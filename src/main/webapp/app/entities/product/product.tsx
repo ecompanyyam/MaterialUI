@@ -75,7 +75,7 @@ export const Product = () => {
 
   useEffect(() => {
     sortEntities();
-  }, [paginationState.activePage, paginationState.order, paginationState.sort]);
+  }, [paginationState.activePage, paginationState.order, paginationState.sort, search]);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -124,42 +124,41 @@ export const Product = () => {
     <div>
       <h2 id="product-heading" data-cy="ProductHeading">
         <Translate contentKey="eCompanyApp.product.home.title">Products</Translate>
-        <Row>
-          <Col sm="12">
-            <Form onSubmit={startSearching} className="d-flex">
-              <FormGroup>
-                <InputGroup>
-                  <Input
-                    className="form-control me-sm-2"
-                    type="text"
-                    name="search"
-                    defaultValue={search}
-                    onChange={handleSearch}
-                    placeholder={translate('ecompanyApp.product.home.search')}
-                  />
-                  <Button className="btn btn-secondary my-2 my-sm-0">
-                    <FontAwesomeIcon icon="search" />
-                  </Button>
-                  <Button type="reset" className="input-group-addon" onClick={clear}>
-                    <FontAwesomeIcon icon="trash" />
-                  </Button>
-                </InputGroup>
-              </FormGroup>
-            </Form>
-          </Col>
-        </Row>
         <div className="d-flex justify-content-end">
-          <Button className="btn btn-outline-dark btn-sm" onClick={handleSyncList} disabled={loading}>
+          <Button className="me-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
             <Translate contentKey="eCompanyApp.product.home.refreshListLabel">Refresh List</Translate>
           </Button>
-          <Link to="/product/new" className="btn btn-outline-dark jh-create-entity" id="jh-create-entity" data-cy="entityCreateButton">
+          <Link to="/product/new" className="btn btn-primary jh-create-entity" id="jh-create-entity" data-cy="entityCreateButton">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
             <Translate contentKey="eCompanyApp.product.home.createLabel">Create new Product</Translate>
           </Link>
         </div>
       </h2>
+      <Row>
+        <Col sm="12">
+          <Form onSubmit={startSearching}>
+            <FormGroup>
+              <InputGroup>
+                <Input
+                  type="text"
+                  name="search"
+                  defaultValue={search}
+                  onChange={handleSearch}
+                  placeholder={translate('eCompanyApp.product.home.search')}
+                />
+                <Button className="input-group-addon">
+                  <FontAwesomeIcon icon="search" />
+                </Button>
+                <Button type="reset" className="input-group-addon" onClick={clear}>
+                  <FontAwesomeIcon icon="trash" />
+                </Button>
+              </InputGroup>
+            </FormGroup>
+          </Form>
+        </Col>
+      </Row>
       <div className="table-responsive">
         {productList && productList.length > 0 ? (
           <Table responsive>

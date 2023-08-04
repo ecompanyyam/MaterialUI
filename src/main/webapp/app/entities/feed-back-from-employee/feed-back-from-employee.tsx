@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Button, Table } from 'reactstrap';
-import { byteSize, Translate, getPaginationState, JhiPagination, JhiItemCount } from 'react-jhipster';
+import { Button, Input, InputGroup, FormGroup, Form, Row, Col, Table } from 'reactstrap';
+import { openFile, byteSize, Translate, translate, TextFormat, getPaginationState, JhiPagination, JhiItemCount } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faLongArrowUp, faLongArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
 import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
-import { getEntities } from './feed-back-from-employee.reducer';
+import { searchEntities, getEntities } from './feed-back-from-employee.reducer';
 
 export const FeedBackFromEmployee = () => {
   const dispatch = useAppDispatch();
 
   const location = useLocation();
   const navigate = useNavigate();
+  const [search, setSearch] = useState('');
 
   const [paginationState, setPaginationState] = useState(
     overridePaginationStateWithQueryParams(getPaginationState(location, ITEMS_PER_PAGE, 'id'), location.search)
@@ -34,6 +35,35 @@ export const FeedBackFromEmployee = () => {
     );
   };
 
+  const startSearching = e => {
+    if (search) {
+      setPaginationState({
+        ...paginationState,
+        activePage: 1,
+      });
+      dispatch(
+        searchEntities({
+          query: search,
+          page: paginationState.activePage - 1,
+          size: paginationState.itemsPerPage,
+          sort: `${paginationState.sort},${paginationState.order}`,
+        })
+      );
+    }
+    e.preventDefault();
+  };
+
+  const clear = () => {
+    setSearch('');
+    setPaginationState({
+      ...paginationState,
+      activePage: 1,
+    });
+    dispatch(getEntities({}));
+  };
+
+  const handleSearch = event => setSearch(event.target.value);
+
   const sortEntities = () => {
     getAllEntities();
     const endURL = `?page=${paginationState.activePage}&sort=${paginationState.sort},${paginationState.order}`;
@@ -44,7 +74,7 @@ export const FeedBackFromEmployee = () => {
 
   useEffect(() => {
     sortEntities();
-  }, [paginationState.activePage, paginationState.order, paginationState.sort]);
+  }, [paginationState.activePage, paginationState.order, paginationState.sort, search]);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -110,6 +140,29 @@ export const FeedBackFromEmployee = () => {
           </Link>
         </div>
       </h2>
+      <Row>
+        <Col sm="12">
+          <Form onSubmit={startSearching}>
+            <FormGroup>
+              <InputGroup>
+                <Input
+                  type="text"
+                  name="search"
+                  defaultValue={search}
+                  onChange={handleSearch}
+                  placeholder={translate('eCompanyApp.product.home.search')}
+                />
+                <Button className="input-group-addon">
+                  <FontAwesomeIcon icon="search" />
+                </Button>
+                <Button type="reset" className="input-group-addon" onClick={clear}>
+                  <FontAwesomeIcon icon="trash" />
+                </Button>
+              </InputGroup>
+            </FormGroup>
+          </Form>
+        </Col>
+      </Row>
       <div className="table-responsive">
         {feedBackFromEmployeeList && feedBackFromEmployeeList.length > 0 ? (
           <Table responsive>

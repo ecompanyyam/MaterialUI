@@ -3,6 +3,7 @@ import { createAsyncThunk, isFulfilled, isPending, isRejected } from '@reduxjs/t
 import { cleanEntity } from 'app/shared/util/entity-utils';
 import { IQueryParams, createEntitySlice, EntityState, serializeAxiosError } from 'app/shared/reducers/reducer.utils';
 import { IFeedBackFromEmployee, defaultValue } from 'app/shared/model/feed-back-from-employee.model';
+import { IBankDetail } from 'app/shared/model/bank-detail.model';
 
 const initialState: EntityState<IFeedBackFromEmployee> = {
   loading: false,
@@ -17,6 +18,10 @@ const initialState: EntityState<IFeedBackFromEmployee> = {
 const apiUrl = 'api/feed-back-from-employees';
 
 // Actions
+export const searchEntities = createAsyncThunk('feedBackFromEmployee/fetch_entity', async ({ query, page, size, sort }: IQueryParams) => {
+  const requestUrl = `${apiUrl}?${query}${sort ? `&page=${page}&size=${size}&sort=${sort}` : ''}`;
+  return axios.get<IFeedBackFromEmployee[]>(requestUrl);
+});
 
 export const getEntities = createAsyncThunk('feedBackFromEmployee/fetch_entity_list', async ({ page, size, sort }: IQueryParams) => {
   const requestUrl = `${apiUrl}?${sort ? `page=${page}&size=${size}&sort=${sort}&` : ''}cacheBuster=${new Date().getTime()}`;
@@ -89,7 +94,7 @@ export const FeedBackFromEmployeeSlice = createEntitySlice({
         state.updateSuccess = true;
         state.entity = {};
       })
-      .addMatcher(isFulfilled(getEntities), (state, action) => {
+      .addMatcher(isFulfilled(getEntities, searchEntities), (state, action) => {
         const { data, headers } = action.payload;
 
         return {
@@ -105,7 +110,7 @@ export const FeedBackFromEmployeeSlice = createEntitySlice({
         state.updateSuccess = true;
         state.entity = action.payload.data;
       })
-      .addMatcher(isPending(getEntities, getEntity), state => {
+      .addMatcher(isPending(getEntities, getEntity, searchEntities), state => {
         state.errorMessage = null;
         state.updateSuccess = false;
         state.loading = true;

@@ -93,7 +93,7 @@ export const ProductSlice = createEntitySlice({
         state.updateSuccess = true;
         state.entity = {};
       })
-      .addMatcher(isFulfilled(getEntities), (state, action) => {
+      .addMatcher(isFulfilled(getEntities, searchEntities), (state, action) => {
         const { data, headers } = action.payload;
 
         return {
@@ -109,7 +109,7 @@ export const ProductSlice = createEntitySlice({
         state.updateSuccess = true;
         state.entity = action.payload.data;
       })
-      .addMatcher(isPending(getEntities, getEntity), state => {
+      .addMatcher(isPending(getEntities, getEntity, searchEntities), state => {
         state.errorMessage = null;
         state.updateSuccess = false;
         state.loading = true;
