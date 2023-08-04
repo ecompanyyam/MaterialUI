@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Table } from 'reactstrap';
 import { byteSize, Translate, TextFormat, getPaginationState, JhiPagination, JhiItemCount } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSort, faSortUp, faSortDown } from '@fortawesome/free-solid-svg-icons';
+import { faSort, faLongArrowUp, faLongArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
 import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
@@ -86,7 +86,7 @@ export const VendorAssessment = () => {
     if (sortFieldName !== fieldName) {
       return faSort;
     } else {
-      return order === ASC ? faSortUp : faSortDown;
+      return order === ASC ? faLongArrowUp : faLongArrowDown;
     }
   };
 
@@ -200,27 +200,45 @@ export const VendorAssessment = () => {
                   <td>
                     <Translate contentKey={`eCompanyApp.Assessment.${vendorAssessment.jobKnowledge}`} />
                   </td>
-                  <td>{vendorAssessment.jobKnowledgeComment}</td>
+                  <td>
+                    {vendorAssessment.jobKnowledgeComment.substring(0, 20)}
+                    {vendorAssessment.jobKnowledgeComment.length >= 20 && '...'}
+                  </td>
                   <td>
                     <Translate contentKey={`eCompanyApp.Assessment.${vendorAssessment.workQuality}`} />
                   </td>
-                  <td>{vendorAssessment.workQualityComment}</td>
+                  <td>
+                    {vendorAssessment.workQualityComment.substring(0, 20)}
+                    {vendorAssessment.workQualityComment.length >= 20 && '...'}
+                  </td>
                   <td>
                     <Translate contentKey={`eCompanyApp.Assessment.${vendorAssessment.attendancePunctuality}`} />
                   </td>
-                  <td>{vendorAssessment.attendancePunctualityComment}</td>
+                  <td>
+                    {vendorAssessment.attendancePunctualityComment.substring(0, 20)}
+                    {vendorAssessment.attendancePunctualityComment.length >= 20 && '...'}
+                  </td>
                   <td>
                     <Translate contentKey={`eCompanyApp.Assessment.${vendorAssessment.initiative}`} />
                   </td>
-                  <td>{vendorAssessment.initiativeComment}</td>
+                  <td>
+                    {vendorAssessment.initiativeComment.substring(0, 20)}
+                    {vendorAssessment.initiativeComment.length >= 20 && '...'}
+                  </td>
                   <td>
                     <Translate contentKey={`eCompanyApp.Assessment.${vendorAssessment.communicationListeningSkills}`} />
                   </td>
-                  <td>{vendorAssessment.communicationListeningSkillsComment}</td>
+                  <td>
+                    {vendorAssessment.communicationListeningSkillsComment.substring(0, 20)}
+                    {vendorAssessment.communicationListeningSkillsComment.length >= 20 && '...'}
+                  </td>
                   <td>
                     <Translate contentKey={`eCompanyApp.Assessment.${vendorAssessment.dependability}`} />
                   </td>
-                  <td>{vendorAssessment.dependabilityComment}</td>
+                  <td>
+                    {vendorAssessment.dependabilityComment.substring(0, 20)}
+                    {vendorAssessment.dependabilityComment.length >= 20 && '...'}
+                  </td>
                   <td>
                     {vendorAssessment.vendorsName ? (
                       <Link to={`/vendor/${vendorAssessment.vendorsName.id}`}>{vendorAssessment.vendorsName.vendorNameEnglish}</Link>

@@ -312,3 +312,109 @@ http://stackoverflow.com/questions/23436430/bootstrap-3-input-group-100-width */
 }
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */
+#login-page .modal-content {
+  background: #ccc;
+}
+#login-page .modal-header .btn-close {
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  color: #000;
+  opacity: 1;
+}
+.modal-title {
+  color: #131352;
+}
+.modal-backdrop.show {
+  background: #131352 !important;
+  opacity: 1;
+}
+.modal-header {
+  display: block;
+}
+
+.pagination .page-link {
+  background: transparent;
+  color: #222;
+}
+
+body {
+  background: #fff;
+  font-family: 'Calibri';
+}
+.table {
+  width: 3000px;
+}
+
+body {
+  background: #fff;
+  font-family: 'Calibri';
+}
+
+.table th {
+  background: #e9eaee;
+  color: #616674;
+  font-size: 16px;
+}
+
+.table td:hover {
+  background: #e9eaee;
+  color: #616674;
+}
+//.table td {
+//  background: #fff !important;
+//  color: #000;
+//  font-size: 12px;
+//  line-height: 13px;
+//  border-bottom: 1px solid #ccc;
+//}
+
+.btn-info,
+.btn-primary,
+.btn-danger {
+  color: #000 !important;
+  background-color: #f8f9fa !important;
+  border-color: #f8f9fa !important;
+}
+.btn-info:hover {
+  background-color: #ccc !important;
+  color: #000 !important;
+  border-radius: 10px !important;
+}
+.btn-primary:hover {
+  background: #375a7f !important;
+  color: #fff !important;
+  border-radius: 10px !important;
+}
+.btn-danger:hover {
+  background: #f47373 !important;
+  color: #fff !important;
+}
+
+.view-routes h2 {
+  color: #000 !important;
+  font-size: 22px !important;
+}
+
+.create_btn {
+  width: auto;
+  border: 1px solid rgb(217, 219, 224);
+  border-radius: 6.25rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 3px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: brand_medium, Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+  height: 1.75rem;
+  line-height: 1.625rem;
+  pointer-events: auto;
+  padding: 0rem 0.75rem;
+  text-align: center;
+  white-space: nowrap;
+  color: rgb(51, 54, 63);
+  background-color: rgb(255, 255, 255);
+}
+.create_btn:hover {
+  background: #026edd;
+  color: #fff;
+}

@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Input, InputGroup, FormGroup, Form, Row, Col, Table } from 'reactstrap';
 import { openFile, byteSize, Translate, translate, TextFormat, getPaginationState, JhiPagination, JhiItemCount } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSort, faSortUp, faSortDown } from '@fortawesome/free-solid-svg-icons';
+import { faSort, faLongArrowUp, faLongArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
 import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
@@ -116,7 +116,7 @@ export const Product = () => {
     if (sortFieldName !== fieldName) {
       return faSort;
     } else {
-      return order === ASC ? faSortUp : faSortDown;
+      return order === ASC ? faLongArrowUp : faLongArrowDown;
     }
   };
 
@@ -215,7 +215,10 @@ export const Product = () => {
                     </Button>
                   </td>
                   <td>{product.productName}</td>
-                  <td>{product.productRemark}</td>
+                  <td>
+                    {product.productRemark.substring(0, 20)}
+                    {product.productRemark.length >= 20 && '...'}
+                  </td>
                   <td>
                     <Translate contentKey={`eCompanyApp.Country.${product.productOrigin}`} />
                   </td>

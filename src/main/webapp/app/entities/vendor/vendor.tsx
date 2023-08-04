@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Table } from 'reactstrap';
 import { openFile, byteSize, Translate, TextFormat, getPaginationState, JhiPagination, JhiItemCount } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSort, faSortUp, faSortDown } from '@fortawesome/free-solid-svg-icons';
+import { faSort, faLongArrowUp, faLongArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
 import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
@@ -86,7 +86,7 @@ export const Vendor = () => {
     if (sortFieldName !== fieldName) {
       return faSort;
     } else {
-      return order === ASC ? faSortUp : faSortDown;
+      return order === ASC ? faLongArrowUp : faLongArrowDown;
     }
   };
 
@@ -325,8 +325,14 @@ export const Vendor = () => {
                   <td>
                     <Translate contentKey={`eCompanyApp.Country.${vendor.country}`} />
                   </td>
-                  <td>{vendor.googleMap}</td>
-                  <td>{vendor.combinedAddress}</td>
+                  <td>
+                    {vendor.googleMap.substring(0, 20)}
+                    {vendor.googleMap.length >= 20 && '...'}
+                  </td>
+                  <td>
+                    {vendor.combinedAddress.substring(0, 20)}
+                    {vendor.combinedAddress.length >= 20 && '...'}
+                  </td>
                   <td>
                     {vendor.cRCertificateUpload ? (
                       <div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Button, Row, Col, FormText } from 'reactstrap';
+import { Button, Row, Col, FormText, FormGroup } from 'reactstrap';
 import { isNumber, Translate, translate, ValidatedField, ValidatedForm } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -78,8 +78,8 @@ export const BankDetailUpdate = () => {
           </h2>
         </Col>
       </Row>
-      <Row className="justify-content-center">
-        <Col md="8">
+      <Row className="align-self-start">
+        <Col md="2">
           {loading ? (
             <p>Loading...</p>
           ) : (

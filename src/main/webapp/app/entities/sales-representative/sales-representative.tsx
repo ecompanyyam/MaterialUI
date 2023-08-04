@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Table } from 'reactstrap';
 import { byteSize, Translate, getPaginationState, JhiPagination, JhiItemCount } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSort, faSortUp, faSortDown } from '@fortawesome/free-solid-svg-icons';
+import { faSort, faLongArrowUp, faLongArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
 import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
@@ -85,7 +85,7 @@ export const SalesRepresentative = () => {
     if (sortFieldName !== fieldName) {
       return faSort;
     } else {
-      return order === ASC ? faSortUp : faSortDown;
+      return order === ASC ? faLongArrowUp : faLongArrowDown;
     }
   };
 
@@ -167,8 +167,14 @@ export const SalesRepresentative = () => {
                   <td>{salesRepresentative.email}</td>
                   <td>{salesRepresentative.phone}</td>
                   <td>{salesRepresentative.officeLocation}</td>
-                  <td>{salesRepresentative.addressLine1}</td>
-                  <td>{salesRepresentative.otherDetails}</td>
+                  <td>
+                    {salesRepresentative.addressLine1.substring(0, 20)}
+                    {salesRepresentative.addressLine1.length >= 20 && '...'}
+                  </td>
+                  <td>
+                    {salesRepresentative.otherDetails.substring(0, 20)}
+                    {salesRepresentative.otherDetails.length >= 20 && '...'}
+                  </td>
                   <td>
                     {salesRepresentative.vendorsName ? (
                       <Link to={`/vendor/${salesRepresentative.vendorsName.id}`}>{salesRepresentative.vendorsName.vendorNameEnglish}</Link>

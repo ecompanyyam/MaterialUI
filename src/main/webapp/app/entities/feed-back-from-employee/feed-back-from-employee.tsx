@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Table } from 'reactstrap';
 import { byteSize, Translate, getPaginationState, JhiPagination, JhiItemCount } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSort, faSortUp, faSortDown } from '@fortawesome/free-solid-svg-icons';
+import { faSort, faLongArrowUp, faLongArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
 import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
@@ -85,7 +85,7 @@ export const FeedBackFromEmployee = () => {
     if (sortFieldName !== fieldName) {
       return faSort;
     } else {
-      return order === ASC ? faSortUp : faSortDown;
+      return order === ASC ? faLongArrowUp : faLongArrowDown;
     }
   };
 
@@ -154,7 +154,10 @@ export const FeedBackFromEmployee = () => {
                   <td>
                     <Translate contentKey={`eCompanyApp.FeedBackCategory.${feedBackFromEmployee.feedBackCategory}`} />
                   </td>
-                  <td>{feedBackFromEmployee.comment}</td>
+                  <td>
+                    {feedBackFromEmployee.comment.substring(0, 20)}
+                    {feedBackFromEmployee.comment.length >= 20 && '...'}
+                  </td>
                   <td>
                     {feedBackFromEmployee.vendorsName ? (
                       <Link to={`/vendor/${feedBackFromEmployee.vendorsName.id}`}>

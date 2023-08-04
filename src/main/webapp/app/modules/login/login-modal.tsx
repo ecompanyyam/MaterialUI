@@ -78,15 +78,19 @@ const LoginModal = (props: ILoginModalProps) => {
                 value={true}
                 register={register}
               />
+              <Link to="/account/reset/request" data-cy="forgetYourPasswordSelector">
+                <Translate contentKey="login.password.forgot">Did you forget your password?</Translate>
+              </Link>
             </Col>
           </Row>
           <div className="mt-1">&nbsp;</div>
-          <Alert color="warning">
-            <Link to="/account/reset/request" data-cy="forgetYourPasswordSelector">
-              <Translate contentKey="login.password.forgot">Did you forget your password?</Translate>
-            </Link>
-          </Alert>
-          <Alert color="warning">
+          {/* <Alert className="alert alert-primary"> */}
+          {/*   <Link to="/account/reset/request" data-cy="forgetYourPasswordSelector"> */}
+          {/*     <Translate contentKey="login.password.forgot">Did you forget your password?</Translate> */}
+          {/*   </Link> */}
+          {/* </Alert> */}
+
+          <Alert className="alert alert-primary">
             <span>
               <Translate contentKey="global.messages.info.register.noaccount">You don&apos;t have an account yet?</Translate>
             </span>{' '}
