@@ -1,0 +1,29 @@
+{
+  "eCompanyApp": {
+    "bankDetail": {
+      "home": {
+        "title": "BankDetails",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Bank Detail",
+        "createOrEditLabel": "Créer ou éditer un Bank Detail",
+        "notFound": "Aucun Bank Detail trouvé"
+      },
+      "created": "Un nouveau Bank Detail a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Bank Detail avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Bank Detail avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Bank Detail {{ id }} ?"
+      },
+      "detail": {
+        "title": "Bank Detail"
+      },
+      "id": "ID",
+      "bankAccount": "Bank Account",
+      "bankName": "Bank Name",
+      "branchSwiftCode": "Branch Swift Code",
+      "ibanNo": "Iban No",
+      "accountNumber": "Account Number",
+      "vendorsName": "Vendors Name"
+    }
+  }
+}

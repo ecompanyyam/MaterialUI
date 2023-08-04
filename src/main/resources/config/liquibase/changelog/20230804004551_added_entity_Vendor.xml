@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Vendor.
+    -->
+    <changeSet id="20230804004551-1" author="jhipster">
+        <createTable tableName="vendor">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="vendor_name_english" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="vendor_name_arabic" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vendor_id" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="vendor_account_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vendor_cr_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vendor_vat_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vendor_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vendor_category" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vendor_establishment_date" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vendor_logo" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="vendor_logo_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="height" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="width" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="taken" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="uploaded" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="contact_full_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="contact_email_address" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="contact_primary_phone_no" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="contact_primary_fax_no" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="contact_secondary_phone_no" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="contact_secondary_fax_no" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="office_location" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="office_functionality" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="website_url" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="building_no" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vendor_street_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="zip_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="district_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="additional_no" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="city_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="unit_no" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="country" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="google_map" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="combined_address" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="c_r_certificate_upload" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="c_r_certificate_upload_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="v_at_certificate_upload" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="v_at_certificate_upload_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="national_address_upload" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="national_address_upload_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="company_profile_upload" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="company_profile_upload_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="other_upload" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="other_upload_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cash" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="credit" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="letter_of_credit" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="others" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="vendor" columnName="taken" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="vendor" columnName="uploaded" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20230804004551-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/vendor.csv"
+                  separator=";"
+                  tableName="vendor"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="vendor_name_english" type="string"/>
+            <column name="vendor_name_arabic" type="string"/>
+            <column name="vendor_id" type="string"/>
+            <column name="vendor_account_number" type="string"/>
+            <column name="vendor_cr_number" type="string"/>
+            <column name="vendor_vat_number" type="string"/>
+            <column name="vendor_type" type="string"/>
+            <column name="vendor_category" type="string"/>
+            <column name="vendor_establishment_date" type="string"/>
+            <column name="vendor_logo" type="blob"/>
+            <column name="vendor_logo_content_type" type="string"/>
+            <column name="height" type="numeric"/>
+            <column name="width" type="numeric"/>
+            <column name="taken" type="date"/>
+            <column name="uploaded" type="date"/>
+            <column name="contact_full_name" type="string"/>
+            <column name="contact_email_address" type="string"/>
+            <column name="contact_primary_phone_no" type="string"/>
+            <column name="contact_primary_fax_no" type="string"/>
+            <column name="contact_secondary_phone_no" type="string"/>
+            <column name="contact_secondary_fax_no" type="string"/>
+            <column name="office_location" type="string"/>
+            <column name="office_functionality" type="string"/>
+            <column name="website_url" type="string"/>
+            <column name="building_no" type="string"/>
+            <column name="vendor_street_name" type="string"/>
+            <column name="zip_code" type="string"/>
+            <column name="district_name" type="string"/>
+            <column name="additional_no" type="string"/>
+            <column name="city_name" type="string"/>
+            <column name="unit_no" type="string"/>
+            <column name="country" type="string"/>
+            <column name="google_map" type="clob"/>
+            <column name="combined_address" type="clob"/>
+            <column name="c_r_certificate_upload" type="blob"/>
+            <column name="c_r_certificate_upload_content_type" type="string"/>
+            <column name="v_at_certificate_upload" type="blob"/>
+            <column name="v_at_certificate_upload_content_type" type="string"/>
+            <column name="national_address_upload" type="blob"/>
+            <column name="national_address_upload_content_type" type="string"/>
+            <column name="company_profile_upload" type="blob"/>
+            <column name="company_profile_upload_content_type" type="string"/>
+            <column name="other_upload" type="blob"/>
+            <column name="other_upload_content_type" type="string"/>
+            <column name="cash" type="string"/>
+            <column name="credit" type="string"/>
+            <column name="letter_of_credit" type="string"/>
+            <column name="others" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

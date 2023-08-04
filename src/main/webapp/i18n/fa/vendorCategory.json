@@ -1,0 +1,11 @@
+{
+  "eCompanyApp": {
+    "VendorCategory": {
+      "null": "",
+      "MANUFACTURER": "MANUFACTURER",
+      "SUPPLIER": "SUPPLIER",
+      "SUBCONTRACTOR": "SUBCONTRACTOR",
+      "DISTRIBUTOR": "DISTRIBUTOR"
+    }
+  }
+}

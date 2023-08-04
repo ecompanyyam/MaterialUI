@@ -1,0 +1,90 @@
+{
+  "applications": "*",
+  "changelogDate": "20230804004552",
+  "entityTableName": "vendor_assessment",
+  "fields": [
+    {
+      "fieldName": "assessmentDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "assessedBY",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "jobKnowledge",
+      "fieldType": "Assessment",
+      "fieldValues": "POOR,FAIR,SATISFACTORY,GOOD,EXCELLENT"
+    },
+    {
+      "fieldName": "jobKnowledgeComment",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "workQuality",
+      "fieldType": "Assessment",
+      "fieldValues": "POOR,FAIR,SATISFACTORY,GOOD,EXCELLENT"
+    },
+    {
+      "fieldName": "workQualityComment",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "attendancePunctuality",
+      "fieldType": "Assessment",
+      "fieldValues": "POOR,FAIR,SATISFACTORY,GOOD,EXCELLENT"
+    },
+    {
+      "fieldName": "attendancePunctualityComment",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "initiative",
+      "fieldType": "Assessment",
+      "fieldValues": "POOR,FAIR,SATISFACTORY,GOOD,EXCELLENT"
+    },
+    {
+      "fieldName": "initiativeComment",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "communicationListeningSkills",
+      "fieldType": "Assessment",
+      "fieldValues": "POOR,FAIR,SATISFACTORY,GOOD,EXCELLENT"
+    },
+    {
+      "fieldName": "communicationListeningSkillsComment",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "dependability",
+      "fieldType": "Assessment",
+      "fieldValues": "POOR,FAIR,SATISFACTORY,GOOD,EXCELLENT"
+    },
+    {
+      "fieldName": "dependabilityComment",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "VendorAssessment",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "vendorNameEnglish",
+      "otherEntityName": "vendor",
+      "relationshipName": "vendorsName",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,11 @@
+id;product_name;product_remark;product_origin;product_stock_status;product_avg_delivery_time;product_manufacturer;product_image;product_image_content_type;height;width;taken;uploaded;product_attachments;product_attachments_content_type;vendors_name_id
+1;Southeast;../fake-data/blob/hipster.txt;TURKEY;EX_STOCK;WEEKLY;Usability And male;../fake-data/blob/hipster.png;image/png;472;4105;2023-08-03T21:29:48;2023-08-03T07:07:29;../fake-data/blob/hipster.png;image/png;1
+2;blue Car uselessly;../fake-data/blob/hipster.txt;SA;EX_STOCK;MONTHLY;Music parallelism;../fake-data/blob/hipster.png;image/png;28119;77;2023-08-03T15:23:31;2023-08-04T00:11:23;../fake-data/blob/hipster.png;image/png;2
+3;Northwest;../fake-data/blob/hipster.txt;USA;EX_STOCK;QUARTERLY;Monitored odio;../fake-data/blob/hipster.png;image/png;17192;13032;2023-08-03T05:19:17;2023-08-03T11:39:54;../fake-data/blob/hipster.png;image/png;3
+4;Diesel;../fake-data/blob/hipster.txt;SA;CUSTOM_ORDER;YEARLY;versus volt Orchestrator;../fake-data/blob/hipster.png;image/png;19395;21261;2023-08-03T16:02:18;2023-08-03T03:14:07;../fake-data/blob/hipster.png;image/png;4
+5;plum;../fake-data/blob/hipster.txt;USA;EX_STOCK;MONTHLY;stampede out;../fake-data/blob/hipster.png;image/png;29541;12907;2023-08-03T04:04:30;2023-08-03T08:35:06;../fake-data/blob/hipster.png;image/png;5
+6;Operations;../fake-data/blob/hipster.txt;TURKEY;CUSTOM_ORDER;YEARLY;1080p gee;../fake-data/blob/hipster.png;image/png;3863;5093;2023-08-03T10:08:32;2023-08-03T22:50:52;../fake-data/blob/hipster.png;image/png;6
+7;Gloves;../fake-data/blob/hipster.txt;SA;CUSTOM_ORDER;QUARTERLY;lumen Iowa;../fake-data/blob/hipster.png;image/png;8438;2717;2023-08-03T04:36:08;2023-08-03T10:41:42;../fake-data/blob/hipster.png;image/png;7
+8;digital;../fake-data/blob/hipster.txt;SA;EX_STOCK;WEEKLY;Nauru;../fake-data/blob/hipster.png;image/png;11214;26146;2023-08-03T05:39:51;2023-08-03T03:08:42;../fake-data/blob/hipster.png;image/png;8
+9;Modern;../fake-data/blob/hipster.txt;USA;PARTIALLY_IN_STOCK;WEEKLY;Liaison;../fake-data/blob/hipster.png;image/png;16319;19470;2023-08-03T08:26:05;2023-08-03T09:56:58;../fake-data/blob/hipster.png;image/png;9
+10;Diesel oof;../fake-data/blob/hipster.txt;TURKEY;EX_STOCK;MONTHLY;exploit;../fake-data/blob/hipster.png;image/png;28877;6920;2023-08-03T10:30:22;2023-08-03T04:58:17;../fake-data/blob/hipster.png;image/png;10

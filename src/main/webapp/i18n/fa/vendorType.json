@@ -1,0 +1,9 @@
+{
+  "eCompanyApp": {
+    "VendorType": {
+      "null": "",
+      "LOCAL": "LOCAL",
+      "FOREIGN": "FOREIGN"
+    }
+  }
+}

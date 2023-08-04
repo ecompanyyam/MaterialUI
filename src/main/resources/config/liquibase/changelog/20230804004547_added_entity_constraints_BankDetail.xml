@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity BankDetail.
+    -->
+    <changeSet id="20230804004547-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="vendors_name_id"
+                                 baseTableName="bank_detail"
+                                 constraintName="fk_bank_detail__vendors_name_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="vendor"
+                                 />
+    </changeSet>
+</databaseChangeLog>

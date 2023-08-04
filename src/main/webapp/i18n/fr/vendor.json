@@ -1,0 +1,65 @@
+{
+  "eCompanyApp": {
+    "vendor": {
+      "home": {
+        "title": "Vendors",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Vendor",
+        "createOrEditLabel": "Créer ou éditer un Vendor",
+        "notFound": "Aucun Vendor trouvé"
+      },
+      "created": "Un nouveau Vendor a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Vendor avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Vendor avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Vendor {{ id }} ?"
+      },
+      "detail": {
+        "title": "Vendor"
+      },
+      "id": "ID",
+      "vendorNameEnglish": "Vendor Name English",
+      "vendorNameArabic": "Vendor Name Arabic",
+      "vendorId": "Vendor Id",
+      "vendorAccountNumber": "Vendor Account Number",
+      "vendorCRNumber": "Vendor CR Number",
+      "vendorVATNumber": "Vendor VAT Number",
+      "vendorType": "Vendor Type",
+      "vendorCategory": "Vendor Category",
+      "vendorEstablishmentDate": "Vendor Establishment Date",
+      "vendorLogo": "Vendor Logo",
+      "height": "Height",
+      "width": "Width",
+      "taken": "Taken",
+      "uploaded": "Uploaded",
+      "contactFullName": "Contact Full Name",
+      "contactEmailAddress": "Contact Email Address",
+      "contactPrimaryPhoneNo": "Contact Primary Phone No",
+      "contactPrimaryFaxNo": "Contact Primary Fax No",
+      "contactSecondaryPhoneNo": "Contact Secondary Phone No",
+      "contactSecondaryFaxNo": "Contact Secondary Fax No",
+      "officeLocation": "Office Location",
+      "officeFunctionality": "Office Functionality",
+      "websiteURL": "Website URL",
+      "buildingNo": "Building No",
+      "vendorStreetName": "Vendor Street Name",
+      "zipCode": "Zip Code",
+      "districtName": "District Name",
+      "additionalNo": "Additional No",
+      "cityName": "City Name",
+      "unitNo": "Unit No",
+      "country": "Country",
+      "googleMap": "Google Map",
+      "combinedAddress": "Combined Address",
+      "cRCertificateUpload": "C R Certificate Upload",
+      "vATCertificateUpload": "V AT Certificate Upload",
+      "nationalAddressUpload": "National Address Upload",
+      "companyProfileUpload": "Company Profile Upload",
+      "otherUpload": "Other Upload",
+      "cash": "Cash",
+      "credit": "Credit",
+      "letterOfCredit": "Letter Of Credit",
+      "others": "Others"
+    }
+  }
+}

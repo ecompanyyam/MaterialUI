@@ -1,0 +1,65 @@
+{
+  "eCompanyApp": {
+    "vendor": {
+      "home": {
+        "title": "Vendors",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Vendor ekle",
+        "createOrEditLabel": "Yeni Vendor ekle veya guncelle",
+        "notFound": "Vendors kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Vendor eklendi",
+      "updated": "{{ param }} nolu Vendor guncellendi",
+      "deleted": "{{ param }} nolu Vendor silindi",
+      "delete": {
+        "question": "{{ id }} nolu Vendor silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Vendor"
+      },
+      "id": "ID",
+      "vendorNameEnglish": "Vendor Name English",
+      "vendorNameArabic": "Vendor Name Arabic",
+      "vendorId": "Vendor Id",
+      "vendorAccountNumber": "Vendor Account Number",
+      "vendorCRNumber": "Vendor CR Number",
+      "vendorVATNumber": "Vendor VAT Number",
+      "vendorType": "Vendor Type",
+      "vendorCategory": "Vendor Category",
+      "vendorEstablishmentDate": "Vendor Establishment Date",
+      "vendorLogo": "Vendor Logo",
+      "height": "Height",
+      "width": "Width",
+      "taken": "Taken",
+      "uploaded": "Uploaded",
+      "contactFullName": "Contact Full Name",
+      "contactEmailAddress": "Contact Email Address",
+      "contactPrimaryPhoneNo": "Contact Primary Phone No",
+      "contactPrimaryFaxNo": "Contact Primary Fax No",
+      "contactSecondaryPhoneNo": "Contact Secondary Phone No",
+      "contactSecondaryFaxNo": "Contact Secondary Fax No",
+      "officeLocation": "Office Location",
+      "officeFunctionality": "Office Functionality",
+      "websiteURL": "Website URL",
+      "buildingNo": "Building No",
+      "vendorStreetName": "Vendor Street Name",
+      "zipCode": "Zip Code",
+      "districtName": "District Name",
+      "additionalNo": "Additional No",
+      "cityName": "City Name",
+      "unitNo": "Unit No",
+      "country": "Country",
+      "googleMap": "Google Map",
+      "combinedAddress": "Combined Address",
+      "cRCertificateUpload": "C R Certificate Upload",
+      "vATCertificateUpload": "V AT Certificate Upload",
+      "nationalAddressUpload": "National Address Upload",
+      "companyProfileUpload": "Company Profile Upload",
+      "otherUpload": "Other Upload",
+      "cash": "Cash",
+      "credit": "Credit",
+      "letterOfCredit": "Letter Of Credit",
+      "others": "Others"
+    }
+  }
+}

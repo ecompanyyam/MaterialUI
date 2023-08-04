@@ -1,0 +1,28 @@
+{
+  "eCompanyApp": {
+    "feedBackFromEmployee": {
+      "home": {
+        "title": "Feed Back From Employees",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Feed Back From Employee ekle",
+        "createOrEditLabel": "Yeni Feed Back From Employee ekle veya guncelle",
+        "notFound": "Feed Back From Employees kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Feed Back From Employee eklendi",
+      "updated": "{{ param }} nolu Feed Back From Employee guncellendi",
+      "deleted": "{{ param }} nolu Feed Back From Employee silindi",
+      "delete": {
+        "question": "{{ id }} nolu Feed Back From Employee silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Feed Back From Employee"
+      },
+      "id": "ID",
+      "refContractPONumber": "Ref Contract PO Number",
+      "feedBackCategory": "Feed Back Category",
+      "comment": "Comment",
+      "vendorsName": "Vendors Name",
+      "productName": "Product Name"
+    }
+  }
+}

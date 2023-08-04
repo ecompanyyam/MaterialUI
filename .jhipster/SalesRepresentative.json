@@ -1,0 +1,54 @@
+{
+  "applications": "*",
+  "changelogDate": "20230804004550",
+  "entityTableName": "sales_representative",
+  "fields": [
+    {
+      "fieldName": "fullName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "jobTitle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "officeLocation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressLine1",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "otherDetails",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "SalesRepresentative",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "vendorNameEnglish",
+      "otherEntityName": "vendor",
+      "relationshipName": "vendorsName",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

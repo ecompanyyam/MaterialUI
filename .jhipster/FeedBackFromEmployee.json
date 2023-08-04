@@ -1,0 +1,44 @@
+{
+  "applications": "*",
+  "changelogDate": "20230804004548",
+  "entityTableName": "feed_back_from_employee",
+  "fields": [
+    {
+      "fieldName": "refContractPONumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "feedBackCategory",
+      "fieldType": "FeedBackCategory",
+      "fieldValues": "ADVICE,COMPLAIN"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "FeedBackFromEmployee",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "vendorNameEnglish",
+      "otherEntityName": "vendor",
+      "relationshipName": "vendorsName",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "productName",
+      "otherEntityName": "product",
+      "relationshipName": "productName",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

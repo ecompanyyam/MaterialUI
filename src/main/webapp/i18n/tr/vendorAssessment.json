@@ -1,0 +1,38 @@
+{
+  "eCompanyApp": {
+    "vendorAssessment": {
+      "home": {
+        "title": "Vendor Assessments",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Vendor Assessment ekle",
+        "createOrEditLabel": "Yeni Vendor Assessment ekle veya guncelle",
+        "notFound": "Vendor Assessments kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Vendor Assessment eklendi",
+      "updated": "{{ param }} nolu Vendor Assessment guncellendi",
+      "deleted": "{{ param }} nolu Vendor Assessment silindi",
+      "delete": {
+        "question": "{{ id }} nolu Vendor Assessment silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Vendor Assessment"
+      },
+      "id": "ID",
+      "assessmentDate": "Assessment Date",
+      "assessedBY": "Assessed BY",
+      "jobKnowledge": "Job Knowledge",
+      "jobKnowledgeComment": "Job Knowledge Comment",
+      "workQuality": "Work Quality",
+      "workQualityComment": "Work Quality Comment",
+      "attendancePunctuality": "Attendance Punctuality",
+      "attendancePunctualityComment": "Attendance Punctuality Comment",
+      "initiative": "Initiative",
+      "initiativeComment": "Initiative Comment",
+      "communicationListeningSkills": "Communication Listening Skills",
+      "communicationListeningSkillsComment": "Communication Listening Skills Comment",
+      "dependability": "Dependability",
+      "dependabilityComment": "Dependability Comment",
+      "vendorsName": "Vendors Name"
+    }
+  }
+}

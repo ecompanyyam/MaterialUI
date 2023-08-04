@@ -1,0 +1,36 @@
+{
+  "eCompanyApp": {
+    "product": {
+      "home": {
+        "title": "Products",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Product ekle",
+        "createOrEditLabel": "Yeni Product ekle veya guncelle",
+        "notFound": "Products kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Product eklendi",
+      "updated": "{{ param }} nolu Product guncellendi",
+      "deleted": "{{ param }} nolu Product silindi",
+      "delete": {
+        "question": "{{ id }} nolu Product silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Product"
+      },
+      "id": "ID",
+      "productName": "Product Name",
+      "productRemark": "Product Remark",
+      "productOrigin": "Product Origin",
+      "productStockStatus": "Product Stock Status",
+      "productAvgDeliveryTime": "Product Avg Delivery Time",
+      "productManufacturer": "Product Manufacturer",
+      "productImage": "Product Image",
+      "height": "Height",
+      "width": "Width",
+      "taken": "Taken",
+      "uploaded": "Uploaded",
+      "productAttachments": "Product Attachments",
+      "vendorsName": "Vendors Name"
+    }
+  }
+}

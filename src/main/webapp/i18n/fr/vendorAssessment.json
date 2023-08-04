@@ -1,0 +1,38 @@
+{
+  "eCompanyApp": {
+    "vendorAssessment": {
+      "home": {
+        "title": "VendorAssessments",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Vendor Assessment",
+        "createOrEditLabel": "Créer ou éditer un Vendor Assessment",
+        "notFound": "Aucun Vendor Assessment trouvé"
+      },
+      "created": "Un nouveau Vendor Assessment a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Vendor Assessment avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Vendor Assessment avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Vendor Assessment {{ id }} ?"
+      },
+      "detail": {
+        "title": "Vendor Assessment"
+      },
+      "id": "ID",
+      "assessmentDate": "Assessment Date",
+      "assessedBY": "Assessed BY",
+      "jobKnowledge": "Job Knowledge",
+      "jobKnowledgeComment": "Job Knowledge Comment",
+      "workQuality": "Work Quality",
+      "workQualityComment": "Work Quality Comment",
+      "attendancePunctuality": "Attendance Punctuality",
+      "attendancePunctualityComment": "Attendance Punctuality Comment",
+      "initiative": "Initiative",
+      "initiativeComment": "Initiative Comment",
+      "communicationListeningSkills": "Communication Listening Skills",
+      "communicationListeningSkillsComment": "Communication Listening Skills Comment",
+      "dependability": "Dependability",
+      "dependabilityComment": "Dependability Comment",
+      "vendorsName": "Vendors Name"
+    }
+  }
+}

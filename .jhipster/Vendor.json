@@ -1,0 +1,197 @@
+{
+  "applications": "*",
+  "changelogDate": "20230804004551",
+  "entityTableName": "vendor",
+  "fields": [
+    {
+      "fieldName": "vendorNameEnglish",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "vendorNameArabic",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "vendorId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "vendorAccountNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "vendorCRNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "vendorVATNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "vendorType",
+      "fieldType": "VendorType",
+      "fieldValues": "LOCAL,FOREIGN"
+    },
+    {
+      "fieldName": "vendorCategory",
+      "fieldType": "VendorCategory",
+      "fieldValues": "MANUFACTURER,SUPPLIER,SUBCONTRACTOR,DISTRIBUTOR"
+    },
+    {
+      "fieldName": "vendorEstablishmentDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "vendorLogo",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldName": "height",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "width",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "taken",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "uploaded",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "contactFullName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contactEmailAddress",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "pattern"],
+      "fieldValidateRulesPattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+    },
+    {
+      "fieldName": "contactPrimaryPhoneNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contactPrimaryFaxNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contactSecondaryPhoneNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contactSecondaryFaxNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "officeLocation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "officeFunctionality",
+      "fieldType": "OfficeFunctionality",
+      "fieldValues": "MAIN,BRANCH,SHOWROOM"
+    },
+    {
+      "fieldName": "websiteURL",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "buildingNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "vendorStreetName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "zipCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "districtName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "additionalNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cityName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "unitNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "country",
+      "fieldType": "Country",
+      "fieldValues": "INDIA,SA,TURKEY,USA"
+    },
+    {
+      "fieldName": "googleMap",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "combinedAddress",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "cRCertificateUpload",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "vATCertificateUpload",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "nationalAddressUpload",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "companyProfileUpload",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "otherUpload",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "cash",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "credit",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "letterOfCredit",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "others",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Vendor",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

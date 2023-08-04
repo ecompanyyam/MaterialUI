@@ -1,0 +1,42 @@
+{
+  "applications": "*",
+  "changelogDate": "20230804004547",
+  "entityTableName": "bank_detail",
+  "fields": [
+    {
+      "fieldName": "bankAccount",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "bankName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "branchSwiftCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ibanNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "accountNumber",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "BankDetail",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "vendorNameEnglish",
+      "otherEntityName": "vendor",
+      "relationshipName": "vendorsName",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

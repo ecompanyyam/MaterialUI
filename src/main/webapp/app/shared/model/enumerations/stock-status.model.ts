@@ -1,0 +1,7 @@
+export enum StockStatus {
+  CUSTOM_ORDER = 'CUSTOM_ORDER',
+
+  EX_STOCK = 'EX_STOCK',
+
+  PARTIALLY_IN_STOCK = 'PARTIALLY_IN_STOCK',
+}

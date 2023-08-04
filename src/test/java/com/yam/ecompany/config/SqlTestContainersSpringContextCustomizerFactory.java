@@ -45,7 +45,7 @@ public class SqlTestContainersSpringContextCustomizerFactory implements ContextC
                     testValues.and(
                         "spring.datasource.url=" +
                         prodTestContainer.getTestContainer().getJdbcUrl() +
-                        "?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true"
+                        "?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true"
                     );
                 testValues = testValues.and("spring.datasource.username=" + prodTestContainer.getTestContainer().getUsername());
                 testValues = testValues.and("spring.datasource.password=" + prodTestContainer.getTestContainer().getPassword());

@@ -1,0 +1,28 @@
+{
+  "eCompanyApp": {
+    "feedBackFromEmployee": {
+      "home": {
+        "title": "FeedBackFromEmployees",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Feed Back From Employee",
+        "createOrEditLabel": "Créer ou éditer un Feed Back From Employee",
+        "notFound": "Aucun Feed Back From Employee trouvé"
+      },
+      "created": "Un nouveau Feed Back From Employee a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Feed Back From Employee avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Feed Back From Employee avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Feed Back From Employee {{ id }} ?"
+      },
+      "detail": {
+        "title": "Feed Back From Employee"
+      },
+      "id": "ID",
+      "refContractPONumber": "Ref Contract PO Number",
+      "feedBackCategory": "Feed Back Category",
+      "comment": "Comment",
+      "vendorsName": "Vendors Name",
+      "productName": "Product Name"
+    }
+  }
+}

@@ -11,7 +11,18 @@
     <property name="datetimeType" value="datetime(6)" dbms="mysql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230804004547_added_entity_BankDetail.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230804004548_added_entity_FeedBackFromEmployee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230804004549_added_entity_Product.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230804004550_added_entity_SalesRepresentative.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230804004551_added_entity_Vendor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230804004552_added_entity_VendorAssessment.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20230804004547_added_entity_constraints_BankDetail.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230804004548_added_entity_constraints_FeedBackFromEmployee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230804004549_added_entity_constraints_Product.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230804004550_added_entity_constraints_SalesRepresentative.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230804004552_added_entity_constraints_VendorAssessment.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

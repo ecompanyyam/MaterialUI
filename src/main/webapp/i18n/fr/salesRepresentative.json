@@ -1,0 +1,31 @@
+{
+  "eCompanyApp": {
+    "salesRepresentative": {
+      "home": {
+        "title": "SalesRepresentatives",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Sales Representative",
+        "createOrEditLabel": "Créer ou éditer un Sales Representative",
+        "notFound": "Aucun Sales Representative trouvé"
+      },
+      "created": "Un nouveau Sales Representative a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Sales Representative avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Sales Representative avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Sales Representative {{ id }} ?"
+      },
+      "detail": {
+        "title": "Sales Representative"
+      },
+      "id": "ID",
+      "fullName": "Full Name",
+      "jobTitle": "Job Title",
+      "email": "Email",
+      "phone": "Phone",
+      "officeLocation": "Office Location",
+      "addressLine1": "Address Line 1",
+      "otherDetails": "Other Details",
+      "vendorsName": "Vendors Name"
+    }
+  }
+}

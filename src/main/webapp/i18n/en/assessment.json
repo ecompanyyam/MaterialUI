@@ -1,0 +1,12 @@
+{
+  "eCompanyApp": {
+    "Assessment": {
+      "null": "",
+      "POOR": "POOR",
+      "FAIR": "FAIR",
+      "SATISFACTORY": "SATISFACTORY",
+      "GOOD": "GOOD",
+      "EXCELLENT": "EXCELLENT"
+    }
+  }
+}

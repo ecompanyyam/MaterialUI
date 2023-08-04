@@ -1,0 +1,31 @@
+{
+  "eCompanyApp": {
+    "salesRepresentative": {
+      "home": {
+        "title": "Sales Representatives",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Sales Representative ekle",
+        "createOrEditLabel": "Yeni Sales Representative ekle veya guncelle",
+        "notFound": "Sales Representatives kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Sales Representative eklendi",
+      "updated": "{{ param }} nolu Sales Representative guncellendi",
+      "deleted": "{{ param }} nolu Sales Representative silindi",
+      "delete": {
+        "question": "{{ id }} nolu Sales Representative silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Sales Representative"
+      },
+      "id": "ID",
+      "fullName": "Full Name",
+      "jobTitle": "Job Title",
+      "email": "Email",
+      "phone": "Phone",
+      "officeLocation": "Office Location",
+      "addressLine1": "Address Line 1",
+      "otherDetails": "Other Details",
+      "vendorsName": "Vendors Name"
+    }
+  }
+}

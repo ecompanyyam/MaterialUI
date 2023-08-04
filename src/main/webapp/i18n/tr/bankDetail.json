@@ -1,0 +1,29 @@
+{
+  "eCompanyApp": {
+    "bankDetail": {
+      "home": {
+        "title": "Bank Details",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Bank Detail ekle",
+        "createOrEditLabel": "Yeni Bank Detail ekle veya guncelle",
+        "notFound": "Bank Details kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Bank Detail eklendi",
+      "updated": "{{ param }} nolu Bank Detail guncellendi",
+      "deleted": "{{ param }} nolu Bank Detail silindi",
+      "delete": {
+        "question": "{{ id }} nolu Bank Detail silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Bank Detail"
+      },
+      "id": "ID",
+      "bankAccount": "Bank Account",
+      "bankName": "Bank Name",
+      "branchSwiftCode": "Branch Swift Code",
+      "ibanNo": "Iban No",
+      "accountNumber": "Account Number",
+      "vendorsName": "Vendors Name"
+    }
+  }
+}

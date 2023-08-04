@@ -1,0 +1,78 @@
+{
+  "applications": "*",
+  "changelogDate": "20230804004549",
+  "entityTableName": "product",
+  "fields": [
+    {
+      "fieldName": "productName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "productRemark",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "productOrigin",
+      "fieldType": "Country",
+      "fieldValues": "INDIA,SA,TURKEY,USA"
+    },
+    {
+      "fieldName": "productStockStatus",
+      "fieldType": "StockStatus",
+      "fieldValues": "CUSTOM_ORDER,EX_STOCK,PARTIALLY_IN_STOCK"
+    },
+    {
+      "fieldName": "productAvgDeliveryTime",
+      "fieldType": "TimeTaken",
+      "fieldValues": "WEEKLY,MONTHLY,QUARTERLY,YEARLY"
+    },
+    {
+      "fieldName": "productManufacturer",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "productImage",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldName": "height",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "width",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "taken",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "uploaded",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "productAttachments",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Product",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "vendorNameEnglish",
+      "otherEntityName": "vendor",
+      "relationshipName": "vendorsName",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

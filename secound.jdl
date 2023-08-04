@@ -1,0 +1,178 @@
+
+entity Vendor {
+    vendorNameEnglish String required,
+    vendorNameArabic String,
+    vendorId String required,
+    vendorAccountNumber String,
+    vendorCRNumber String,
+    vendorVATNumber String,
+    vendorType VendorType,
+    vendorCategory VendorCategory,
+    vendorEstablishmentDate String,
+    vendorLogo ImageBlob,
+    height Integer,
+    width Integer,
+    taken Instant,
+    uploaded Instant,
+
+    contactFullName String,
+    contactEmailAddress String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
+    contactPrimaryPhoneNo String,
+    contactPrimaryFaxNo String,
+    contactSecondaryPhoneNo String,
+    contactSecondaryFaxNo String,
+    officeLocation String,
+    officeFunctionality OfficeFunctionality,
+    websiteURL String,
+
+    buildingNo String,
+    vendorStreetName String,
+    zipCode String,
+    districtName String,
+    additionalNo String,
+    cityName String,
+    unitNo String,
+    country Country,
+    googleMap  TextBlob,
+    combinedAddress TextBlob,
+
+
+    CRCertificateUpload Blob,
+    VATCertificateUpload Blob,
+    NationalAddressUpload Blob,
+    companyProfileUpload Blob,
+    otherUpload Blob
+
+    cash String
+    credit String
+    letterOfCredit String
+    others String
+
+}
+
+enum VendorType {
+    LOCAL, FOREIGN
+}
+
+enum VendorCategory {
+    MANUFACTURER,
+    SUPPLIER,
+    SUBCONTRACTOR,
+    DISTRIBUTOR
+}
+
+enum OfficeFunctionality {
+    MAIN,
+    BRANCH,
+    SHOWROOM
+}
+
+enum Country {
+    INDIA, SA, TURKEY, USA
+}
+relationship ManyToOne {
+    Product{vendorsName(vendorNameEnglish) required} to Vendor
+}
+
+
+entity Product {
+    productName String,
+    productRemark TextBlob,
+    productOrigin Country,
+    productStockStatus StockStatus,
+    productAvgDeliveryTime TimeTaken,
+    productManufacturer String maxlength(50),
+    productImage ImageBlob
+    height Integer,
+    width Integer,
+    taken Instant,
+    uploaded Instant,
+    productAttachments Blob
+}
+
+enum TimeTaken {
+    WEEKLY, MONTHLY, QUARTERLY,YEARLY
+}
+
+enum StockStatus {
+    CUSTOM_ORDER, EX_STOCK, PARTIALLY_IN_STOCK
+}
+
+
+entity FeedBackFromEmployee {
+
+    refContractPONumber String,
+    feedBackCategory FeedBackCategory,
+    comment  TextBlob,
+}
+
+enum FeedBackCategory {
+    ADVICE,
+    COMPLAIN
+}
+
+relationship ManyToOne {
+    FeedBackFromEmployee{vendorsName(vendorNameEnglish) required} to Vendor
+    FeedBackFromEmployee{productName(productName) required} to Product
+}
+
+
+entity SalesRepresentative {
+    fullName String
+    jobTitle String
+    email String  pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
+    phone String
+    officeLocation String,
+    addressLine1 TextBlob
+    otherDetails TextBlob,
+}
+
+relationship ManyToOne {
+    SalesRepresentative{vendorsName(vendorNameEnglish) required} to Vendor
+}
+
+entity BankDetail {
+    bankAccount Boolean
+    bankName String
+    branchSwiftCode String
+    ibanNo String
+    accountNumber String
+}
+
+relationship ManyToOne {
+    BankDetail{vendorsName(vendorNameEnglish) required} to Vendor
+}
+entity VendorAssessment {
+    assessmentDate Instant
+    assessedBY String
+    jobKnowledge Assessment
+    jobKnowledgeComment  TextBlob
+
+    workQuality Assessment
+    workQualityComment  TextBlob
+
+    attendancePunctuality Assessment
+    attendancePunctualityComment  TextBlob
+
+    initiative Assessment
+    initiativeComment  TextBlob
+
+    communicationListeningSkills Assessment
+    communicationListeningSkillsComment  TextBlob
+
+    dependability Assessment
+    dependabilityComment  TextBlob
+
+}
+
+enum Assessment {
+    POOR, FAIR, SATISFACTORY,GOOD,EXCELLENT
+}
+
+relationship ManyToOne {
+    VendorAssessment{vendorsName(vendorNameEnglish) required} to Vendor
+}
+
+filter all
+service all with  serviceImpl
+paginate all with pagination
