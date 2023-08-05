@@ -79,11 +79,11 @@ export const SalesRepresentativeUpdate = () => {
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col md="8">
+        <Col md="12">
           {loading ? (
             <p>Loading...</p>
           ) : (
-            <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
+            <ValidatedForm className="row" defaultValues={defaultValues()} onSubmit={saveEntity}>
               {!isNew ? (
                 <ValidatedField
                   name="id"
@@ -98,6 +98,7 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.fullName')}
                 id="sales-representative-fullName"
                 name="fullName"
+                className="col-lg-3"
                 data-cy="fullName"
                 type="text"
               />
@@ -105,6 +106,7 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.jobTitle')}
                 id="sales-representative-jobTitle"
                 name="jobTitle"
+                className="col-lg-3"
                 data-cy="jobTitle"
                 type="text"
               />
@@ -112,6 +114,7 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.email')}
                 id="sales-representative-email"
                 name="email"
+                className="col-lg-3"
                 data-cy="email"
                 type="text"
                 validate={{
@@ -125,6 +128,7 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.phone')}
                 id="sales-representative-phone"
                 name="phone"
+                className="col-lg-3"
                 data-cy="phone"
                 type="text"
               />
@@ -132,6 +136,7 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.officeLocation')}
                 id="sales-representative-officeLocation"
                 name="officeLocation"
+                className="col-lg-3"
                 data-cy="officeLocation"
                 type="text"
               />
@@ -146,6 +151,7 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.otherDetails')}
                 id="sales-representative-otherDetails"
                 name="otherDetails"
+                className="col-lg-3"
                 data-cy="otherDetails"
                 type="textarea"
               />
@@ -153,6 +159,7 @@ export const SalesRepresentativeUpdate = () => {
                 id="sales-representative-vendorsName"
                 name="vendorsName"
                 data-cy="vendorsName"
+                className="col-lg-3"
                 label={translate('eCompanyApp.salesRepresentative.vendorsName')}
                 type="select"
                 required
@@ -169,7 +176,14 @@ export const SalesRepresentativeUpdate = () => {
               <FormText>
                 <Translate contentKey="entity.validation.required">This field is required.</Translate>
               </FormText>
-              <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/sales-representative" replace color="info">
+              <Button
+                tag={Link}
+                id="cancel-save"
+                data-cy="entityCreateCancelButton"
+                to="/sales-representative"
+                replace
+                color="info mt-4 back_btn"
+              >
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;
                 <span className="d-none d-md-inline">
@@ -177,7 +191,7 @@ export const SalesRepresentativeUpdate = () => {
                 </span>
               </Button>
               &nbsp;
-              <Button color="primary" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
+              <Button color="primary mt-4 back_btn" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
                 <FontAwesomeIcon icon="save" />
                 &nbsp;
                 <Translate contentKey="entity.action.save">Save</Translate>

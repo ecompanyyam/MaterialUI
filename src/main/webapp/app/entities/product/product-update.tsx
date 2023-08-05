@@ -118,11 +118,11 @@ export const ProductUpdate = () => {
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col md="8">
+        <Col md="12">
           {loading ? (
             <p>Loading...</p>
           ) : (
-            <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
+            <ValidatedForm className="row" defaultValues={defaultValues()} onSubmit={saveEntity}>
               {!isNew ? (
                 <ValidatedField
                   name="id"
@@ -137,6 +137,7 @@ export const ProductUpdate = () => {
                 label={translate('eCompanyApp.product.productName')}
                 id="product-productName"
                 name="productName"
+                className="col-lg-3"
                 data-cy="productName"
                 type="text"
               />
@@ -144,6 +145,7 @@ export const ProductUpdate = () => {
                 label={translate('eCompanyApp.product.productRemark')}
                 id="product-productRemark"
                 name="productRemark"
+                className="col-lg-3"
                 data-cy="productRemark"
                 type="textarea"
               />
@@ -151,6 +153,7 @@ export const ProductUpdate = () => {
                 label={translate('eCompanyApp.product.productOrigin')}
                 id="product-productOrigin"
                 name="productOrigin"
+                className="col-lg-3"
                 data-cy="productOrigin"
                 type="select"
               >
@@ -163,6 +166,7 @@ export const ProductUpdate = () => {
               <ValidatedField
                 label={translate('eCompanyApp.product.productStockStatus')}
                 id="product-productStockStatus"
+                className="col-lg-3"
                 name="productStockStatus"
                 data-cy="productStockStatus"
                 type="select"
@@ -176,6 +180,7 @@ export const ProductUpdate = () => {
               <ValidatedField
                 label={translate('eCompanyApp.product.productAvgDeliveryTime')}
                 id="product-productAvgDeliveryTime"
+                className="col-lg-3"
                 name="productAvgDeliveryTime"
                 data-cy="productAvgDeliveryTime"
                 type="select"
@@ -190,6 +195,7 @@ export const ProductUpdate = () => {
                 label={translate('eCompanyApp.product.productManufacturer')}
                 id="product-productManufacturer"
                 name="productManufacturer"
+                className="col-lg-3"
                 data-cy="productManufacturer"
                 type="text"
                 validate={{
@@ -200,6 +206,7 @@ export const ProductUpdate = () => {
                 label={translate('eCompanyApp.product.productImage')}
                 id="product-productImage"
                 name="productImage"
+                className="col-lg-3"
                 data-cy="productImage"
                 isImage
                 accept="image/*"
@@ -207,6 +214,7 @@ export const ProductUpdate = () => {
               <ValidatedBlobField
                 label={translate('eCompanyApp.product.productAttachments')}
                 id="product-productAttachments"
+                className="col-lg-3"
                 name="productAttachments"
                 data-cy="productAttachments"
                 openActionLabel={translate('entity.action.open')}
@@ -214,6 +222,7 @@ export const ProductUpdate = () => {
               <ValidatedField
                 id="product-vendorsName"
                 name="vendorsName"
+                className="col-lg-3"
                 data-cy="vendorsName"
                 label={translate('eCompanyApp.product.vendorsName')}
                 type="select"
@@ -231,7 +240,7 @@ export const ProductUpdate = () => {
               <FormText>
                 <Translate contentKey="entity.validation.required">This field is required.</Translate>
               </FormText>
-              <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/product" replace color="info">
+              <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/product" replace color="info mt-4 back_btn">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;
                 <span className="d-none d-md-inline">
@@ -239,7 +248,7 @@ export const ProductUpdate = () => {
                 </span>
               </Button>
               &nbsp;
-              <Button color="primary" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
+              <Button color="primary mt-4 back_btn" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
                 <FontAwesomeIcon icon="save" />
                 &nbsp;
                 <Translate contentKey="entity.action.save">Save</Translate>

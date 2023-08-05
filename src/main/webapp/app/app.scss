@@ -375,6 +375,14 @@ body {
   color: #000 !important;
   background-color: #f8f9fa !important;
   border-color: #f8f9fa !important;
+  padding: 10px 30px;
+  width: auto;
+  border: none;
+  border-right: 30px;
+}
+.back_btn {
+  margin-left: 20px;
+  height: 40px;
 }
 .btn-info:hover {
   background-color: #ccc !important;
@@ -417,4 +425,17 @@ body {
 .create_btn:hover {
   background: #026edd;
   color: #fff;
+}
+.form-control,
+.form-select {
+  color-scheme: inherit;
+  border: 1px solid #ccc;
+  height: 30px;
+  border-radius: 20px;
+  padding: 0 10px;
+}
+.css-uh1pua {
+  background-color: #eeeeee;
+  padding: 18px !important;
+  width: 100%;
 }
