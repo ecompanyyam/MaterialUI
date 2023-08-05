@@ -6,7 +6,8 @@
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new Vendor",
         "createOrEditLabel": "Create or edit a Vendor",
-        "notFound": "No Vendors found"
+        "notFound": "No Vendors found",
+        "search": "search"
       },
       "created": "A new Vendor is created with identifier {{ param }}",
       "updated": "A Vendor is updated with identifier {{ param }}",

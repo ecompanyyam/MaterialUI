@@ -147,7 +147,7 @@ export const VendorAssessment = () => {
                   name="search"
                   defaultValue={search}
                   onChange={handleSearch}
-                  placeholder={translate('eCompanyApp.product.home.search')}
+                  placeholder={translate('eCompanyApp.vendorAssessment.home.search')}
                 />
                 <Button className="input-group-addon">
                   <FontAwesomeIcon icon="search" />

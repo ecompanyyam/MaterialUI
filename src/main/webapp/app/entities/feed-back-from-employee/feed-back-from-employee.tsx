@@ -150,7 +150,7 @@ export const FeedBackFromEmployee = () => {
                   name="search"
                   defaultValue={search}
                   onChange={handleSearch}
-                  placeholder={translate('eCompanyApp.product.home.search')}
+                  placeholder={translate('eCompanyApp.feedBackFromEmployee.home.search')}
                 />
                 <Button className="input-group-addon">
                   <FontAwesomeIcon icon="search" />

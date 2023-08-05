@@ -6,7 +6,8 @@
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new Vendor Assessment",
         "createOrEditLabel": "Create or edit a Vendor Assessment",
-        "notFound": "No Vendor Assessments found"
+        "notFound": "No Vendor Assessments found",
+        "search": "search"
       },
       "created": "A new Vendor Assessment is created with identifier {{ param }}",
       "updated": "A Vendor Assessment is updated with identifier {{ param }}",

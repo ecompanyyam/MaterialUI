@@ -19,12 +19,14 @@ const Routes = ({ match }) => (
   <div>
     <ErrorBoundaryRoutes>
       <Route>
+        {/* eslint-disable-next-line react/no-children-prop */}
         <PrivateRoute path="/upload/dataset1" children={Dataset1} hasAnyAuthorities={[AUTHORITIES.ADMIN]} />
+        {/* eslint-disable-next-line react/no-children-prop */}
         <PrivateRoute path="/upload/dataset2" children={Dataset2} hasAnyAuthorities={[AUTHORITIES.USER]} />
       </Route>
     </ErrorBoundaryRoutes>
   </div>
 );
-let routes = Routes;
-let routes1 = routes;
+const routes = Routes;
+const routes1 = routes;
 export default routes1;

@@ -6,7 +6,8 @@
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new Feed Back From Employee",
         "createOrEditLabel": "Create or edit a Feed Back From Employee",
-        "notFound": "No Feed Back From Employees found"
+        "notFound": "No Feed Back From Employees found",
+        "search": "search"
       },
       "created": "A new Feed Back From Employee is created with identifier {{ param }}",
       "updated": "A Feed Back From Employee is updated with identifier {{ param }}",
