@@ -312,8 +312,32 @@ http://stackoverflow.com/questions/23436430/bootstrap-3-input-group-100-width */
 }
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */
+.navbar {
+  padding: 0 !important;
+}
 #login-page .modal-content {
-  background: #ccc;
+  background: #fff;
+  margin-top: 100px !important;
+  width: 80%;
+  margin: auto;
+}
+#login-page .modal-footer {
+  padding: 4px;
+}
+#login-page img {
+  width: 25%;
+  margin: auto;
+}
+.mar0 {
+  margin: 0;
+}
+#login-page .alert {
+  background: transparent !important;
+  padding: 0;
+}
+#login-page .alert span,
+#login-page .alert a {
+  color: #000 !important;
 }
 #login-page .modal-header .btn-close {
   position: absolute;

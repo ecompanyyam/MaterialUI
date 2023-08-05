@@ -31,11 +31,12 @@ const LoginModal = (props: ILoginModalProps) => {
   return (
     <Modal isOpen={props.showModal} toggle={handleClose} backdrop="static" id="login-page" autoFocus={false}>
       <Form onSubmit={handleLoginSubmit}>
-        <ModalHeader id="login-title" data-cy="loginTitle" toggle={handleClose}>
-          <Translate contentKey="login.title">Sign in</Translate>
-        </ModalHeader>
+        {/* <ModalHeader id="login-title" data-cy="loginTitle" toggle={handleClose}> */}
+        {/*   <Translate contentKey="login.title">Sign in</Translate> */}
+        {/* </ModalHeader> */}
         <ModalBody>
           <Row>
+            <img src="content/images/yamco-logo.jpg" alt="Logo" />
             <Col md="12">
               {loginError ? (
                 <Alert color="danger" data-cy="loginError">
@@ -70,17 +71,20 @@ const LoginModal = (props: ILoginModalProps) => {
                 error={errors.password as FieldError}
                 isTouched={touchedFields.password}
               />
-              <ValidatedField
-                name="rememberMe"
-                type="checkbox"
-                check
-                label={translate('login.form.rememberme')}
-                value={true}
-                register={register}
-              />
-              <Link to="/account/reset/request" data-cy="forgetYourPasswordSelector">
-                <Translate contentKey="login.password.forgot">Did you forget your password?</Translate>
-              </Link>
+              <div className="row mar0">
+                <ValidatedField
+                  name="rememberMe"
+                  type="checkbox"
+                  className="col-lg-6"
+                  check
+                  label={translate('login.form.rememberme')}
+                  value={true}
+                  register={register}
+                />
+                <Link to="/account/reset/request" data-cy="forgetYourPasswordSelector" className="col-lg-6">
+                  <Translate contentKey="login.password.forgot">Did you forget your password?</Translate>
+                </Link>
+              </div>
             </Col>
           </Row>
           <div className="mt-1">&nbsp;</div>
@@ -100,7 +104,7 @@ const LoginModal = (props: ILoginModalProps) => {
           </Alert>
         </ModalBody>
         <ModalFooter>
-          <Button color="secondary" onClick={handleClose} tabIndex={1}>
+          <Button color="primary" onClick={handleClose} tabIndex={1}>
             <Translate contentKey="entity.action.cancel">Cancel</Translate>
           </Button>{' '}
           <Button color="primary" type="submit" data-cy="submit">
