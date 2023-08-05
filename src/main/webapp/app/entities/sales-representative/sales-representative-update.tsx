@@ -95,6 +95,27 @@ export const SalesRepresentativeUpdate = () => {
                 />
               ) : null}
               <ValidatedField
+                id="sales-representative-vendorsName"
+                name="vendorsName"
+                data-cy="vendorsName"
+                className="col-lg-3"
+                label={translate('eCompanyApp.salesRepresentative.vendorsName')}
+                type="select"
+                required
+              >
+                <option value="" key="0" />
+                {vendors
+                  ? vendors.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.vendorNameEnglish}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
+              <FormText>
+                <Translate contentKey="entity.validation.required">This field is required.</Translate>
+              </FormText>
+              <ValidatedField
                 label={translate('eCompanyApp.salesRepresentative.fullName')}
                 id="sales-representative-fullName"
                 name="fullName"
@@ -144,6 +165,7 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.addressLine1')}
                 id="sales-representative-addressLine1"
                 name="addressLine1"
+                className="col-lg-3"
                 data-cy="addressLine1"
                 type="textarea"
               />
@@ -155,27 +177,6 @@ export const SalesRepresentativeUpdate = () => {
                 data-cy="otherDetails"
                 type="textarea"
               />
-              <ValidatedField
-                id="sales-representative-vendorsName"
-                name="vendorsName"
-                data-cy="vendorsName"
-                className="col-lg-3"
-                label={translate('eCompanyApp.salesRepresentative.vendorsName')}
-                type="select"
-                required
-              >
-                <option value="" key="0" />
-                {vendors
-                  ? vendors.map(otherEntity => (
-                      <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.vendorNameEnglish}
-                      </option>
-                    ))
-                  : null}
-              </ValidatedField>
-              <FormText>
-                <Translate contentKey="entity.validation.required">This field is required.</Translate>
-              </FormText>
               <Button
                 tag={Link}
                 id="cancel-save"

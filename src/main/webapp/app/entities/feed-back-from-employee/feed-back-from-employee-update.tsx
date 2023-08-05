@@ -106,36 +106,6 @@ export const FeedBackFromEmployeeUpdate = () => {
                 />
               ) : null}
               <ValidatedField
-                label={translate('eCompanyApp.feedBackFromEmployee.refContractPONumber')}
-                id="feed-back-from-employee-refContractPONumber"
-                name="refContractPONumber"
-                data-cy="refContractPONumber"
-                className="col-lg-3"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('eCompanyApp.feedBackFromEmployee.feedBackCategory')}
-                id="feed-back-from-employee-feedBackCategory"
-                className="col-lg-3"
-                name="feedBackCategory"
-                data-cy="feedBackCategory"
-                type="select"
-              >
-                {feedBackCategoryValues.map(feedBackCategory => (
-                  <option value={feedBackCategory} key={feedBackCategory}>
-                    {translate('eCompanyApp.FeedBackCategory.' + feedBackCategory)}
-                  </option>
-                ))}
-              </ValidatedField>
-              <ValidatedField
-                label={translate('eCompanyApp.feedBackFromEmployee.comment')}
-                id="feed-back-from-employee-comment"
-                name="comment"
-                className="col-lg-3"
-                data-cy="comment"
-                type="textarea"
-              />
-              <ValidatedField
                 id="feed-back-from-employee-vendorsName"
                 name="vendorsName"
                 className="col-lg-3"
@@ -152,10 +122,10 @@ export const FeedBackFromEmployeeUpdate = () => {
                       </option>
                     ))
                   : null}
+                <FormText>
+                  <Translate contentKey="entity.validation.required">This field is required.</Translate>
+                </FormText>
               </ValidatedField>
-              <FormText>
-                <Translate contentKey="entity.validation.required">This field is required.</Translate>
-              </FormText>
               <ValidatedField
                 id="feed-back-from-employee-productName"
                 name="productName"
@@ -173,10 +143,40 @@ export const FeedBackFromEmployeeUpdate = () => {
                       </option>
                     ))
                   : null}
+                <FormText>
+                  <Translate contentKey="entity.validation.required">This field is required.</Translate>
+                </FormText>
               </ValidatedField>
-              <FormText>
-                <Translate contentKey="entity.validation.required">This field is required.</Translate>
-              </FormText>
+              <ValidatedField
+                label={translate('eCompanyApp.feedBackFromEmployee.feedBackCategory')}
+                id="feed-back-from-employee-feedBackCategory"
+                className="col-lg-3"
+                name="feedBackCategory"
+                data-cy="feedBackCategory"
+                type="select"
+              >
+                {feedBackCategoryValues.map(feedBackCategory => (
+                  <option value={feedBackCategory} key={feedBackCategory}>
+                    {translate('eCompanyApp.FeedBackCategory.' + feedBackCategory)}
+                  </option>
+                ))}
+              </ValidatedField>
+              <ValidatedField
+                label={translate('eCompanyApp.feedBackFromEmployee.refContractPONumber')}
+                id="feed-back-from-employee-refContractPONumber"
+                name="refContractPONumber"
+                data-cy="refContractPONumber"
+                className="col-lg-3"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('eCompanyApp.feedBackFromEmployee.comment')}
+                id="feed-back-from-employee-comment"
+                name="comment"
+                className="col-lg-3"
+                data-cy="comment"
+                type="textarea"
+              />
               <Button
                 tag={Link}
                 id="cancel-save"

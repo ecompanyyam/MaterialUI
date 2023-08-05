@@ -134,20 +134,31 @@ export const ProductUpdate = () => {
                 />
               ) : null}
               <ValidatedField
+                id="product-vendorsName"
+                name="vendorsName"
+                className="col-lg-3"
+                data-cy="vendorsName"
+                label={translate('eCompanyApp.product.vendorsName')}
+                type="select"
+                required
+              >
+                <option value="" key="0" />
+                {vendors
+                  ? vendors.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.vendorNameEnglish}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
+              <ValidatedField
                 label={translate('eCompanyApp.product.productName')}
                 id="product-productName"
                 name="productName"
-                className="col-lg-3"
+                className="col-lg-6"
                 data-cy="productName"
                 type="text"
-              />
-              <ValidatedField
-                label={translate('eCompanyApp.product.productRemark')}
-                id="product-productRemark"
-                name="productRemark"
-                className="col-lg-3"
-                data-cy="productRemark"
-                type="textarea"
+                required
               />
               <ValidatedField
                 label={translate('eCompanyApp.product.productOrigin')}
@@ -220,23 +231,13 @@ export const ProductUpdate = () => {
                 openActionLabel={translate('entity.action.open')}
               />
               <ValidatedField
-                id="product-vendorsName"
-                name="vendorsName"
+                label={translate('eCompanyApp.product.productRemark')}
+                id="product-productRemark"
+                name="productRemark"
                 className="col-lg-3"
-                data-cy="vendorsName"
-                label={translate('eCompanyApp.product.vendorsName')}
-                type="select"
-                required
-              >
-                <option value="" key="0" />
-                {vendors
-                  ? vendors.map(otherEntity => (
-                      <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.vendorNameEnglish}
-                      </option>
-                    ))
-                  : null}
-              </ValidatedField>
+                data-cy="productRemark"
+                type="textarea"
+              />
               <FormText>
                 <Translate contentKey="entity.validation.required">This field is required.</Translate>
               </FormText>

@@ -219,16 +219,6 @@ export const VendorUpdate = () => {
                 data-cy="vendorEstablishmentDate"
                 type="text"
               />
-              {metadataRows}
-              <ValidatedBlobField
-                label={translate('eCompanyApp.vendor.vendorLogo')}
-                id="vendor-vendorLogo"
-                name="vendorLogo"
-                className="col-lg-3"
-                data-cy="vendorLogo"
-                isImage
-                accept="image/*"
-              />
               <ValidatedField
                 label={translate('eCompanyApp.vendor.contactFullName')}
                 id="vendor-contactFullName"
@@ -385,6 +375,48 @@ export const VendorUpdate = () => {
                 ))}
               </ValidatedField>
               <ValidatedField
+                label={translate('eCompanyApp.vendor.cash')}
+                id="vendor-cash"
+                name="cash"
+                data-cy="cash"
+                className="col-lg-3"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('eCompanyApp.vendor.credit')}
+                id="vendor-credit"
+                name="credit"
+                className="col-lg-3"
+                data-cy="credit"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('eCompanyApp.vendor.letterOfCredit')}
+                id="vendor-letterOfCredit"
+                name="letterOfCredit"
+                className="col-lg-3"
+                data-cy="letterOfCredit"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('eCompanyApp.vendor.others')}
+                id="vendor-others"
+                name="others"
+                className="col-lg-3"
+                data-cy="others"
+                type="text"
+              />
+              {metadataRows}
+              <ValidatedBlobField
+                label={translate('eCompanyApp.vendor.vendorLogo')}
+                id="vendor-vendorLogo"
+                name="vendorLogo"
+                className="col-lg-3"
+                data-cy="vendorLogo"
+                isImage
+                accept="image/*"
+              />
+              <ValidatedField
                 label={translate('eCompanyApp.vendor.googleMap')}
                 id="vendor-googleMap"
                 name="googleMap"
@@ -439,38 +471,6 @@ export const VendorUpdate = () => {
                 className="col-lg-3"
                 data-cy="otherUpload"
                 openActionLabel={translate('entity.action.open')}
-              />
-              <ValidatedField
-                label={translate('eCompanyApp.vendor.cash')}
-                id="vendor-cash"
-                name="cash"
-                data-cy="cash"
-                className="col-lg-3"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('eCompanyApp.vendor.credit')}
-                id="vendor-credit"
-                name="credit"
-                className="col-lg-3"
-                data-cy="credit"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('eCompanyApp.vendor.letterOfCredit')}
-                id="vendor-letterOfCredit"
-                name="letterOfCredit"
-                className="col-lg-3"
-                data-cy="letterOfCredit"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('eCompanyApp.vendor.others')}
-                id="vendor-others"
-                name="others"
-                className="col-lg-3"
-                data-cy="others"
-                type="text"
               />
               <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/vendor" replace color="info mt-4 back_btn">
                 <FontAwesomeIcon icon="arrow-left" />

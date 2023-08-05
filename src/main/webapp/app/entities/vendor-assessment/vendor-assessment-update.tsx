@@ -108,10 +108,31 @@ export const VendorAssessmentUpdate = () => {
                 />
               ) : null}
               <ValidatedField
+                id="vendor-assessment-vendorsName"
+                name="vendorsName"
+                className="col-lg-4"
+                data-cy="vendorsName"
+                label={translate('eCompanyApp.vendorAssessment.vendorsName')}
+                type="select"
+                required
+              >
+                <option value="" key="0" />
+                {vendors
+                  ? vendors.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.vendorNameEnglish}
+                      </option>
+                    ))
+                  : null}
+                <FormText>
+                  <Translate contentKey="entity.validation.required">This field is required.</Translate>
+                </FormText>
+              </ValidatedField>
+              <ValidatedField
                 label={translate('eCompanyApp.vendorAssessment.assessmentDate')}
                 id="vendor-assessment-assessmentDate"
                 name="assessmentDate"
-                className="col-lg-3"
+                className="col-lg-4 "
                 data-cy="assessmentDate"
                 type="datetime-local"
                 placeholder="YYYY-MM-DD HH:mm"
@@ -120,7 +141,7 @@ export const VendorAssessmentUpdate = () => {
                 label={translate('eCompanyApp.vendorAssessment.assessedBY')}
                 id="vendor-assessment-assessedBY"
                 name="assessedBY"
-                className="col-lg-3"
+                className="col-lg-4"
                 data-cy="assessedBY"
                 type="text"
               />
@@ -256,27 +277,6 @@ export const VendorAssessmentUpdate = () => {
                 className="col-lg-3"
                 type="textarea"
               />
-              <ValidatedField
-                id="vendor-assessment-vendorsName"
-                name="vendorsName"
-                className="col-lg-3"
-                data-cy="vendorsName"
-                label={translate('eCompanyApp.vendorAssessment.vendorsName')}
-                type="select"
-                required
-              >
-                <option value="" key="0" />
-                {vendors
-                  ? vendors.map(otherEntity => (
-                      <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.vendorNameEnglish}
-                      </option>
-                    ))
-                  : null}
-              </ValidatedField>
-              <FormText>
-                <Translate contentKey="entity.validation.required">This field is required.</Translate>
-              </FormText>
               <Button
                 tag={Link}
                 id="cancel-save"
