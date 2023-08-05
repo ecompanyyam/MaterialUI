@@ -8,3 +8,32 @@ Main page styles
   background: url('/content/images/jhipster_family_member_0.svg') no-repeat center top;
   background-size: contain;
 }
+img {
+  width: 100%;
+}
+.header_div {
+  background: #fff;
+  padding: 10px 0;
+}
+.get_q {
+  background: #1f2e9b;
+  padding: 30px 0 20px 0;
+}
+.get_q button {
+  background: transparent;
+  border-radius: 0;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 30px;
+}
+.box_div {
+  padding: 50px 0;
+}
+.box_div h4 {
+  margin-top: 15px;
+  font-weight: normal;
+  color: #193a56;
+}
+.table td img {
+  width: 30px;
+}

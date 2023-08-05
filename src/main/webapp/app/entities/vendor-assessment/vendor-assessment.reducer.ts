@@ -115,7 +115,7 @@ export const VendorAssessmentSlice = createEntitySlice({
         state.updateSuccess = false;
         state.loading = true;
       })
-      .addMatcher(isPending(createEntity, updateEntity, partialUpdateEntity, deleteEntity, searchEntities), state => {
+      .addMatcher(isPending(createEntity, updateEntity, partialUpdateEntity, deleteEntity), state => {
         state.errorMessage = null;
         state.updateSuccess = false;
         state.updating = true;
