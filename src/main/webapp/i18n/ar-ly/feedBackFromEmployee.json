@@ -2,7 +2,7 @@
   "eCompanyApp": {
     "feedBackFromEmployee": {
       "home": {
-        "title": "Feed Back From Employees",
+        "title": "تغذية مرتدة من الموظفين",
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new Feed Back From Employee",
         "createOrEditLabel": "Create or edit a Feed Back From Employee",
