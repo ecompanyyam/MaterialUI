@@ -118,11 +118,11 @@ export const ProductUpdate = () => {
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col md="8">
+        <Col md="12">
           {loading ? (
             <p>Loading...</p>
           ) : (
-            <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
+            <ValidatedForm className="row" defaultValues={defaultValues()} onSubmit={saveEntity}>
               {!isNew ? (
                 <ValidatedField
                   name="id"
@@ -134,86 +134,9 @@ export const ProductUpdate = () => {
                 />
               ) : null}
               <ValidatedField
-                label={translate('eCompanyApp.product.productName')}
-                id="product-productName"
-                name="productName"
-                data-cy="productName"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('eCompanyApp.product.productRemark')}
-                id="product-productRemark"
-                name="productRemark"
-                data-cy="productRemark"
-                type="textarea"
-              />
-              <ValidatedField
-                label={translate('eCompanyApp.product.productOrigin')}
-                id="product-productOrigin"
-                name="productOrigin"
-                data-cy="productOrigin"
-                type="select"
-              >
-                {countryValues.map(country => (
-                  <option value={country} key={country}>
-                    {translate('eCompanyApp.Country.' + country)}
-                  </option>
-                ))}
-              </ValidatedField>
-              <ValidatedField
-                label={translate('eCompanyApp.product.productStockStatus')}
-                id="product-productStockStatus"
-                name="productStockStatus"
-                data-cy="productStockStatus"
-                type="select"
-              >
-                {stockStatusValues.map(stockStatus => (
-                  <option value={stockStatus} key={stockStatus}>
-                    {translate('eCompanyApp.StockStatus.' + stockStatus)}
-                  </option>
-                ))}
-              </ValidatedField>
-              <ValidatedField
-                label={translate('eCompanyApp.product.productAvgDeliveryTime')}
-                id="product-productAvgDeliveryTime"
-                name="productAvgDeliveryTime"
-                data-cy="productAvgDeliveryTime"
-                type="select"
-              >
-                {timeTakenValues.map(timeTaken => (
-                  <option value={timeTaken} key={timeTaken}>
-                    {translate('eCompanyApp.TimeTaken.' + timeTaken)}
-                  </option>
-                ))}
-              </ValidatedField>
-              <ValidatedField
-                label={translate('eCompanyApp.product.productManufacturer')}
-                id="product-productManufacturer"
-                name="productManufacturer"
-                data-cy="productManufacturer"
-                type="text"
-                validate={{
-                  maxLength: { value: 50, message: translate('entity.validation.maxlength', { max: 50 }) },
-                }}
-              />
-              <ValidatedBlobField
-                label={translate('eCompanyApp.product.productImage')}
-                id="product-productImage"
-                name="productImage"
-                data-cy="productImage"
-                isImage
-                accept="image/*"
-              />
-              <ValidatedBlobField
-                label={translate('eCompanyApp.product.productAttachments')}
-                id="product-productAttachments"
-                name="productAttachments"
-                data-cy="productAttachments"
-                openActionLabel={translate('entity.action.open')}
-              />
-              <ValidatedField
                 id="product-vendorsName"
                 name="vendorsName"
+                className="col-lg-3"
                 data-cy="vendorsName"
                 label={translate('eCompanyApp.product.vendorsName')}
                 type="select"
@@ -228,10 +151,97 @@ export const ProductUpdate = () => {
                     ))
                   : null}
               </ValidatedField>
+              <ValidatedField
+                label={translate('eCompanyApp.product.productName')}
+                id="product-productName"
+                name="productName"
+                className="col-lg-6"
+                data-cy="productName"
+                type="text"
+                required
+              />
+              <ValidatedField
+                label={translate('eCompanyApp.product.productOrigin')}
+                id="product-productOrigin"
+                name="productOrigin"
+                className="col-lg-3"
+                data-cy="productOrigin"
+                type="select"
+              >
+                {countryValues.map(country => (
+                  <option value={country} key={country}>
+                    {translate('eCompanyApp.Country.' + country)}
+                  </option>
+                ))}
+              </ValidatedField>
+              <ValidatedField
+                label={translate('eCompanyApp.product.productStockStatus')}
+                id="product-productStockStatus"
+                className="col-lg-3"
+                name="productStockStatus"
+                data-cy="productStockStatus"
+                type="select"
+              >
+                {stockStatusValues.map(stockStatus => (
+                  <option value={stockStatus} key={stockStatus}>
+                    {translate('eCompanyApp.StockStatus.' + stockStatus)}
+                  </option>
+                ))}
+              </ValidatedField>
+              <ValidatedField
+                label={translate('eCompanyApp.product.productAvgDeliveryTime')}
+                id="product-productAvgDeliveryTime"
+                className="col-lg-3"
+                name="productAvgDeliveryTime"
+                data-cy="productAvgDeliveryTime"
+                type="select"
+              >
+                {timeTakenValues.map(timeTaken => (
+                  <option value={timeTaken} key={timeTaken}>
+                    {translate('eCompanyApp.TimeTaken.' + timeTaken)}
+                  </option>
+                ))}
+              </ValidatedField>
+              <ValidatedField
+                label={translate('eCompanyApp.product.productManufacturer')}
+                id="product-productManufacturer"
+                name="productManufacturer"
+                className="col-lg-3"
+                data-cy="productManufacturer"
+                type="text"
+                validate={{
+                  maxLength: { value: 50, message: translate('entity.validation.maxlength', { max: 50 }) },
+                }}
+              />
+              <ValidatedBlobField
+                label={translate('eCompanyApp.product.productImage')}
+                id="product-productImage"
+                name="productImage"
+                className="col-lg-3"
+                data-cy="productImage"
+                isImage
+                accept="image/*"
+              />
+              <ValidatedBlobField
+                label={translate('eCompanyApp.product.productAttachments')}
+                id="product-productAttachments"
+                className="col-lg-3"
+                name="productAttachments"
+                data-cy="productAttachments"
+                openActionLabel={translate('entity.action.open')}
+              />
+              <ValidatedField
+                label={translate('eCompanyApp.product.productRemark')}
+                id="product-productRemark"
+                name="productRemark"
+                className="col-lg-3"
+                data-cy="productRemark"
+                type="textarea"
+              />
               <FormText>
                 <Translate contentKey="entity.validation.required">This field is required.</Translate>
               </FormText>
-              <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/product" replace color="info">
+              <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/product" replace color="info mt-4 back_btn">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;
                 <span className="d-none d-md-inline">
@@ -239,7 +249,7 @@ export const ProductUpdate = () => {
                 </span>
               </Button>
               &nbsp;
-              <Button color="primary" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
+              <Button color="primary mt-4 back_btn" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
                 <FontAwesomeIcon icon="save" />
                 &nbsp;
                 <Translate contentKey="entity.action.save">Save</Translate>

@@ -21,7 +21,7 @@ export const VendorDetail = () => {
   const vendorEntity = useAppSelector(state => state.vendor.entity);
   return (
     <Row>
-      <Col md="8">
+      <Col md="12">
         <h2 data-cy="vendorDetailsHeading">
           <Translate contentKey="eCompanyApp.vendor.detail.title">Vendor</Translate>
         </h2>

@@ -90,11 +90,11 @@ export const FeedBackFromEmployeeUpdate = () => {
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col md="8">
+        <Col md="12">
           {loading ? (
             <p>Loading...</p>
           ) : (
-            <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
+            <ValidatedForm className="row" defaultValues={defaultValues()} onSubmit={saveEntity}>
               {!isNew ? (
                 <ValidatedField
                   name="id"
@@ -106,35 +106,9 @@ export const FeedBackFromEmployeeUpdate = () => {
                 />
               ) : null}
               <ValidatedField
-                label={translate('eCompanyApp.feedBackFromEmployee.refContractPONumber')}
-                id="feed-back-from-employee-refContractPONumber"
-                name="refContractPONumber"
-                data-cy="refContractPONumber"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('eCompanyApp.feedBackFromEmployee.feedBackCategory')}
-                id="feed-back-from-employee-feedBackCategory"
-                name="feedBackCategory"
-                data-cy="feedBackCategory"
-                type="select"
-              >
-                {feedBackCategoryValues.map(feedBackCategory => (
-                  <option value={feedBackCategory} key={feedBackCategory}>
-                    {translate('eCompanyApp.FeedBackCategory.' + feedBackCategory)}
-                  </option>
-                ))}
-              </ValidatedField>
-              <ValidatedField
-                label={translate('eCompanyApp.feedBackFromEmployee.comment')}
-                id="feed-back-from-employee-comment"
-                name="comment"
-                data-cy="comment"
-                type="textarea"
-              />
-              <ValidatedField
                 id="feed-back-from-employee-vendorsName"
                 name="vendorsName"
+                className="col-lg-3"
                 data-cy="vendorsName"
                 label={translate('eCompanyApp.feedBackFromEmployee.vendorsName')}
                 type="select"
@@ -148,13 +122,14 @@ export const FeedBackFromEmployeeUpdate = () => {
                       </option>
                     ))
                   : null}
+                <FormText>
+                  <Translate contentKey="entity.validation.required">This field is required.</Translate>
+                </FormText>
               </ValidatedField>
-              <FormText>
-                <Translate contentKey="entity.validation.required">This field is required.</Translate>
-              </FormText>
               <ValidatedField
                 id="feed-back-from-employee-productName"
                 name="productName"
+                className="col-lg-3"
                 data-cy="productName"
                 label={translate('eCompanyApp.feedBackFromEmployee.productName')}
                 type="select"
@@ -168,11 +143,48 @@ export const FeedBackFromEmployeeUpdate = () => {
                       </option>
                     ))
                   : null}
+                <FormText>
+                  <Translate contentKey="entity.validation.required">This field is required.</Translate>
+                </FormText>
               </ValidatedField>
-              <FormText>
-                <Translate contentKey="entity.validation.required">This field is required.</Translate>
-              </FormText>
-              <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/feed-back-from-employee" replace color="info">
+              <ValidatedField
+                label={translate('eCompanyApp.feedBackFromEmployee.feedBackCategory')}
+                id="feed-back-from-employee-feedBackCategory"
+                className="col-lg-3"
+                name="feedBackCategory"
+                data-cy="feedBackCategory"
+                type="select"
+              >
+                {feedBackCategoryValues.map(feedBackCategory => (
+                  <option value={feedBackCategory} key={feedBackCategory}>
+                    {translate('eCompanyApp.FeedBackCategory.' + feedBackCategory)}
+                  </option>
+                ))}
+              </ValidatedField>
+              <ValidatedField
+                label={translate('eCompanyApp.feedBackFromEmployee.refContractPONumber')}
+                id="feed-back-from-employee-refContractPONumber"
+                name="refContractPONumber"
+                data-cy="refContractPONumber"
+                className="col-lg-3"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('eCompanyApp.feedBackFromEmployee.comment')}
+                id="feed-back-from-employee-comment"
+                name="comment"
+                className="col-lg-3"
+                data-cy="comment"
+                type="textarea"
+              />
+              <Button
+                tag={Link}
+                id="cancel-save"
+                data-cy="entityCreateCancelButton"
+                to="/feed-back-from-employee"
+                replace
+                color="info mt-4 back_btn"
+              >
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;
                 <span className="d-none d-md-inline">
@@ -180,7 +192,7 @@ export const FeedBackFromEmployeeUpdate = () => {
                 </span>
               </Button>
               &nbsp;
-              <Button color="primary" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
+              <Button color="primary mt-4 back_btn" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
                 <FontAwesomeIcon icon="save" />
                 &nbsp;
                 <Translate contentKey="entity.action.save">Save</Translate>

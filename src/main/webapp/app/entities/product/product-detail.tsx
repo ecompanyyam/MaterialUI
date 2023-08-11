@@ -21,7 +21,7 @@ export const ProductDetail = () => {
   const productEntity = useAppSelector(state => state.product.entity);
   return (
     <Row>
-      <Col md="8">
+      <Col md="2">
         <h2 data-cy="productDetailsHeading">
           <Translate contentKey="eCompanyApp.product.detail.title">Product</Translate>
         </h2>

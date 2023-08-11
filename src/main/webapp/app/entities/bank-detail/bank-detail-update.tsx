@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Button, Row, Col, FormText } from 'reactstrap';
+import { Button, Row, Col, FormText, FormGroup } from 'reactstrap';
 import { isNumber, Translate, translate, ValidatedField, ValidatedForm } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -78,12 +78,12 @@ export const BankDetailUpdate = () => {
           </h2>
         </Col>
       </Row>
-      <Row className="justify-content-center">
-        <Col md="8">
+      <Row className="align-self-start">
+        <Col md="12">
           {loading ? (
             <p>Loading...</p>
           ) : (
-            <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
+            <ValidatedForm className="row" defaultValues={defaultValues()} onSubmit={saveEntity}>
               {!isNew ? (
                 <ValidatedField
                   name="id"
@@ -108,6 +108,7 @@ export const BankDetailUpdate = () => {
                 name="bankName"
                 data-cy="bankName"
                 type="text"
+                className="col-lg-3"
               />
               <ValidatedField
                 label={translate('eCompanyApp.bankDetail.branchSwiftCode')}
@@ -115,6 +116,7 @@ export const BankDetailUpdate = () => {
                 name="branchSwiftCode"
                 data-cy="branchSwiftCode"
                 type="text"
+                className="col-lg-3"
               />
               <ValidatedField
                 label={translate('eCompanyApp.bankDetail.ibanNo')}
@@ -122,6 +124,7 @@ export const BankDetailUpdate = () => {
                 name="ibanNo"
                 data-cy="ibanNo"
                 type="text"
+                className="col-lg-3"
               />
               <ValidatedField
                 label={translate('eCompanyApp.bankDetail.accountNumber')}
@@ -129,9 +132,11 @@ export const BankDetailUpdate = () => {
                 name="accountNumber"
                 data-cy="accountNumber"
                 type="text"
+                className="col-lg-3"
               />
               <ValidatedField
                 id="bank-detail-vendorsName"
+                className="col-lg-3"
                 name="vendorsName"
                 data-cy="vendorsName"
                 label={translate('eCompanyApp.bankDetail.vendorsName')}
@@ -146,19 +151,16 @@ export const BankDetailUpdate = () => {
                       </option>
                     ))
                   : null}
-              </ValidatedField>
-              <FormText>
                 <Translate contentKey="entity.validation.required">This field is required.</Translate>
-              </FormText>
-              <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/bank-detail" replace color="info">
+              </ValidatedField>
+              <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/bank-detail" replace color="info mt-4 back_btn">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;
                 <span className="d-none d-md-inline">
                   <Translate contentKey="entity.action.back">Back</Translate>
                 </span>
               </Button>
-              &nbsp;
-              <Button color="primary" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
+              <Button color="primary mt-4 back_btn" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
                 <FontAwesomeIcon icon="save" />
                 &nbsp;
                 <Translate contentKey="entity.action.save">Save</Translate>

@@ -12,16 +12,7 @@ export const Home = () => {
 
   return (
     <Row>
-      <Col md="3" className="pad">
-        <span className="hipster rounded" />
-      </Col>
-      <Col md="9">
-        <h2>
-          <Translate contentKey="home.title">Welcome, Java Hipster!</Translate>
-        </h2>
-        <p className="lead">
-          <Translate contentKey="home.subtitle">This is your homepage</Translate>
-        </p>
+      <Col md="12">
         {account?.login ? (
           <div>
             <Alert color="success">
@@ -31,67 +22,72 @@ export const Home = () => {
             </Alert>
           </div>
         ) : (
-          <div>
-            <Alert color="warning">
-              <Translate contentKey="global.messages.info.authenticated.prefix">If you want to </Translate>
-
-              <Link to="/login" className="alert-link">
-                <Translate contentKey="global.messages.info.authenticated.link"> sign in</Translate>
-              </Link>
-              <Translate contentKey="global.messages.info.authenticated.suffix">
-                , you can try the default accounts:
-                <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;)
-                <br />- User (login=&quot;user&quot; and password=&quot;user&quot;).
-              </Translate>
-            </Alert>
-
-            <Alert color="warning">
-              <Translate contentKey="global.messages.info.register.noaccount">You do not have an account yet?</Translate>&nbsp;
-              <Link to="/account/register" className="alert-link">
-                <Translate contentKey="global.messages.info.register.link">Register a new account</Translate>
-              </Link>
-            </Alert>
-          </div>
+          <>
+            <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <img src="content/images/banner-img.avif" className="d-block w-100" alt="..." />
+                </div>
+                <div className="carousel-item">
+                  <img src="content/images/banner-img2.avif" className="d-block w-100" alt="..." />
+                </div>
+              </div>
+              <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
+              </button>
+            </div>
+            {/* <div className="get_q"> */}
+            {/*     <div className="container"> */}
+            {/*         <div className="row"> */}
+            {/*             <div className="col-md-9"> */}
+            {/*                 <h3>We Care While We Build Since 1995</h3> */}
+            {/*             </div> */}
+            {/*             <div className="col-md-3"> */}
+            {/*                 <button className="btn btn-info">GET A QUOTE</button> */}
+            {/*             </div> */}
+            {/*         </div> */}
+            {/*     </div> */}
+            {/* </div> */}
+            <div className="box_div">
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-4">
+                    <div className="inner_box">
+                      <img src="content/images/scope-contracting3.avif" />
+                      <h4>Design & Built</h4>
+                      <p>
+                        Good planning and implementing well-defined processes helps us deliver quality output. Our adaptive working style
+                        helps collaborate with clients and deliver efficiently.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <div className="inner_box">
+                      <img src="content/images/scope-operation2.avif" />
+                      <h4>Cloud Computing</h4>
+                      <p>
+                        YAMCO is a one-stop cloud computing solution provider for UI, backend, analysis, business intelligence, machine
+                        learning and reporting.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <div className="inner_box">
+                      <img src="content/images/scope-designbuild.avif" />
+                      <h4>Software Quality Assurance</h4>
+                      <p>Software Quality Assurance We believe that A well-functioning software means a well-tested software</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
         )}
-        <p>
-          <Translate contentKey="home.question">If you have any question on JHipster:</Translate>
-        </p>
-
-        <ul>
-          <li>
-            <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.homepage">JHipster homepage</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.stackoverflow">JHipster on Stack Overflow</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.bugtracker">JHipster bug tracker</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.chat">JHipster public chat room</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.follow">follow @jhipster on Twitter</Translate>
-            </a>
-          </li>
-        </ul>
-
-        <p>
-          <Translate contentKey="home.like">If you like JHipster, do not forget to give us a star on</Translate>{' '}
-          <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          !
-        </p>
       </Col>
     </Row>
   );

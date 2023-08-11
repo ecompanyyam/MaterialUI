@@ -6,7 +6,8 @@
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new Bank Detail",
         "createOrEditLabel": "Create or edit a Bank Detail",
-        "notFound": "No Bank Details found"
+        "notFound": "No Bank Details found",
+        "search": "search"
       },
       "created": "A new Bank Detail is created with identifier {{ param }}",
       "updated": "A Bank Detail is updated with identifier {{ param }}",

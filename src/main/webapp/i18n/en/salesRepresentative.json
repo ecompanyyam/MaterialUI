@@ -6,7 +6,8 @@
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new Sales Representative",
         "createOrEditLabel": "Create or edit a Sales Representative",
-        "notFound": "No Sales Representatives found"
+        "notFound": "No Sales Representatives found",
+        "search": "search"
       },
       "created": "A new Sales Representative is created with identifier {{ param }}",
       "updated": "A Sales Representative is updated with identifier {{ param }}",
