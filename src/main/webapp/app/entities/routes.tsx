@@ -9,6 +9,8 @@ import Product from './product';
 import SalesRepresentative from './sales-representative';
 import Vendor from './vendor';
 import VendorAssessment from './vendor-assessment';
+import Client from './client';
+import Document from './document';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 export default () => {
@@ -22,6 +24,8 @@ export default () => {
         <Route path="sales-representative/*" element={<SalesRepresentative />} />
         <Route path="vendor/*" element={<Vendor />} />
         <Route path="vendor-assessment/*" element={<VendorAssessment />} />
+        <Route path="client/*" element={<Client />} />
+        <Route path="document/*" element={<Document />} />
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
       </ErrorBoundaryRoutes>
     </div>

@@ -13,6 +13,8 @@
         "salesRepresentative": "Sales Representative",
         "vendor": "Vendor",
         "vendorAssessment": "Vendor Assessment",
+        "client": "Client",
+        "document": "Document",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

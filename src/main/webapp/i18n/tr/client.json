@@ -1,0 +1,35 @@
+{
+  "eCompanyApp": {
+    "client": {
+      "home": {
+        "title": "Clients",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Client ekle",
+        "createOrEditLabel": "Yeni Client ekle veya guncelle",
+        "notFound": "Clients kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Client eklendi",
+      "updated": "{{ param }} nolu Client guncellendi",
+      "deleted": "{{ param }} nolu Client silindi",
+      "delete": {
+        "question": "{{ id }} nolu Client silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Client"
+      },
+      "id": "ID",
+      "clientName": "Client Name",
+      "logo": "Logo",
+      "height": "Height",
+      "width": "Width",
+      "taken": "Taken",
+      "uploaded": "Uploaded",
+      "dateOfSubmittal": "Date Of Submittal",
+      "approvalStatus": "Approval Status",
+      "registrationNumber": "Registration Number",
+      "dateOfRegistration": "Date Of Registration",
+      "dateOfExpiry": "Date Of Expiry",
+      "approvalDocument": "Approval Document"
+    }
+  }
+}

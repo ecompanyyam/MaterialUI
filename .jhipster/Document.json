@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "changelogDate": "20230812030544",
+  "entityTableName": "document",
+  "fields": [
+    {
+      "fieldName": "documentType",
+      "fieldType": "DocumentType",
+      "fieldValues": "QUALITY_CERTIFICATES,ACCREDITATIONS,VENDOR_APPROVALS,LEGAL_DOCUMENTS,OTHERS"
+    },
+    {
+      "fieldName": "organizationName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "documentName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "documentNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "issueDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "expiryDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "documentStatus",
+      "fieldType": "DocumentStatus",
+      "fieldValues": "STILL_VALID,EXPIRED"
+    },
+    {
+      "fieldName": "uploadFile",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Document",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,14 @@
+{
+  "eCompanyApp": {
+    "ApprovalStatus": {
+      "null": "",
+      "SUBMITTAL_UNDER_PREPARATION": "SUBMITTAL_UNDER_PREPARATION",
+      "SUBMITTED": "SUBMITTED",
+      "UNDER_REVIEW": "UNDER_REVIEW",
+      "UNDER_APPROVAL": "UNDER_APPROVAL",
+      "FINAL_APPROVAL_STAGE": "FINAL_APPROVAL_STAGE",
+      "APPROVED": "APPROVED",
+      "NOT_VALID": "NOT_VALID"
+    }
+  }
+}

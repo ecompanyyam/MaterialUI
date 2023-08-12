@@ -17,6 +17,8 @@
     <include file="config/liquibase/changelog/20230804004550_added_entity_SalesRepresentative.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20230804004551_added_entity_Vendor.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20230804004552_added_entity_VendorAssessment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230812030543_added_entity_Client.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230812030544_added_entity_Document.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20230804004547_added_entity_constraints_BankDetail.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20230804004548_added_entity_constraints_FeedBackFromEmployee.xml" relativeToChangelogFile="false"/>

@@ -4,6 +4,8 @@ import product from 'app/entities/product/product.reducer';
 import salesRepresentative from 'app/entities/sales-representative/sales-representative.reducer';
 import vendor from 'app/entities/vendor/vendor.reducer';
 import vendorAssessment from 'app/entities/vendor-assessment/vendor-assessment.reducer';
+import client from 'app/entities/client/client.reducer';
+import document from 'app/entities/document/document.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const entitiesReducers = {
@@ -13,6 +15,8 @@ const entitiesReducers = {
   salesRepresentative,
   vendor,
   vendorAssessment,
+  client,
+  document,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
 };
 
