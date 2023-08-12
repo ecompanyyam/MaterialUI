@@ -1,0 +1,64 @@
+{
+  "applications": "*",
+  "changelogDate": "20230812030543",
+  "entityTableName": "client",
+  "fields": [
+    {
+      "fieldName": "clientName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "logo",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldName": "height",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "width",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "taken",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "uploaded",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dateOfSubmittal",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "approvalStatus",
+      "fieldType": "ApprovalStatus",
+      "fieldValues": "SUBMITTAL_UNDER_PREPARATION,SUBMITTED,UNDER_REVIEW,UNDER_APPROVAL,FINAL_APPROVAL_STAGE,APPROVED,NOT_VALID"
+    },
+    {
+      "fieldName": "registrationNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateOfRegistration",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dateOfExpiry",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "approvalDocument",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Client",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

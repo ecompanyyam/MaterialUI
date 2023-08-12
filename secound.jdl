@@ -173,6 +173,56 @@ relationship ManyToOne {
     VendorAssessment{vendorsName(vendorNameEnglish) required} to Vendor
 }
 
+entity Client {
+    clientName String
+    logo ImageBlob
+    height Integer,
+    width Integer,
+    taken Instant,
+    uploaded Instant,
+
+    dateOfSubmittal Instant
+    approvalStatus ApprovalStatus
+    registrationNumber String
+    dateOfRegistration Instant
+    dateOfExpiry Instant
+    approvalDocument Blob
+}
+
+enum ApprovalStatus {
+    SUBMITTAL_UNDER_PREPARATION,
+    SUBMITTED,
+    UNDER_REVIEW,
+    UNDER_APPROVAL,
+    FINAL_APPROVAL_STAGE,
+    APPROVED,
+    NOT_VALID
+}
+
+entity Document {
+    documentType	 DocumentType
+    organizationName String
+    documentName String
+    documentNumber String
+    issueDate Instant
+    expiryDate Instant
+    documentStatus DocumentStatus
+    uploadFile Blob
+}
+
+enum DocumentType {
+    QUALITY_CERTIFICATES,
+    ACCREDITATIONS,
+    VENDOR_APPROVALS,
+    LEGAL_DOCUMENTS,
+    OTHERS
+}
+
+enum DocumentStatus {
+    STILL_VALID,
+    EXPIRED
+}
+
 filter all
 service all with  serviceImpl
 paginate all with pagination

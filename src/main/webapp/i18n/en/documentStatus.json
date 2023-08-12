@@ -1,0 +1,9 @@
+{
+  "eCompanyApp": {
+    "DocumentStatus": {
+      "null": "",
+      "STILL_VALID": "STILL_VALID",
+      "EXPIRED": "EXPIRED"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "eCompanyApp": {
+    "document": {
+      "home": {
+        "title": "Documents",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Document ekle",
+        "createOrEditLabel": "Yeni Document ekle veya guncelle",
+        "notFound": "Documents kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Document eklendi",
+      "updated": "{{ param }} nolu Document guncellendi",
+      "deleted": "{{ param }} nolu Document silindi",
+      "delete": {
+        "question": "{{ id }} nolu Document silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Document"
+      },
+      "id": "ID",
+      "documentType": "Document Type",
+      "organizationName": "Organization Name",
+      "documentName": "Document Name",
+      "documentNumber": "Document Number",
+      "issueDate": "Issue Date",
+      "expiryDate": "Expiry Date",
+      "documentStatus": "Document Status",
+      "uploadFile": "Upload File"
+    }
+  }
+}

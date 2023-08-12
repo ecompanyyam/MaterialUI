@@ -54,6 +54,8 @@ public class CacheConfiguration {
             createCache(cm, com.yam.ecompany.domain.SalesRepresentative.class.getName());
             createCache(cm, com.yam.ecompany.domain.Vendor.class.getName());
             createCache(cm, com.yam.ecompany.domain.VendorAssessment.class.getName());
+            createCache(cm, com.yam.ecompany.domain.Client.class.getName());
+            createCache(cm, com.yam.ecompany.domain.Document.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

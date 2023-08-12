@@ -1,0 +1,12 @@
+{
+  "eCompanyApp": {
+    "DocumentType": {
+      "null": "",
+      "QUALITY_CERTIFICATES": "QUALITY_CERTIFICATES",
+      "ACCREDITATIONS": "ACCREDITATIONS",
+      "VENDOR_APPROVALS": "VENDOR_APPROVALS",
+      "LEGAL_DOCUMENTS": "LEGAL_DOCUMENTS",
+      "OTHERS": "OTHERS"
+    }
+  }
+}
