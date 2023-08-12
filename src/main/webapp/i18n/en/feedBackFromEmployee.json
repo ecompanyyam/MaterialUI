@@ -2,12 +2,12 @@
   "eCompanyApp": {
     "feedBackFromEmployee": {
       "home": {
-        "title": "Feed Back From Employees",
+        "title": "Feedback",
         "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new Feed Back From Employee",
-        "createOrEditLabel": "Create or edit a Feed Back From Employee",
-        "notFound": "No Feed Back From Employees found",
-        "search": "search"
+        "createLabel": "Create New",
+        "createOrEditLabel": "Create or Edit a Feedback from Employee",
+        "notFound": "No Feedback from Employees Found",
+        "search": "Search"
       },
       "created": "A new Feed Back From Employee is created with identifier {{ param }}",
       "updated": "A Feed Back From Employee is updated with identifier {{ param }}",

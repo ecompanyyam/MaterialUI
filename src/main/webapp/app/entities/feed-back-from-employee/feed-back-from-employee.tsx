@@ -172,6 +172,14 @@ export const FeedBackFromEmployee = () => {
                   <Translate contentKey="eCompanyApp.feedBackFromEmployee.id">ID</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
+                <th>
+                  <Translate contentKey="eCompanyApp.feedBackFromEmployee.vendorsName">Vendors Name</Translate>{' '}
+                  <FontAwesomeIcon icon="sort" />
+                </th>
+                <th>
+                  <Translate contentKey="eCompanyApp.feedBackFromEmployee.productName">Product Name</Translate>{' '}
+                  <FontAwesomeIcon icon="sort" />
+                </th>
                 <th className="hand" onClick={sort('refContractPONumber')}>
                   <Translate contentKey="eCompanyApp.feedBackFromEmployee.refContractPONumber">Ref Contract PO Number</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('refContractPONumber')} />
@@ -184,14 +192,7 @@ export const FeedBackFromEmployee = () => {
                   <Translate contentKey="eCompanyApp.feedBackFromEmployee.comment">Comment</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('comment')} />
                 </th>
-                <th>
-                  <Translate contentKey="eCompanyApp.feedBackFromEmployee.vendorsName">Vendors Name</Translate>{' '}
-                  <FontAwesomeIcon icon="sort" />
-                </th>
-                <th>
-                  <Translate contentKey="eCompanyApp.feedBackFromEmployee.productName">Product Name</Translate>{' '}
-                  <FontAwesomeIcon icon="sort" />
-                </th>
+
                 <th />
               </tr>
             </thead>
@@ -202,14 +203,6 @@ export const FeedBackFromEmployee = () => {
                     <Button tag={Link} to={`/feed-back-from-employee/${feedBackFromEmployee.id}`} color="link" size="sm">
                       {feedBackFromEmployee.id}
                     </Button>
-                  </td>
-                  <td>{feedBackFromEmployee.refContractPONumber}</td>
-                  <td>
-                    <Translate contentKey={`eCompanyApp.FeedBackCategory.${feedBackFromEmployee.feedBackCategory}`} />
-                  </td>
-                  <td>
-                    {feedBackFromEmployee.comment.substring(0, 20)}
-                    {feedBackFromEmployee.comment.length >= 20 && '...'}
                   </td>
                   <td>
                     {feedBackFromEmployee.vendorsName ? (
@@ -227,6 +220,15 @@ export const FeedBackFromEmployee = () => {
                       ''
                     )}
                   </td>
+                  <td>{feedBackFromEmployee.refContractPONumber}</td>
+                  <td>
+                    <Translate contentKey={`eCompanyApp.FeedBackCategory.${feedBackFromEmployee.feedBackCategory}`} />
+                  </td>
+                  <td>
+                    {feedBackFromEmployee.comment.substring(0, 20)}
+                    {feedBackFromEmployee.comment.length >= 20 && '...'}
+                  </td>
+
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button
