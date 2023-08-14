@@ -5,12 +5,16 @@ import com.yam.ecompany.domain.Document;
 import com.yam.ecompany.repository.DocumentRepository;
 import com.yam.ecompany.service.criteria.DocumentCriteria;
 import jakarta.persistence.criteria.JoinType;
+import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.service.QueryService;
@@ -28,6 +32,9 @@ public class DocumentQueryService extends QueryService<Document> {
     private final Logger log = LoggerFactory.getLogger(DocumentQueryService.class);
 
     private final DocumentRepository documentRepository;
+
+    @Autowired
+    private MailService mailService;
 
     public DocumentQueryService(DocumentRepository documentRepository) {
         this.documentRepository = documentRepository;
@@ -108,5 +115,18 @@ public class DocumentQueryService extends QueryService<Document> {
             }
         }
         return specification;
+    }
+
+    //    @Scheduled(cron = "0 0 09 * * MON-FRI") // (cron = "0/1 * * * * *")
+    // uncomment to start schedule
+    //    @Scheduled(cron = "0 0 09 * * MON-FRI")
+    public void findByExpireDate() {
+        log.debug("Request to get all Scheduled");
+        List<Document> documentList = documentRepository.findByExpiryDateLessThanEqual(Instant.now());
+        if (!documentList.isEmpty()) {
+            log.debug("Request to get all Scheduled{}", documentList.size());
+            documentList.stream().forEach(doc -> mailService.sendDocumentExpiredMail(doc));
+        }
+        log.debug("Request to get all Scheduled");
     }
 }

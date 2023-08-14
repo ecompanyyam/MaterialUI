@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * A Document.
@@ -41,6 +42,7 @@ public class Document implements Serializable {
     private Instant issueDate;
 
     @Column(name = "expiry_date")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private Instant expiryDate;
 
     @Enumerated(EnumType.STRING)

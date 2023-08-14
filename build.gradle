@@ -208,6 +208,9 @@ dependencies {
     implementation "io.dropwizard.metrics:metrics-core"
     // https://mvnrepository.com/artifact/com.drewnoakes/metadata-extractor
     implementation 'com.drewnoakes:metadata-extractor:2.18.0'
+    implementation "com.h2database:h2:*"
+    implementation "org.springframework.boot:spring-boot-starter-quartz:*"
+    implementation "org.springframework.boot:spring-boot-starter-validation:*"
     // jhipster-needle-gradle-dependency - JHipster will add additional dependencies here
 }
 
