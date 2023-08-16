@@ -8,13 +8,25 @@
       "entities": {
         "main": "Entities",
         "bankDetail": "Bank Detail",
-        "feedBackFromEmployee": "Feed Back From Employee",
+        "feedBackFromEmployee": "Feedback ",
         "product": "Product",
         "salesRepresentative": "Sales Representative",
         "vendor": "Vendor",
         "vendorAssessment": "Vendor Assessment",
         "client": "Client",
         "document": "Document",
+        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+      },
+      "entitiesAdd": {
+        "main": "Entities Add",
+        "bankDetail": "Bank Detail Add",
+        "feedBackFromEmployee": "Feedback  Add",
+        "product": "Product Add",
+        "salesRepresentative": "Sales Representative Add",
+        "vendor": "Vendor Add",
+        "vendorAssessment": "Vendor Assessment Add",
+        "client": "Client Add",
+        "document": "Document Add",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

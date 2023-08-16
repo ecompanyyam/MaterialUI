@@ -5,22 +5,22 @@
         "title": "Feedback",
         "refreshListLabel": "Refresh list",
         "createLabel": "Create New",
-        "createOrEditLabel": "Create or Edit a Feedback from Employee",
-        "notFound": "No Feedback from Employees Found",
+        "createOrEditLabel": "Create or Edit a Feedback",
+        "notFound": "No Feedback Found",
         "search": "Search"
       },
-      "created": "A new Feed Back From Employee is created with identifier {{ param }}",
-      "updated": "A Feed Back From Employee is updated with identifier {{ param }}",
-      "deleted": "A Feed Back From Employee is deleted with identifier {{ param }}",
+      "created": "A new Feedback  is created with identifier {{ param }}",
+      "updated": "A Feedback  is updated with identifier {{ param }}",
+      "deleted": "A Feedback  is deleted with identifier {{ param }}",
       "delete": {
-        "question": "Are you sure you want to delete Feed Back From Employee {{ id }}?"
+        "question": "Are you sure you want to delete Feedback  {{ id }}?"
       },
       "detail": {
-        "title": "Feed Back From Employee"
+        "title": "Feedback "
       },
       "id": "ID",
       "refContractPONumber": "Ref Contract PO Number",
-      "feedBackCategory": "Feed Back Category",
+      "feedBackCategory": "Feedback Category",
       "comment": "Comment",
       "vendorsName": "Vendors Name",
       "productName": "Product Name"

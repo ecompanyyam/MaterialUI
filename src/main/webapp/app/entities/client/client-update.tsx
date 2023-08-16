@@ -81,18 +81,40 @@ export const ClientUpdate = () => {
           dateOfRegistration: convertDateTimeFromServer(clientEntity.dateOfRegistration),
           dateOfExpiry: convertDateTimeFromServer(clientEntity.dateOfExpiry),
         };
-
+  const metadata = (
+    <div>
+      <ValidatedField label={translate('eCompanyApp.client.height')} id="client-height" name="height" data-cy="height" type="text" />
+      <ValidatedField label={translate('eCompanyApp.client.width')} id="client-width" name="width" data-cy="width" type="text" />
+      <ValidatedField
+        label={translate('eCompanyApp.client.taken')}
+        id="client-taken"
+        name="taken"
+        data-cy="taken"
+        type="datetime-local"
+        placeholder="YYYY-MM-DD HH:mm"
+      />
+      <ValidatedField
+        label={translate('eCompanyApp.client.uploaded')}
+        id="client-uploaded"
+        name="uploaded"
+        data-cy="uploaded"
+        type="datetime-local"
+        placeholder="YYYY-MM-DD HH:mm"
+      />
+    </div>
+  );
+  const metadataRows = isNew ? '' : metadata;
   return (
     <div>
       <Row className="justify-content-center">
-        <Col md="8">
+        <Col md="3">
           <h2 id="eCompanyApp.client.home.createOrEditLabel" data-cy="ClientCreateUpdateHeading">
             <Translate contentKey="eCompanyApp.client.home.createOrEditLabel">Create or edit a Client</Translate>
           </h2>
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col md="8">
+        <Col md="3">
           {loading ? (
             <p>Loading...</p>
           ) : (
@@ -114,6 +136,7 @@ export const ClientUpdate = () => {
                 data-cy="clientName"
                 type="text"
               />
+              {metadataRows}
               <ValidatedBlobField
                 label={translate('eCompanyApp.client.logo')}
                 id="client-logo"
@@ -121,30 +144,6 @@ export const ClientUpdate = () => {
                 data-cy="logo"
                 isImage
                 accept="image/*"
-              />
-              <ValidatedField
-                label={translate('eCompanyApp.client.height')}
-                id="client-height"
-                name="height"
-                data-cy="height"
-                type="text"
-              />
-              <ValidatedField label={translate('eCompanyApp.client.width')} id="client-width" name="width" data-cy="width" type="text" />
-              <ValidatedField
-                label={translate('eCompanyApp.client.taken')}
-                id="client-taken"
-                name="taken"
-                data-cy="taken"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
-              />
-              <ValidatedField
-                label={translate('eCompanyApp.client.uploaded')}
-                id="client-uploaded"
-                name="uploaded"
-                data-cy="uploaded"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
               />
               <ValidatedField
                 label={translate('eCompanyApp.client.dateOfSubmittal')}

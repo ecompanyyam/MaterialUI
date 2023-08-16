@@ -81,7 +81,7 @@ export const FeedBackFromEmployeeUpdate = () => {
   return (
     <div>
       <Row className="justify-content-center">
-        <Col md="8">
+        <Col md="4">
           <h2 id="eCompanyApp.feedBackFromEmployee.home.createOrEditLabel" data-cy="FeedBackFromEmployeeCreateUpdateHeading">
             <Translate contentKey="eCompanyApp.feedBackFromEmployee.home.createOrEditLabel">
               Create or edit a FeedBackFromEmployee
@@ -90,7 +90,7 @@ export const FeedBackFromEmployeeUpdate = () => {
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col md="12">
+        <Col md="3">
           {loading ? (
             <p>Loading...</p>
           ) : (
@@ -108,7 +108,6 @@ export const FeedBackFromEmployeeUpdate = () => {
               <ValidatedField
                 id="feed-back-from-employee-vendorsName"
                 name="vendorsName"
-                className="col-lg-3"
                 data-cy="vendorsName"
                 label={translate('eCompanyApp.feedBackFromEmployee.vendorsName')}
                 type="select"
@@ -129,7 +128,6 @@ export const FeedBackFromEmployeeUpdate = () => {
               <ValidatedField
                 id="feed-back-from-employee-productName"
                 name="productName"
-                className="col-lg-3"
                 data-cy="productName"
                 label={translate('eCompanyApp.feedBackFromEmployee.productName')}
                 type="select"
@@ -150,7 +148,6 @@ export const FeedBackFromEmployeeUpdate = () => {
               <ValidatedField
                 label={translate('eCompanyApp.feedBackFromEmployee.feedBackCategory')}
                 id="feed-back-from-employee-feedBackCategory"
-                className="col-lg-3"
                 name="feedBackCategory"
                 data-cy="feedBackCategory"
                 type="select"
@@ -166,14 +163,12 @@ export const FeedBackFromEmployeeUpdate = () => {
                 id="feed-back-from-employee-refContractPONumber"
                 name="refContractPONumber"
                 data-cy="refContractPONumber"
-                className="col-lg-3"
                 type="text"
               />
               <ValidatedField
                 label={translate('eCompanyApp.feedBackFromEmployee.comment')}
                 id="feed-back-from-employee-comment"
                 name="comment"
-                className="col-lg-3"
                 data-cy="comment"
                 type="textarea"
               />

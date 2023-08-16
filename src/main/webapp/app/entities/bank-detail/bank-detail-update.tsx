@@ -72,14 +72,14 @@ export const BankDetailUpdate = () => {
   return (
     <div>
       <Row className="justify-content-center">
-        <Col md="8">
+        <Col md="3">
           <h2 id="eCompanyApp.bankDetail.home.createOrEditLabel" data-cy="BankDetailCreateUpdateHeading">
             <Translate contentKey="eCompanyApp.bankDetail.home.createOrEditLabel">Create or edit a BankDetail</Translate>
           </h2>
         </Col>
       </Row>
-      <Row className="align-self-start">
-        <Col md="12">
+      <Row className="justify-content-center">
+        <Col md="3">
           {loading ? (
             <p>Loading...</p>
           ) : (
@@ -95,48 +95,7 @@ export const BankDetailUpdate = () => {
                 />
               ) : null}
               <ValidatedField
-                label={translate('eCompanyApp.bankDetail.bankAccount')}
-                id="bank-detail-bankAccount"
-                name="bankAccount"
-                data-cy="bankAccount"
-                check
-                type="checkbox"
-              />
-              <ValidatedField
-                label={translate('eCompanyApp.bankDetail.bankName')}
-                id="bank-detail-bankName"
-                name="bankName"
-                data-cy="bankName"
-                type="text"
-                className="col-lg-3"
-              />
-              <ValidatedField
-                label={translate('eCompanyApp.bankDetail.branchSwiftCode')}
-                id="bank-detail-branchSwiftCode"
-                name="branchSwiftCode"
-                data-cy="branchSwiftCode"
-                type="text"
-                className="col-lg-3"
-              />
-              <ValidatedField
-                label={translate('eCompanyApp.bankDetail.ibanNo')}
-                id="bank-detail-ibanNo"
-                name="ibanNo"
-                data-cy="ibanNo"
-                type="text"
-                className="col-lg-3"
-              />
-              <ValidatedField
-                label={translate('eCompanyApp.bankDetail.accountNumber')}
-                id="bank-detail-accountNumber"
-                name="accountNumber"
-                data-cy="accountNumber"
-                type="text"
-                className="col-lg-3"
-              />
-              <ValidatedField
                 id="bank-detail-vendorsName"
-                className="col-lg-3"
                 name="vendorsName"
                 data-cy="vendorsName"
                 label={translate('eCompanyApp.bankDetail.vendorsName')}
@@ -153,6 +112,42 @@ export const BankDetailUpdate = () => {
                   : null}
                 <Translate contentKey="entity.validation.required">This field is required.</Translate>
               </ValidatedField>
+              <ValidatedField
+                label={translate('eCompanyApp.bankDetail.bankAccount')}
+                id="bank-detail-bankAccount"
+                name="bankAccount"
+                data-cy="bankAccount"
+                check
+                type="checkbox"
+              />
+              <ValidatedField
+                label={translate('eCompanyApp.bankDetail.bankName')}
+                id="bank-detail-bankName"
+                name="bankName"
+                data-cy="bankName"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('eCompanyApp.bankDetail.branchSwiftCode')}
+                id="bank-detail-branchSwiftCode"
+                name="branchSwiftCode"
+                data-cy="branchSwiftCode"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('eCompanyApp.bankDetail.ibanNo')}
+                id="bank-detail-ibanNo"
+                name="ibanNo"
+                data-cy="ibanNo"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('eCompanyApp.bankDetail.accountNumber')}
+                id="bank-detail-accountNumber"
+                name="accountNumber"
+                data-cy="accountNumber"
+                type="text"
+              />
               <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/bank-detail" replace color="info mt-4 back_btn">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;

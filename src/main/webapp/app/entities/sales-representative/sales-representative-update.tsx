@@ -72,14 +72,14 @@ export const SalesRepresentativeUpdate = () => {
   return (
     <div>
       <Row className="justify-content-center">
-        <Col md="8">
+        <Col md="4">
           <h2 id="eCompanyApp.salesRepresentative.home.createOrEditLabel" data-cy="SalesRepresentativeCreateUpdateHeading">
             <Translate contentKey="eCompanyApp.salesRepresentative.home.createOrEditLabel">Create or edit a SalesRepresentative</Translate>
           </h2>
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col md="12">
+        <Col md="3">
           {loading ? (
             <p>Loading...</p>
           ) : (
@@ -98,7 +98,6 @@ export const SalesRepresentativeUpdate = () => {
                 id="sales-representative-vendorsName"
                 name="vendorsName"
                 data-cy="vendorsName"
-                className="col-lg-3"
                 label={translate('eCompanyApp.salesRepresentative.vendorsName')}
                 type="select"
                 required
@@ -119,7 +118,6 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.fullName')}
                 id="sales-representative-fullName"
                 name="fullName"
-                className="col-lg-3"
                 data-cy="fullName"
                 type="text"
               />
@@ -127,7 +125,6 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.jobTitle')}
                 id="sales-representative-jobTitle"
                 name="jobTitle"
-                className="col-lg-3"
                 data-cy="jobTitle"
                 type="text"
               />
@@ -135,7 +132,6 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.email')}
                 id="sales-representative-email"
                 name="email"
-                className="col-lg-3"
                 data-cy="email"
                 type="text"
                 validate={{
@@ -149,7 +145,6 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.phone')}
                 id="sales-representative-phone"
                 name="phone"
-                className="col-lg-3"
                 data-cy="phone"
                 type="text"
               />
@@ -157,7 +152,6 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.officeLocation')}
                 id="sales-representative-officeLocation"
                 name="officeLocation"
-                className="col-lg-3"
                 data-cy="officeLocation"
                 type="text"
               />
@@ -165,7 +159,6 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.addressLine1')}
                 id="sales-representative-addressLine1"
                 name="addressLine1"
-                className="col-lg-3"
                 data-cy="addressLine1"
                 type="textarea"
               />
@@ -173,7 +166,6 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.otherDetails')}
                 id="sales-representative-otherDetails"
                 name="otherDetails"
-                className="col-lg-3"
                 data-cy="otherDetails"
                 type="textarea"
               />
