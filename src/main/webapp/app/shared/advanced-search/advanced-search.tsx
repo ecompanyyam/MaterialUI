@@ -116,7 +116,7 @@ export const AdvancedSearch = ({ filters, placeholder, onApply, onReset, onBasic
                                 <Button
                                     variant="outlined"
                                     onClick={() => {
-                                        setFilterRows([...filterRows ]);
+                                        setFilterRows([...filterRows, initialFilterRow ]);
                                     }}
                                 >
                                     <Translate contentKey="eCompanyApp.advancedSearch.addButtonLabel" />

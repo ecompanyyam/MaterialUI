@@ -3,7 +3,7 @@ import { IFilterType } from 'app/shared/advanced-search/types';
 const Equals = { label: 'Equals', value: 'equals' };
 const NotEquals =  { label: 'Not Equals', value: 'notEquals' };
 const GreaterThan = { label: 'Greater Than', value: 'greaterThan' };
-const LessThan =  { label: 'Less Than', value: 'lessThan '};
+const LessThan =  { label: 'Less Than', value: 'lessThan'};
 const GreaterThanOrEqual =  { label: 'Greater Than or Equal', value: 'greaterThanOrEqual' };
 const LessThanOrEqual =  { label: 'Less Than or Equal', value: 'lessThanOrEqual' };
 
