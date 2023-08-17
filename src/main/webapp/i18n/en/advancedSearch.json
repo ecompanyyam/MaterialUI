@@ -1,0 +1,12 @@
+{
+    "eCompanyApp": {
+      "advancedSearch": {
+        "filtersLabel": "Filters",
+        "applyButtonLabel": "Apply",
+        "resetButtonLabel": "Reset",
+        "addButtonLabel": "Add",
+        "clearAppliedFiltersLinkButtonLabel": "Clear Applied Filters"
+      }
+    }
+  }
+  

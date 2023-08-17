@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Button, Input, InputGroup, FormGroup, Form, Row, Col, Table } from 'reactstrap';
-import { openFile, byteSize, Translate, translate, TextFormat, getPaginationState, JhiPagination, JhiItemCount } from 'react-jhipster';
+import { Button, Row, Col, Table } from 'reactstrap';
+import { openFile, byteSize, Translate, getPaginationState, JhiPagination, JhiItemCount } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faLongArrowUp, faLongArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
 import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
+import { AdvancedSearch } from 'app/shared/advanced-search/advanced-search';
+import { IFilterRow } from 'app/shared/advanced-search/types';
 
+import { ProductFilterDefinitions } from './product-filter-definitions';
 import { searchEntities, getEntities } from './product.reducer';
 
 export const Product = () => {
@@ -36,22 +39,21 @@ export const Product = () => {
     );
   };
 
-  const startSearching = e => {
-    if (search) {
+  const startSearching = (query: string) => {
+    if (query) {
       setPaginationState({
         ...paginationState,
         activePage: 1,
       });
       dispatch(
         searchEntities({
-          query: search,
+          query,
           page: paginationState.activePage - 1,
           size: paginationState.itemsPerPage,
           sort: `${paginationState.sort},${paginationState.order}`,
         })
       );
     }
-    e.preventDefault();
   };
 
   const clear = () => {
@@ -138,25 +140,30 @@ export const Product = () => {
       </h2>
       <Row>
         <Col sm="12">
-          <Form onSubmit={startSearching}>
-            <FormGroup>
-              <InputGroup>
-                <Input
-                  type="text"
-                  name="search"
-                  defaultValue={search}
-                  onChange={handleSearch}
-                  placeholder={translate('eCompanyApp.product.home.search')}
-                />
-                <Button className="input-group-addon">
-                  <FontAwesomeIcon icon="search" />
-                </Button>
-                <Button type="reset" className="input-group-addon" onClick={clear}>
-                  <FontAwesomeIcon icon="trash" />
-                </Button>
-              </InputGroup>
-            </FormGroup>
-          </Form>
+          <AdvancedSearch
+              placeholder='Search by product name'
+              filters={ProductFilterDefinitions}
+              onApply={(filterRows: IFilterRow[]) => {
+                const query = filterRows.reduce((acc: string[], curr: IFilterRow) => {
+                  const searchString = `${curr.property}.${curr.operator}=${curr.value}`;
+
+                  acc.push(searchString);
+
+                  return acc;
+                }, []).join('&');
+
+                startSearching(query);
+              }}
+              onReset={() => { clear(); }}
+              onBasicTextSearch={(searchKey: string) => {
+                if (searchKey === "") {
+                  clear();
+                  return;
+                }
+                const query = `productName.contains=${searchKey}`;
+                startSearching(query);
+              }}
+            />
         </Col>
       </Row>
       <div className="table-responsive">
