@@ -20,8 +20,8 @@ export const DocumentDetail = () => {
 
   const documentEntity = useAppSelector(state => state.document.entity);
   return (
-    <Row className="justify-content-center">
-      <Col md="3">
+    <Row className="justify-content-center align-items-center">
+      <Col md="8">
         <h2 data-cy="documentDetailsHeading">
           <Translate contentKey="eCompanyApp.document.detail.title">Document</Translate>
         </h2>

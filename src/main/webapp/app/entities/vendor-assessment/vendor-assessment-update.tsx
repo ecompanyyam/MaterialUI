@@ -85,14 +85,14 @@ export const VendorAssessmentUpdate = () => {
   return (
     <div>
       <Row className="justify-content-center">
-        <Col md="4">
+        <Col md="8">
           <h2 id="eCompanyApp.vendorAssessment.home.createOrEditLabel" data-cy="VendorAssessmentCreateUpdateHeading">
             <Translate contentKey="eCompanyApp.vendorAssessment.home.createOrEditLabel">Create or edit a VendorAssessment</Translate>
           </h2>
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col md="3">
+        <Col md="6">
           {loading ? (
             <p>Loading...</p>
           ) : (
@@ -110,6 +110,7 @@ export const VendorAssessmentUpdate = () => {
               <ValidatedField
                 id="vendor-assessment-vendorsName"
                 name="vendorsName"
+                className="validated-field-container"
                 data-cy="vendorsName"
                 label={translate('eCompanyApp.vendorAssessment.vendorsName')}
                 type="select"
@@ -131,6 +132,7 @@ export const VendorAssessmentUpdate = () => {
                 label={translate('eCompanyApp.vendorAssessment.assessmentDate')}
                 id="vendor-assessment-assessmentDate"
                 name="assessmentDate"
+                className="validated-field-container"
                 data-cy="assessmentDate"
                 type="datetime-local"
                 placeholder="YYYY-MM-DD HH:mm"
@@ -139,6 +141,7 @@ export const VendorAssessmentUpdate = () => {
                 label={translate('eCompanyApp.vendorAssessment.assessedBY')}
                 id="vendor-assessment-assessedBY"
                 name="assessedBY"
+                className="validated-field-container"
                 data-cy="assessedBY"
                 type="text"
               />
@@ -146,6 +149,7 @@ export const VendorAssessmentUpdate = () => {
                 label={translate('eCompanyApp.vendorAssessment.jobKnowledge')}
                 id="vendor-assessment-jobKnowledge"
                 name="jobKnowledge"
+                className="validated-field-container"
                 data-cy="jobKnowledge"
                 type="select"
               >
@@ -159,6 +163,7 @@ export const VendorAssessmentUpdate = () => {
                 label={translate('eCompanyApp.vendorAssessment.jobKnowledgeComment')}
                 id="vendor-assessment-jobKnowledgeComment"
                 name="jobKnowledgeComment"
+                className="validated-field-container"
                 data-cy="jobKnowledgeComment"
                 type="textarea"
               />
@@ -166,6 +171,7 @@ export const VendorAssessmentUpdate = () => {
                 label={translate('eCompanyApp.vendorAssessment.workQuality')}
                 id="vendor-assessment-workQuality"
                 name="workQuality"
+                className="validated-field-container"
                 data-cy="workQuality"
                 type="select"
               >
@@ -179,6 +185,7 @@ export const VendorAssessmentUpdate = () => {
                 label={translate('eCompanyApp.vendorAssessment.workQualityComment')}
                 id="vendor-assessment-workQualityComment"
                 name="workQualityComment"
+                className="validated-field-container"
                 data-cy="workQualityComment"
                 type="textarea"
               />
@@ -186,6 +193,7 @@ export const VendorAssessmentUpdate = () => {
                 label={translate('eCompanyApp.vendorAssessment.attendancePunctuality')}
                 id="vendor-assessment-attendancePunctuality"
                 name="attendancePunctuality"
+                className="validated-field-container"
                 data-cy="attendancePunctuality"
                 type="select"
               >
@@ -199,6 +207,7 @@ export const VendorAssessmentUpdate = () => {
                 label={translate('eCompanyApp.vendorAssessment.attendancePunctualityComment')}
                 id="vendor-assessment-attendancePunctualityComment"
                 name="attendancePunctualityComment"
+                className="validated-field-container"
                 data-cy="attendancePunctualityComment"
                 type="textarea"
               />
@@ -206,6 +215,7 @@ export const VendorAssessmentUpdate = () => {
                 label={translate('eCompanyApp.vendorAssessment.initiative')}
                 id="vendor-assessment-initiative"
                 name="initiative"
+                className="validated-field-container"
                 data-cy="initiative"
                 type="select"
               >
@@ -219,6 +229,7 @@ export const VendorAssessmentUpdate = () => {
                 label={translate('eCompanyApp.vendorAssessment.initiativeComment')}
                 id="vendor-assessment-initiativeComment"
                 name="initiativeComment"
+                className="validated-field-container"
                 data-cy="initiativeComment"
                 type="textarea"
               />
@@ -226,6 +237,7 @@ export const VendorAssessmentUpdate = () => {
                 label={translate('eCompanyApp.vendorAssessment.communicationListeningSkills')}
                 id="vendor-assessment-communicationListeningSkills"
                 name="communicationListeningSkills"
+                className="validated-field-container"
                 data-cy="communicationListeningSkills"
                 type="select"
               >
@@ -239,6 +251,7 @@ export const VendorAssessmentUpdate = () => {
                 label={translate('eCompanyApp.vendorAssessment.communicationListeningSkillsComment')}
                 id="vendor-assessment-communicationListeningSkillsComment"
                 name="communicationListeningSkillsComment"
+                className="validated-field-container"
                 data-cy="communicationListeningSkillsComment"
                 type="textarea"
               />
@@ -246,6 +259,7 @@ export const VendorAssessmentUpdate = () => {
                 label={translate('eCompanyApp.vendorAssessment.dependability')}
                 id="vendor-assessment-dependability"
                 name="dependability"
+                className="validated-field-container"
                 data-cy="dependability"
                 type="select"
               >
@@ -259,6 +273,7 @@ export const VendorAssessmentUpdate = () => {
                 label={translate('eCompanyApp.vendorAssessment.dependabilityComment')}
                 id="vendor-assessment-dependabilityComment"
                 name="dependabilityComment"
+                className="validated-field-container"
                 data-cy="dependabilityComment"
                 type="textarea"
               />

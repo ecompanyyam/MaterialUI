@@ -79,7 +79,7 @@ export const SalesRepresentativeUpdate = () => {
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col md="3">
+        <Col md="6">
           {loading ? (
             <p>Loading...</p>
           ) : (
@@ -97,6 +97,7 @@ export const SalesRepresentativeUpdate = () => {
               <ValidatedField
                 id="sales-representative-vendorsName"
                 name="vendorsName"
+                className="validated-field-container"
                 data-cy="vendorsName"
                 label={translate('eCompanyApp.salesRepresentative.vendorsName')}
                 type="select"
@@ -110,14 +111,15 @@ export const SalesRepresentativeUpdate = () => {
                       </option>
                     ))
                   : null}
+                <FormText>
+                  <Translate contentKey="entity.validation.required">This field is required.</Translate>
+                </FormText>
               </ValidatedField>
-              <FormText>
-                <Translate contentKey="entity.validation.required">This field is required.</Translate>
-              </FormText>
               <ValidatedField
                 label={translate('eCompanyApp.salesRepresentative.fullName')}
                 id="sales-representative-fullName"
                 name="fullName"
+                className="validated-field-container"
                 data-cy="fullName"
                 type="text"
               />
@@ -125,6 +127,7 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.jobTitle')}
                 id="sales-representative-jobTitle"
                 name="jobTitle"
+                className="validated-field-container"
                 data-cy="jobTitle"
                 type="text"
               />
@@ -132,6 +135,7 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.email')}
                 id="sales-representative-email"
                 name="email"
+                className="validated-field-container"
                 data-cy="email"
                 type="text"
                 validate={{
@@ -145,6 +149,7 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.phone')}
                 id="sales-representative-phone"
                 name="phone"
+                className="validated-field-container"
                 data-cy="phone"
                 type="text"
               />
@@ -152,6 +157,7 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.officeLocation')}
                 id="sales-representative-officeLocation"
                 name="officeLocation"
+                className="validated-field-container"
                 data-cy="officeLocation"
                 type="text"
               />
@@ -159,6 +165,7 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.addressLine1')}
                 id="sales-representative-addressLine1"
                 name="addressLine1"
+                className="validated-field-container"
                 data-cy="addressLine1"
                 type="textarea"
               />
@@ -166,6 +173,7 @@ export const SalesRepresentativeUpdate = () => {
                 label={translate('eCompanyApp.salesRepresentative.otherDetails')}
                 id="sales-representative-otherDetails"
                 name="otherDetails"
+                className="validated-field-container"
                 data-cy="otherDetails"
                 type="textarea"
               />

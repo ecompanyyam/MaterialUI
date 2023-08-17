@@ -86,7 +86,7 @@ export const DocumentUpdate = () => {
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col md="3">
+        <Col md="6">
           {loading ? (
             <p>Loading...</p>
           ) : (
@@ -105,6 +105,7 @@ export const DocumentUpdate = () => {
                 label={translate('eCompanyApp.document.documentType')}
                 id="document-documentType"
                 name="documentType"
+                className="validated-field-container"
                 data-cy="documentType"
                 type="select"
               >
@@ -118,6 +119,7 @@ export const DocumentUpdate = () => {
                 label={translate('eCompanyApp.document.organizationName')}
                 id="document-organizationName"
                 name="organizationName"
+                className="validated-field-container"
                 data-cy="organizationName"
                 type="text"
               />
@@ -125,6 +127,7 @@ export const DocumentUpdate = () => {
                 label={translate('eCompanyApp.document.documentName')}
                 id="document-documentName"
                 name="documentName"
+                className="validated-field-container"
                 data-cy="documentName"
                 type="text"
               />
@@ -132,6 +135,7 @@ export const DocumentUpdate = () => {
                 label={translate('eCompanyApp.document.documentNumber')}
                 id="document-documentNumber"
                 name="documentNumber"
+                className="validated-field-container"
                 data-cy="documentNumber"
                 type="text"
               />
@@ -139,6 +143,7 @@ export const DocumentUpdate = () => {
                 label={translate('eCompanyApp.document.issueDate')}
                 id="document-issueDate"
                 name="issueDate"
+                className="validated-field-container"
                 data-cy="issueDate"
                 type="datetime-local"
                 placeholder="YYYY-MM-DD HH:mm"
@@ -147,6 +152,7 @@ export const DocumentUpdate = () => {
                 label={translate('eCompanyApp.document.expiryDate')}
                 id="document-expiryDate"
                 name="expiryDate"
+                className="validated-field-container"
                 data-cy="expiryDate"
                 type="datetime-local"
                 placeholder="YYYY-MM-DD HH:mm"
@@ -155,6 +161,7 @@ export const DocumentUpdate = () => {
                 label={translate('eCompanyApp.document.documentStatus')}
                 id="document-documentStatus"
                 name="documentStatus"
+                className="validated-field-container"
                 data-cy="documentStatus"
                 type="select"
               >

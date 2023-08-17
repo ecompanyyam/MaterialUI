@@ -90,7 +90,7 @@ export const FeedBackFromEmployeeUpdate = () => {
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col md="3">
+        <Col md="6">
           {loading ? (
             <p>Loading...</p>
           ) : (
@@ -108,6 +108,7 @@ export const FeedBackFromEmployeeUpdate = () => {
               <ValidatedField
                 id="feed-back-from-employee-vendorsName"
                 name="vendorsName"
+                className="validated-field-container"
                 data-cy="vendorsName"
                 label={translate('eCompanyApp.feedBackFromEmployee.vendorsName')}
                 type="select"
@@ -128,6 +129,7 @@ export const FeedBackFromEmployeeUpdate = () => {
               <ValidatedField
                 id="feed-back-from-employee-productName"
                 name="productName"
+                className="validated-field-container"
                 data-cy="productName"
                 label={translate('eCompanyApp.feedBackFromEmployee.productName')}
                 type="select"
@@ -149,6 +151,7 @@ export const FeedBackFromEmployeeUpdate = () => {
                 label={translate('eCompanyApp.feedBackFromEmployee.feedBackCategory')}
                 id="feed-back-from-employee-feedBackCategory"
                 name="feedBackCategory"
+                className="validated-field-container"
                 data-cy="feedBackCategory"
                 type="select"
               >
@@ -162,6 +165,7 @@ export const FeedBackFromEmployeeUpdate = () => {
                 label={translate('eCompanyApp.feedBackFromEmployee.refContractPONumber')}
                 id="feed-back-from-employee-refContractPONumber"
                 name="refContractPONumber"
+                className="validated-field-container"
                 data-cy="refContractPONumber"
                 type="text"
               />
@@ -169,6 +173,7 @@ export const FeedBackFromEmployeeUpdate = () => {
                 label={translate('eCompanyApp.feedBackFromEmployee.comment')}
                 id="feed-back-from-employee-comment"
                 name="comment"
+                className="validated-field-container"
                 data-cy="comment"
                 type="textarea"
               />

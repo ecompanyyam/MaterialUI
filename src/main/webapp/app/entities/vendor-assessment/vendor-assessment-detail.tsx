@@ -20,8 +20,8 @@ export const VendorAssessmentDetail = () => {
 
   const vendorAssessmentEntity = useAppSelector(state => state.vendorAssessment.entity);
   return (
-    <Row className="justify-content-center">
-      <Col md="3">
+    <Row className="justify-content-center align-items-center">
+      <Col md="8">
         <h2 data-cy="vendorAssessmentDetailsHeading">
           <Translate contentKey="eCompanyApp.vendorAssessment.detail.title">VendorAssessment</Translate>
         </h2>

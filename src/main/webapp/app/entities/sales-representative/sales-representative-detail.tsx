@@ -19,8 +19,8 @@ export const SalesRepresentativeDetail = () => {
 
   const salesRepresentativeEntity = useAppSelector(state => state.salesRepresentative.entity);
   return (
-    <Row className="justify-content-center">
-      <Col md="3">
+    <Row className="justify-content-center align-items-center">
+      <Col md="8">
         <h2 data-cy="salesRepresentativeDetailsHeading">
           <Translate contentKey="eCompanyApp.salesRepresentative.detail.title">SalesRepresentative</Translate>
         </h2>

@@ -85,29 +85,6 @@ export const ProductUpdate = () => {
           uploaded: convertDateTimeFromServer(productEntity.uploaded),
           vendorsName: productEntity?.vendorsName?.id,
         };
-  const metadata = (
-    <div>
-      <ValidatedField label={translate('eCompanyApp.product.height')} id="product-height" name="height" data-cy="height" type="text" />
-      <ValidatedField label={translate('eCompanyApp.product.width')} id="product-width" name="width" data-cy="width" type="text" />
-      <ValidatedField
-        label={translate('eCompanyApp.product.taken')}
-        id="product-taken"
-        name="taken"
-        data-cy="taken"
-        type="datetime-local"
-        placeholder="YYYY-MM-DD HH:mm"
-      />
-      <ValidatedField
-        label={translate('eCompanyApp.product.uploaded')}
-        id="product-uploaded"
-        name="uploaded"
-        data-cy="uploaded"
-        type="datetime-local"
-        placeholder="YYYY-MM-DD HH:mm"
-      />
-    </div>
-  );
-  const metadataRows = isNew ? '' : metadata;
   return (
     <div>
       <Row className="justify-content-center">
@@ -118,7 +95,7 @@ export const ProductUpdate = () => {
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col md="3">
+        <Col md="6">
           {loading ? (
             <p>Loading...</p>
           ) : (
@@ -136,6 +113,7 @@ export const ProductUpdate = () => {
               <ValidatedField
                 id="product-vendorsName"
                 name="vendorsName"
+                className="validated-field-container"
                 data-cy="vendorsName"
                 label={translate('eCompanyApp.product.vendorsName')}
                 type="select"
@@ -154,6 +132,7 @@ export const ProductUpdate = () => {
                 label={translate('eCompanyApp.product.productName')}
                 id="product-productName"
                 name="productName"
+                className="validated-field-container"
                 data-cy="productName"
                 type="text"
                 required
@@ -162,6 +141,7 @@ export const ProductUpdate = () => {
                 label={translate('eCompanyApp.product.productOrigin')}
                 id="product-productOrigin"
                 name="productOrigin"
+                className="validated-field-container"
                 data-cy="productOrigin"
                 type="select"
               >
@@ -175,6 +155,7 @@ export const ProductUpdate = () => {
                 label={translate('eCompanyApp.product.productStockStatus')}
                 id="product-productStockStatus"
                 name="productStockStatus"
+                className="validated-field-container"
                 data-cy="productStockStatus"
                 type="select"
               >
@@ -188,6 +169,7 @@ export const ProductUpdate = () => {
                 label={translate('eCompanyApp.product.productAvgDeliveryTime')}
                 id="product-productAvgDeliveryTime"
                 name="productAvgDeliveryTime"
+                className="validated-field-container"
                 data-cy="productAvgDeliveryTime"
                 type="select"
               >
@@ -201,17 +183,18 @@ export const ProductUpdate = () => {
                 label={translate('eCompanyApp.product.productManufacturer')}
                 id="product-productManufacturer"
                 name="productManufacturer"
+                className="validated-field-container"
                 data-cy="productManufacturer"
                 type="text"
                 validate={{
                   maxLength: { value: 50, message: translate('entity.validation.maxlength', { max: 50 }) },
                 }}
               />
-              {metadataRows}
               <ValidatedBlobField
                 label={translate('eCompanyApp.product.productImage')}
                 id="product-productImage"
                 name="productImage"
+                className="validated-field-container"
                 required
                 data-cy="productImage"
                 isImage
@@ -228,6 +211,7 @@ export const ProductUpdate = () => {
                 label={translate('eCompanyApp.product.productRemark')}
                 id="product-productRemark"
                 name="productRemark"
+                className="validated-field-container"
                 data-cy="productRemark"
                 type="textarea"
               />

@@ -79,7 +79,7 @@ export const BankDetailUpdate = () => {
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col md="3">
+        <Col md="6">
           {loading ? (
             <p>Loading...</p>
           ) : (
@@ -97,6 +97,7 @@ export const BankDetailUpdate = () => {
               <ValidatedField
                 id="bank-detail-vendorsName"
                 name="vendorsName"
+                className="validated-field-container"
                 data-cy="vendorsName"
                 label={translate('eCompanyApp.bankDetail.vendorsName')}
                 type="select"
@@ -124,6 +125,7 @@ export const BankDetailUpdate = () => {
                 label={translate('eCompanyApp.bankDetail.bankName')}
                 id="bank-detail-bankName"
                 name="bankName"
+                className="validated-field-container"
                 data-cy="bankName"
                 type="text"
               />
@@ -131,6 +133,7 @@ export const BankDetailUpdate = () => {
                 label={translate('eCompanyApp.bankDetail.branchSwiftCode')}
                 id="bank-detail-branchSwiftCode"
                 name="branchSwiftCode"
+                className="validated-field-container"
                 data-cy="branchSwiftCode"
                 type="text"
               />
@@ -138,6 +141,7 @@ export const BankDetailUpdate = () => {
                 label={translate('eCompanyApp.bankDetail.ibanNo')}
                 id="bank-detail-ibanNo"
                 name="ibanNo"
+                className="validated-field-container"
                 data-cy="ibanNo"
                 type="text"
               />
@@ -145,6 +149,7 @@ export const BankDetailUpdate = () => {
                 label={translate('eCompanyApp.bankDetail.accountNumber')}
                 id="bank-detail-accountNumber"
                 name="accountNumber"
+                className="validated-field-container"
                 data-cy="accountNumber"
                 type="text"
               />

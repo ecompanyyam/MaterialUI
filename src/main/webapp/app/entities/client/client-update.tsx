@@ -107,14 +107,14 @@ export const ClientUpdate = () => {
   return (
     <div>
       <Row className="justify-content-center">
-        <Col md="3">
+        <Col md="8">
           <h2 id="eCompanyApp.client.home.createOrEditLabel" data-cy="ClientCreateUpdateHeading">
             <Translate contentKey="eCompanyApp.client.home.createOrEditLabel">Create or edit a Client</Translate>
           </h2>
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col md="3">
+        <Col md="6">
           {loading ? (
             <p>Loading...</p>
           ) : (
@@ -133,22 +133,15 @@ export const ClientUpdate = () => {
                 label={translate('eCompanyApp.client.clientName')}
                 id="client-clientName"
                 name="clientName"
+                className="validated-field-container"
                 data-cy="clientName"
                 type="text"
-              />
-              {metadataRows}
-              <ValidatedBlobField
-                label={translate('eCompanyApp.client.logo')}
-                id="client-logo"
-                name="logo"
-                data-cy="logo"
-                isImage
-                accept="image/*"
               />
               <ValidatedField
                 label={translate('eCompanyApp.client.dateOfSubmittal')}
                 id="client-dateOfSubmittal"
                 name="dateOfSubmittal"
+                className="validated-field-container"
                 data-cy="dateOfSubmittal"
                 type="datetime-local"
                 placeholder="YYYY-MM-DD HH:mm"
@@ -157,6 +150,7 @@ export const ClientUpdate = () => {
                 label={translate('eCompanyApp.client.approvalStatus')}
                 id="client-approvalStatus"
                 name="approvalStatus"
+                className="validated-field-container"
                 data-cy="approvalStatus"
                 type="select"
               >
@@ -170,6 +164,7 @@ export const ClientUpdate = () => {
                 label={translate('eCompanyApp.client.registrationNumber')}
                 id="client-registrationNumber"
                 name="registrationNumber"
+                className="validated-field-container"
                 data-cy="registrationNumber"
                 type="text"
               />
@@ -177,6 +172,7 @@ export const ClientUpdate = () => {
                 label={translate('eCompanyApp.client.dateOfRegistration')}
                 id="client-dateOfRegistration"
                 name="dateOfRegistration"
+                className="validated-field-container"
                 data-cy="dateOfRegistration"
                 type="datetime-local"
                 placeholder="YYYY-MM-DD HH:mm"
@@ -185,9 +181,19 @@ export const ClientUpdate = () => {
                 label={translate('eCompanyApp.client.dateOfExpiry')}
                 id="client-dateOfExpiry"
                 name="dateOfExpiry"
+                className="validated-field-container"
                 data-cy="dateOfExpiry"
                 type="datetime-local"
                 placeholder="YYYY-MM-DD HH:mm"
+              />
+              {metadataRows}
+              <ValidatedBlobField
+                label={translate('eCompanyApp.client.logo')}
+                id="client-logo"
+                name="logo"
+                data-cy="logo"
+                isImage
+                accept="image/*"
               />
               <ValidatedBlobField
                 label={translate('eCompanyApp.client.approvalDocument')}

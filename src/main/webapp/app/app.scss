@@ -498,3 +498,28 @@ input[type='file']::file-selector-button {
 .form-control[type='file'] {
   padding: 3px 0;
 }
+/* app.scss or your component's SCSS file */
+
+/* Apply common style for all ValidatedField components */
+.validated-field-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Adjust as needed */
+}
+
+.validated-field-container label {
+  width: 30%; /* Adjust the width of the label column */
+  margin-right: 10px; /* Add spacing between label and input */
+}
+
+.validated-field-container input,
+.validated-field-container select {
+  width: 70%; /* Adjust the width of the input column */
+}
+
+/* ... */
+
+/* Apply the common style to ValidatedBlobField component */
+.validated-blob-field-container {
+  /* Similar styling as above for blob fields */
+}

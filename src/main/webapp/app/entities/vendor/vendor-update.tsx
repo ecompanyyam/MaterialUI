@@ -81,29 +81,6 @@ export const VendorUpdate = () => {
           taken: convertDateTimeFromServer(vendorEntity.taken),
           uploaded: convertDateTimeFromServer(vendorEntity.uploaded),
         };
-  const metadata = (
-    <div>
-      <ValidatedField label={translate('eCompanyApp.vendor.height')} id="vendor-height" name="height" data-cy="height" type="text" />
-      <ValidatedField label={translate('eCompanyApp.vendor.width')} id="vendor-width" name="width" data-cy="width" type="text" />
-      <ValidatedField
-        label={translate('eCompanyApp.vendor.taken')}
-        id="vendor-taken"
-        name="taken"
-        data-cy="taken"
-        type="datetime-local"
-        placeholder="YYYY-MM-DD HH:mm"
-      />
-      <ValidatedField
-        label={translate('eCompanyApp.vendor.uploaded')}
-        id="vendor-uploaded"
-        name="uploaded"
-        data-cy="uploaded"
-        type="datetime-local"
-        placeholder="YYYY-MM-DD HH:mm"
-      />
-    </div>
-  );
-  const metadataRows = isNew ? '' : metadata;
   return (
     <div>
       <Row className="justify-content-center">
@@ -114,7 +91,7 @@ export const VendorUpdate = () => {
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col md="3">
+        <Col md="6">
           {loading ? (
             <p>Loading...</p>
           ) : (
@@ -133,6 +110,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.vendorId')}
                 id="vendor-vendorId"
                 name="vendorId"
+                className="validated-field-container"
                 data-cy="vendorId"
                 type="text"
                 validate={{
@@ -143,6 +121,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.vendorNameEnglish')}
                 id="vendor-vendorNameEnglish"
                 name="vendorNameEnglish"
+                className="validated-field-container"
                 data-cy="vendorNameEnglish"
                 type="text"
                 validate={{
@@ -153,14 +132,15 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.vendorNameArabic')}
                 id="vendor-vendorNameArabic"
                 name="vendorNameArabic"
+                className="validated-field-container"
                 data-cy="vendorNameArabic"
                 type="text"
               />
-              {metadataRows}
               <ValidatedBlobField
                 label={translate('eCompanyApp.vendor.vendorLogo')}
                 id="vendor-vendorLogo"
                 name="vendorLogo"
+                className="validated-blob-field-container"
                 required
                 data-cy="vendorLogo"
                 isImage
@@ -170,6 +150,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.vendorAccountNumber')}
                 id="vendor-vendorAccountNumber"
                 name="vendorAccountNumber"
+                className="validated-field-container"
                 data-cy="vendorAccountNumber"
                 type="text"
               />
@@ -177,6 +158,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.vendorCRNumber')}
                 id="vendor-vendorCRNumber"
                 name="vendorCRNumber"
+                className="validated-field-container"
                 data-cy="vendorCRNumber"
                 type="text"
               />
@@ -184,6 +166,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.vendorVATNumber')}
                 id="vendor-vendorVATNumber"
                 name="vendorVATNumber"
+                className="validated-field-container"
                 data-cy="vendorVATNumber"
                 type="text"
               />
@@ -191,6 +174,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.vendorType')}
                 id="vendor-vendorType"
                 name="vendorType"
+                className="validated-field-container"
                 data-cy="vendorType"
                 type="select"
               >
@@ -204,6 +188,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.vendorCategory')}
                 id="vendor-vendorCategory"
                 name="vendorCategory"
+                className="validated-field-container"
                 data-cy="vendorCategory"
                 type="select"
               >
@@ -217,6 +202,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.vendorEstablishmentDate')}
                 id="vendor-vendorEstablishmentDate"
                 name="vendorEstablishmentDate"
+                className="validated-field-container"
                 data-cy="vendorEstablishmentDate"
                 type="text"
               />
@@ -225,6 +211,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.contactFullName')}
                 id="vendor-contactFullName"
                 name="contactFullName"
+                className="validated-field-container"
                 data-cy="contactFullName"
                 type="text"
               />
@@ -232,6 +219,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.contactEmailAddress')}
                 id="vendor-contactEmailAddress"
                 name="contactEmailAddress"
+                className="validated-field-container"
                 data-cy="contactEmailAddress"
                 type="text"
                 validate={{
@@ -246,6 +234,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.contactPrimaryPhoneNo')}
                 id="vendor-contactPrimaryPhoneNo"
                 name="contactPrimaryPhoneNo"
+                className="validated-field-container"
                 data-cy="contactPrimaryPhoneNo"
                 type="text"
               />
@@ -253,6 +242,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.contactPrimaryFaxNo')}
                 id="vendor-contactPrimaryFaxNo"
                 name="contactPrimaryFaxNo"
+                className="validated-field-container"
                 data-cy="contactPrimaryFaxNo"
                 type="text"
               />
@@ -260,6 +250,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.contactSecondaryPhoneNo')}
                 id="vendor-contactSecondaryPhoneNo"
                 name="contactSecondaryPhoneNo"
+                className="validated-field-container"
                 data-cy="contactSecondaryPhoneNo"
                 type="text"
               />
@@ -267,6 +258,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.contactSecondaryFaxNo')}
                 id="vendor-contactSecondaryFaxNo"
                 name="contactSecondaryFaxNo"
+                className="validated-field-container"
                 data-cy="contactSecondaryFaxNo"
                 type="text"
               />
@@ -274,6 +266,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.officeLocation')}
                 id="vendor-officeLocation"
                 name="officeLocation"
+                className="validated-field-container"
                 data-cy="officeLocation"
                 type="text"
               />
@@ -281,6 +274,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.officeFunctionality')}
                 id="vendor-officeFunctionality"
                 name="officeFunctionality"
+                className="validated-field-container"
                 data-cy="officeFunctionality"
                 type="select"
               >
@@ -294,6 +288,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.websiteURL')}
                 id="vendor-websiteURL"
                 name="websiteURL"
+                className="validated-field-container"
                 data-cy="websiteURL"
                 type="text"
               />
@@ -302,6 +297,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.buildingNo')}
                 id="vendor-buildingNo"
                 name="buildingNo"
+                className="validated-field-container"
                 data-cy="buildingNo"
                 type="text"
               />
@@ -309,6 +305,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.vendorStreetName')}
                 id="vendor-vendorStreetName"
                 name="vendorStreetName"
+                className="validated-field-container"
                 data-cy="vendorStreetName"
                 type="text"
               />
@@ -316,6 +313,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.zipCode')}
                 id="vendor-zipCode"
                 name="zipCode"
+                className="validated-field-container"
                 data-cy="zipCode"
                 type="text"
               />
@@ -323,6 +321,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.districtName')}
                 id="vendor-districtName"
                 name="districtName"
+                className="validated-field-container"
                 data-cy="districtName"
                 type="text"
               />
@@ -330,6 +329,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.additionalNo')}
                 id="vendor-additionalNo"
                 name="additionalNo"
+                className="validated-field-container"
                 data-cy="additionalNo"
                 type="text"
               />
@@ -337,6 +337,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.cityName')}
                 id="vendor-cityName"
                 name="cityName"
+                className="validated-field-container"
                 data-cy="cityName"
                 type="text"
               />
@@ -344,6 +345,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.unitNo')}
                 id="vendor-unitNo"
                 name="unitNo"
+                className="validated-field-container"
                 data-cy="unitNo"
                 type="text"
               />
@@ -351,6 +353,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.country')}
                 id="vendor-country"
                 name="country"
+                className="validated-field-container"
                 data-cy="country"
                 type="select"
               >
@@ -360,11 +363,19 @@ export const VendorUpdate = () => {
                   </option>
                 ))}
               </ValidatedField>
-              <ValidatedField label={translate('eCompanyApp.vendor.cash')} id="vendor-cash" name="cash" data-cy="cash" type="text" />
+              <ValidatedField
+                label={translate('eCompanyApp.vendor.cash')}
+                id="vendor-cash"
+                name="cash"
+                className="validated-field-container"
+                data-cy="cash"
+                type="text"
+              />
               <ValidatedField
                 label={translate('eCompanyApp.vendor.credit')}
                 id="vendor-credit"
                 name="credit"
+                className="validated-field-container"
                 data-cy="credit"
                 type="text"
               />
@@ -372,6 +383,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.letterOfCredit')}
                 id="vendor-letterOfCredit"
                 name="letterOfCredit"
+                className="validated-field-container"
                 data-cy="letterOfCredit"
                 type="text"
               />
@@ -379,6 +391,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.others')}
                 id="vendor-others"
                 name="others"
+                className="validated-field-container"
                 data-cy="others"
                 type="text"
               />
@@ -386,6 +399,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.googleMap')}
                 id="vendor-googleMap"
                 name="googleMap"
+                className="validated-field-container"
                 data-cy="googleMap"
                 type="textarea"
               />
@@ -393,6 +407,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.combinedAddress')}
                 id="vendor-combinedAddress"
                 name="combinedAddress"
+                className="validated-field-container"
                 data-cy="combinedAddress"
                 type="textarea"
               />
@@ -401,6 +416,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.cRCertificateUpload')}
                 id="vendor-cRCertificateUpload"
                 name="cRCertificateUpload"
+                className="validated-field-container"
                 data-cy="cRCertificateUpload"
                 openActionLabel={translate('entity.action.open')}
               />
@@ -408,6 +424,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.vATCertificateUpload')}
                 id="vendor-vATCertificateUpload"
                 name="vATCertificateUpload"
+                className="validated-field-container"
                 data-cy="vATCertificateUpload"
                 openActionLabel={translate('entity.action.open')}
               />
@@ -415,6 +432,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.nationalAddressUpload')}
                 id="vendor-nationalAddressUpload"
                 name="nationalAddressUpload"
+                className="validated-field-container"
                 data-cy="nationalAddressUpload"
                 openActionLabel={translate('entity.action.open')}
               />
@@ -422,6 +440,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.companyProfileUpload')}
                 id="vendor-companyProfileUpload"
                 name="companyProfileUpload"
+                className="validated-field-container"
                 data-cy="companyProfileUpload"
                 openActionLabel={translate('entity.action.open')}
               />
@@ -429,6 +448,7 @@ export const VendorUpdate = () => {
                 label={translate('eCompanyApp.vendor.otherUpload')}
                 id="vendor-otherUpload"
                 name="otherUpload"
+                className="validated-field-container"
                 data-cy="otherUpload"
                 openActionLabel={translate('entity.action.open')}
               />
