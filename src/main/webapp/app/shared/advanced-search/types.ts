@@ -20,7 +20,6 @@ interface IFilterRow {
     property?: string;
     operator?: string;
     value?: string;
-    removable?: boolean;
 };
 
 interface IFilterRowProps {

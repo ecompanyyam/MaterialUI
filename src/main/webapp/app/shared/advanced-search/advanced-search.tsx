@@ -74,6 +74,7 @@ export const AdvancedSearch = ({ filters, placeholder, onApply, onReset, onBasic
                             onChange={(event: any) => {
                                 setBasicSearchKey(event.target.value.trim());
                             }}
+                            value={basicSearchKey}
                         />
                         
                     </Paper>
@@ -115,7 +116,7 @@ export const AdvancedSearch = ({ filters, placeholder, onApply, onReset, onBasic
                                 <Button
                                     variant="outlined"
                                     onClick={() => {
-                                        setFilterRows([...filterRows, { removable: true }]);
+                                        setFilterRows([...filterRows ]);
                                     }}
                                 >
                                     <Translate contentKey="eCompanyApp.advancedSearch.addButtonLabel" />
