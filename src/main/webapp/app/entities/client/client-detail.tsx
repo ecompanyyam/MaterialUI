@@ -20,8 +20,8 @@ export const ClientDetail = () => {
 
   const clientEntity = useAppSelector(state => state.client.entity);
   return (
-    <Row>
-      <Col md="8">
+    <Row className="justify-content-center">
+      <Col md="3">
         <h2 data-cy="clientDetailsHeading">
           <Translate contentKey="eCompanyApp.client.detail.title">Client</Translate>
         </h2>
@@ -62,25 +62,25 @@ export const ClientDetail = () => {
               <Translate contentKey="eCompanyApp.client.height">Height</Translate>
             </span>
           </dt>
-          <dd>{clientEntity.height}</dd>
-          <dt>
-            <span id="width">
-              <Translate contentKey="eCompanyApp.client.width">Width</Translate>
-            </span>
-          </dt>
-          <dd>{clientEntity.width}</dd>
-          <dt>
-            <span id="taken">
-              <Translate contentKey="eCompanyApp.client.taken">Taken</Translate>
-            </span>
-          </dt>
-          <dd>{clientEntity.taken ? <TextFormat value={clientEntity.taken} type="date" format={APP_DATE_FORMAT} /> : null}</dd>
-          <dt>
-            <span id="uploaded">
-              <Translate contentKey="eCompanyApp.client.uploaded">Uploaded</Translate>
-            </span>
-          </dt>
-          <dd>{clientEntity.uploaded ? <TextFormat value={clientEntity.uploaded} type="date" format={APP_DATE_FORMAT} /> : null}</dd>
+          {/* <dd>{clientEntity.height}</dd> */}
+          {/* <dt> */}
+          {/*   <span id="width"> */}
+          {/*     <Translate contentKey="eCompanyApp.client.width">Width</Translate> */}
+          {/*   </span> */}
+          {/* </dt> */}
+          {/* <dd>{clientEntity.width}</dd> */}
+          {/* <dt> */}
+          {/*   <span id="taken"> */}
+          {/*     <Translate contentKey="eCompanyApp.client.taken">Taken</Translate> */}
+          {/*   </span> */}
+          {/* </dt> */}
+          {/* <dd>{clientEntity.taken ? <TextFormat value={clientEntity.taken} type="date" format={APP_DATE_FORMAT} /> : null}</dd> */}
+          {/* <dt> */}
+          {/*   <span id="uploaded"> */}
+          {/*     <Translate contentKey="eCompanyApp.client.uploaded">Uploaded</Translate> */}
+          {/*   </span> */}
+          {/* </dt> */}
+          {/* <dd>{clientEntity.uploaded ? <TextFormat value={clientEntity.uploaded} type="date" format={APP_DATE_FORMAT} /> : null}</dd> */}
           <dt>
             <span id="dateOfSubmittal">
               <Translate contentKey="eCompanyApp.client.dateOfSubmittal">Date Of Submittal</Translate>

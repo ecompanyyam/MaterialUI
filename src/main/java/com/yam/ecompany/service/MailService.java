@@ -1,5 +1,6 @@
 package com.yam.ecompany.service;
 
+import com.yam.ecompany.domain.Document;
 import com.yam.ecompany.domain.User;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
@@ -26,7 +27,7 @@ import tech.jhipster.config.JHipsterProperties;
 public class MailService {
 
     private final Logger log = LoggerFactory.getLogger(MailService.class);
-
+    private static final String Document = "document";
     private static final String USER = "user";
 
     private static final String BASE_URL = "baseUrl";
@@ -108,5 +109,22 @@ public class MailService {
     public void sendPasswordResetMail(User user) {
         log.debug("Sending password reset email to '{}'", user.getEmail());
         sendEmailFromTemplate(user, "mail/passwordResetEmail", "email.reset.title");
+    }
+
+    @Async
+    public void sendDocumentExpiredMail(Document document) {
+        log.debug("Sending password reset email to '{}'");
+        sendDocumentExpiredFromTemplate(document, "mail/documentExpiredEmail", "email.expired.title");
+    }
+
+    @Async
+    public void sendDocumentExpiredFromTemplate(Document document, String templateName, String titleKey) {
+        Locale locale = Locale.forLanguageTag("en");
+        Context context = new Context(locale);
+        context.setVariable(Document, document);
+        context.setVariable(BASE_URL, jHipsterProperties.getMail().getBaseUrl());
+        String content = templateEngine.process(templateName, context);
+        String subject = messageSource.getMessage(titleKey, null, locale);
+        sendEmail(jHipsterProperties.getMail().getFrom(), subject, content, false, true);
     }
 }

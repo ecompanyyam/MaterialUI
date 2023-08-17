@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Table } from 'reactstrap';
 import { openFile, byteSize, Translate, TextFormat, getPaginationState, JhiPagination, JhiItemCount } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSort, faSortUp, faSortDown } from '@fortawesome/free-solid-svg-icons';
+import { faSort, faLongArrowUp, faLongArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
 import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
@@ -86,7 +86,7 @@ export const Client = () => {
     if (sortFieldName !== fieldName) {
       return faSort;
     } else {
-      return order === ASC ? faSortUp : faSortDown;
+      return order === ASC ? faLongArrowUp : faLongArrowDown;
     }
   };
 
@@ -121,22 +121,22 @@ export const Client = () => {
                 <th className="hand" onClick={sort('logo')}>
                   <Translate contentKey="eCompanyApp.client.logo">Logo</Translate> <FontAwesomeIcon icon={getSortIconByFieldName('logo')} />
                 </th>
-                <th className="hand" onClick={sort('height')}>
-                  <Translate contentKey="eCompanyApp.client.height">Height</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('height')} />
-                </th>
-                <th className="hand" onClick={sort('width')}>
-                  <Translate contentKey="eCompanyApp.client.width">Width</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('width')} />
-                </th>
-                <th className="hand" onClick={sort('taken')}>
-                  <Translate contentKey="eCompanyApp.client.taken">Taken</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('taken')} />
-                </th>
-                <th className="hand" onClick={sort('uploaded')}>
-                  <Translate contentKey="eCompanyApp.client.uploaded">Uploaded</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('uploaded')} />
-                </th>
+                {/* <th className="hand" onClick={sort('height')}> */}
+                {/*   <Translate contentKey="eCompanyApp.client.height">Height</Translate>{' '} */}
+                {/*   <FontAwesomeIcon icon={getSortIconByFieldName('height')} /> */}
+                {/* </th> */}
+                {/* <th className="hand" onClick={sort('width')}> */}
+                {/*   <Translate contentKey="eCompanyApp.client.width">Width</Translate>{' '} */}
+                {/*   <FontAwesomeIcon icon={getSortIconByFieldName('width')} /> */}
+                {/* </th> */}
+                {/* <th className="hand" onClick={sort('taken')}> */}
+                {/*   <Translate contentKey="eCompanyApp.client.taken">Taken</Translate>{' '} */}
+                {/*   <FontAwesomeIcon icon={getSortIconByFieldName('taken')} /> */}
+                {/* </th> */}
+                {/* <th className="hand" onClick={sort('uploaded')}> */}
+                {/*   <Translate contentKey="eCompanyApp.client.uploaded">Uploaded</Translate>{' '} */}
+                {/*   <FontAwesomeIcon icon={getSortIconByFieldName('uploaded')} /> */}
+                {/* </th> */}
                 <th className="hand" onClick={sort('dateOfSubmittal')}>
                   <Translate contentKey="eCompanyApp.client.dateOfSubmittal">Date Of Submittal</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('dateOfSubmittal')} />
@@ -188,10 +188,10 @@ export const Client = () => {
                       </div>
                     ) : null}
                   </td>
-                  <td>{client.height}</td>
-                  <td>{client.width}</td>
-                  <td>{client.taken ? <TextFormat type="date" value={client.taken} format={APP_DATE_FORMAT} /> : null}</td>
-                  <td>{client.uploaded ? <TextFormat type="date" value={client.uploaded} format={APP_DATE_FORMAT} /> : null}</td>
+                  {/* <td>{client.height}</td> */}
+                  {/* <td>{client.width}</td> */}
+                  {/* <td>{client.taken ? <TextFormat type="date" value={client.taken} format={APP_DATE_FORMAT} /> : null}</td> */}
+                  {/* <td>{client.uploaded ? <TextFormat type="date" value={client.uploaded} format={APP_DATE_FORMAT} /> : null}</td> */}
                   <td>
                     {client.dateOfSubmittal ? <TextFormat type="date" value={client.dateOfSubmittal} format={APP_DATE_FORMAT} /> : null}
                   </td>

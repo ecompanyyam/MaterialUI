@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.language}" lang="en">
+  <head>
+    <title th:text="#{email.expired.title}">Document Expired</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" th:href="@{|${baseUrl}/favicon.ico|}" />
+  </head>
+  <body>
+    <p th:text="#{email.expired.greeting(${document.documentName})}">Dear</p>
+    <p th:text="#{email.expired.text1}">Your Document has been expired, please update:</p>
+    <p>
+      <a th:with="url=(@{|${baseUrl}/account/activate?key=${document.documentName}|})" th:href="${url}" th:text="${url}"
+        >${document.documentName}</a
+      >
+    </p>
+    <p>
+      <span th:text="#{email.expired.text2}">Regards, </span>
+      <br />
+      <em th:text="#{email.signature}">Ecompany.</em>
+    </p>
+  </body>
+</html>

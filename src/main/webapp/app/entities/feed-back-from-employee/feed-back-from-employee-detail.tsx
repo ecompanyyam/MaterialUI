@@ -19,8 +19,8 @@ export const FeedBackFromEmployeeDetail = () => {
 
   const feedBackFromEmployeeEntity = useAppSelector(state => state.feedBackFromEmployee.entity);
   return (
-    <Row>
-      <Col md="8">
+    <Row className="justify-content-center">
+      <Col md="3">
         <h2 data-cy="feedBackFromEmployeeDetailsHeading">
           <Translate contentKey="eCompanyApp.feedBackFromEmployee.detail.title">FeedBackFromEmployee</Translate>
         </h2>

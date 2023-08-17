@@ -19,8 +19,8 @@ export const BankDetailDetail = () => {
 
   const bankDetailEntity = useAppSelector(state => state.bankDetail.entity);
   return (
-    <Row>
-      <Col md="8">
+    <Row className="justify-content-center">
+      <Col md="3">
         <h2 data-cy="bankDetailDetailsHeading">
           <Translate contentKey="eCompanyApp.bankDetail.detail.title">BankDetail</Translate>
         </h2>

@@ -76,7 +76,7 @@ relationship ManyToOne {
 
 
 entity Product {
-    productName String,
+    productName String required
     productRemark TextBlob,
     productOrigin Country,
     productStockStatus StockStatus,
@@ -118,7 +118,7 @@ relationship ManyToOne {
 
 
 entity SalesRepresentative {
-    fullName String
+    fullName String required
     jobTitle String
     email String  pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
     phone String
@@ -174,7 +174,7 @@ relationship ManyToOne {
 }
 
 entity Client {
-    clientName String
+    clientName String required
     logo ImageBlob
     height Integer,
     width Integer,
@@ -182,7 +182,7 @@ entity Client {
     uploaded Instant,
 
     dateOfSubmittal Instant
-    approvalStatus ApprovalStatus
+    approvalStatus ApprovalStatus required
     registrationNumber String
     dateOfRegistration Instant
     dateOfExpiry Instant
@@ -200,13 +200,13 @@ enum ApprovalStatus {
 }
 
 entity Document {
-    documentType	 DocumentType
+    documentType DocumentType required
     organizationName String
     documentName String
     documentNumber String
     issueDate Instant
     expiryDate Instant
-    documentStatus DocumentStatus
+    documentStatus DocumentStatus required
     uploadFile Blob
 }
 
