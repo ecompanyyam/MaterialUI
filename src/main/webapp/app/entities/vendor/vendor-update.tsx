@@ -14,6 +14,8 @@ import { VendorCategory } from 'app/shared/model/enumerations/vendor-category.mo
 import { OfficeFunctionality } from 'app/shared/model/enumerations/office-functionality.model';
 import { Country } from 'app/shared/model/enumerations/country.model';
 import { getEntity, updateEntity, createEntity, reset } from './vendor.reducer';
+import GoogleMapComponent from 'app/shared/GoogleMapComponent';
+import vendor from 'app/entities/vendor/vendor';
 
 export const VendorUpdate = () => {
   const dispatch = useAppDispatch();
@@ -31,7 +33,14 @@ export const VendorUpdate = () => {
   const vendorCategoryValues = Object.keys(VendorCategory);
   const officeFunctionalityValues = Object.keys(OfficeFunctionality);
   const countryValues = Object.keys(Country);
-
+  const parseGoogleMap = (googleMap: string) => {
+    const [latitude, longitude] = googleMap.split(',');
+    return { latitude, longitude };
+  };
+  const [selectedCoordinates, setSelectedCoordinates] = useState<{
+    latitude: number;
+    longitude: number;
+  } | null>(null);
   const handleClose = () => {
     navigate('/vendor' + location.search);
   };
@@ -49,14 +58,29 @@ export const VendorUpdate = () => {
       handleClose();
     }
   }, [updateSuccess]);
-
+  useEffect(() => {
+    if (updateSuccess) {
+      // Save the modified Google Map location to the vendorEntity before navigating
+      const updatedEntity = { ...vendorEntity, googleMap: vendorEntity.googleMap };
+      if (isNew) {
+        dispatch(createEntity(updatedEntity));
+      } else {
+        dispatch(updateEntity(updatedEntity));
+      }
+      handleClose();
+    }
+  }, [updateSuccess]);
   const saveEntity = values => {
     values.taken = convertDateTimeToServer(values.taken);
     values.uploaded = convertDateTimeToServer(values.uploaded);
-
+    let googleMap = ''; // Initialize an empty location string
+    if (values.latitude && values.longitude) {
+      googleMap = `${values.latitude},${values.longitude}`; // Combine latitude and longitude
+    }
     const entity = {
       ...vendorEntity,
       ...values,
+      googleMap: googleMap, // Store the combined location
     };
 
     if (isNew) {
@@ -66,6 +90,7 @@ export const VendorUpdate = () => {
     }
   };
 
+  const [googleMapLocation, setGoogleMapLocation] = useState(vendorEntity.googleMap || '');
   const defaultValues = () =>
     isNew
       ? {
@@ -80,6 +105,7 @@ export const VendorUpdate = () => {
           ...vendorEntity,
           taken: convertDateTimeFromServer(vendorEntity.taken),
           uploaded: convertDateTimeFromServer(vendorEntity.uploaded),
+          ...parseGoogleMap(vendorEntity.googleMap), // Parse the googleMap field into latitude and longitude
         };
   return (
     <div>
@@ -400,8 +426,15 @@ export const VendorUpdate = () => {
                 id="vendor-googleMap"
                 name="googleMap"
                 className="validated-field-container"
+                value={googleMapLocation}
+                onChange={e => setGoogleMapLocation(e.target.value)}
                 data-cy="googleMap"
                 type="textarea"
+              />
+              <GoogleMapComponent
+                location={vendorEntity.googleMap || ''}
+                selectedCoordinates={selectedCoordinates}
+                setSelectedCoordinates={setSelectedCoordinates}
               />
               <ValidatedField
                 label={translate('eCompanyApp.vendor.combinedAddress')}
