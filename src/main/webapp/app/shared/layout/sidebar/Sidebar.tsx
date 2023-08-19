@@ -9,8 +9,10 @@ import { AccountMenu, AdminMenu, EntitiesAddMenu, EntitiesMenu, LocaleMenu, Uplo
 import { Storage, Translate } from 'react-jhipster';
 import { setLocale } from 'app/shared/reducers/locale';
 import { isRTL } from 'app/config/translation';
-import { useAppDispatch } from 'app/config/store';
-
+import { useAppDispatch, useAppSelector } from 'app/config/store';
+import CloseIcon from '@mui/icons-material/Close';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
 interface SidebarProps {
   open: boolean;
   onClose: () => void;
@@ -47,14 +49,37 @@ const Sidebar: React.FC<SidebarProps> = props => {
     dispatch(setLocale(langKey));
     document.querySelector('html').setAttribute('dir', isRTL(langKey) ? 'rtl' : 'ltr');
   };
+  const account = useAppSelector(state => state.authentication.account);
 
   return (
     <Drawer anchor="left" open={props.open} onClose={props.onClose}>
-      <Nav id="header-tabs" className="ms-auto" navbar>
-        <Dashboard />
-        {props.isAuthenticated && <EntitiesAddMenu />}
-        {props.isAuthenticated && <EntitiesMenu />}
-        {props.isAuthenticated && <UploadMenu />}
+      <Nav className={`sidebar ${props.open ? 'open' : ''}`}>
+        <div className="sidebar-content">
+          <Translate contentKey="global.menu.message" interpolate={{ username: account.login }}>
+            Hi {account.login}.
+          </Translate>
+          <div className="close-button" onClick={props.onClose}>
+            <CloseIcon />
+          </div>
+          <div className="menu-container">
+            {props.isAuthenticated && (
+              <List>
+                <ListItem>
+                  <Dashboard />
+                </ListItem>
+                <ListItem>
+                  <EntitiesAddMenu />
+                </ListItem>
+                <ListItem>
+                  <EntitiesMenu />
+                </ListItem>
+                <ListItem>
+                  <UploadMenu />
+                </ListItem>
+              </List>
+            )}
+          </div>
+        </div>
       </Nav>
     </Drawer>
   );

@@ -521,5 +521,103 @@ input[type='file']::file-selector-button {
 
 /* Apply the common style to ValidatedBlobField component */
 .validated-blob-field-container {
-  /* Similar styling as above for blob fields */
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Adjust as needed */
+}
+
+/* VendorUpdate.css */
+
+/* Flex container for tabs */
+.nav-tabs-container {
+  display: flex;
+  justify-content: space-between; /* Distribute tabs evenly */
+  border-bottom: 1px solid #ddd; /* Optional: Add a border at the bottom */
+}
+
+/* Individual tab styling */
+.nav-tabs-container .nav-item {
+  flex: 1; /* Distribute available space equally */
+  text-align: center; /* Center the tab contents */
+  border: none; /* Remove the default border */
+}
+
+/* Active tab styling */
+.nav-tabs-container .nav-item.active {
+  font-weight: bold; /* Highlight the active tab */
+  border-bottom: 2px solid #007bff; /* Add a border at the bottom of the active tab */
+}
+.next-button {
+  margin-top: 1rem; /* Add spacing between the tab content and button */
+}
+// Sidebar.scss
+
+.sidebar {
+  width: 240px;
+  transition: transform 0.3s ease;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    width: 100%;
+    transform: translateX(-100%);
+  }
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .close-button {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 8px;
+
+      svg {
+        cursor: pointer;
+      }
+    }
+
+    .menu-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+
+      /* Change the text color of menu items */
+      color: black !important; /* Change to desired color */
+      .submenu {
+        margin-left: 20px; // Indent the submenu
+      }
+      .MuiListItemText-root {
+        color: black; // Change text color
+      }
+      .MuiListItem-button:hover {
+        background-color: #495057;
+        .MuiListItemText-root {
+          color: white; // Change text color on hover
+        }
+      }
+    }
+
+    /* Style for sidebar items */
+    .sidebar-item {
+      padding: 10px;
+      color: black !important; /* Change to desired color */
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #495057;
+        color: white; /* Change text color on hover */
+      }
+    }
+  }
+}
+
+.nav-link {
+  color: black !important; /* Change to desired color */
 }
