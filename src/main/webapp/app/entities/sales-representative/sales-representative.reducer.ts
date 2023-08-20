@@ -3,7 +3,6 @@ import { createAsyncThunk, isFulfilled, isPending, isRejected } from '@reduxjs/t
 import { cleanEntity } from 'app/shared/util/entity-utils';
 import { IQueryParams, createEntitySlice, EntityState, serializeAxiosError } from 'app/shared/reducers/reducer.utils';
 import { ISalesRepresentative, defaultValue } from 'app/shared/model/sales-representative.model';
-import { IFeedBackFromEmployee } from 'app/shared/model/feed-back-from-employee.model';
 
 const initialState: EntityState<ISalesRepresentative> = {
   loading: false,
@@ -18,10 +17,6 @@ const initialState: EntityState<ISalesRepresentative> = {
 const apiUrl = 'api/sales-representatives';
 
 // Actions
-export const searchEntities = createAsyncThunk('salesRepresentative/fetch_entity', async ({ query, page, size, sort }: IQueryParams) => {
-  const requestUrl = `${apiUrl}?${query}${sort ? `&page=${page}&size=${size}&sort=${sort}` : ''}`;
-  return axios.get<ISalesRepresentative[]>(requestUrl);
-});
 
 export const getEntities = createAsyncThunk('salesRepresentative/fetch_entity_list', async ({ page, size, sort }: IQueryParams) => {
   const requestUrl = `${apiUrl}?${sort ? `page=${page}&size=${size}&sort=${sort}&` : ''}cacheBuster=${new Date().getTime()}`;
@@ -94,7 +89,7 @@ export const SalesRepresentativeSlice = createEntitySlice({
         state.updateSuccess = true;
         state.entity = {};
       })
-      .addMatcher(isFulfilled(getEntities, searchEntities), (state, action) => {
+      .addMatcher(isFulfilled(getEntities), (state, action) => {
         const { data, headers } = action.payload;
 
         return {
@@ -110,12 +105,12 @@ export const SalesRepresentativeSlice = createEntitySlice({
         state.updateSuccess = true;
         state.entity = action.payload.data;
       })
-      .addMatcher(isPending(getEntities, getEntity, searchEntities), state => {
+      .addMatcher(isPending(getEntities, getEntity), state => {
         state.errorMessage = null;
         state.updateSuccess = false;
         state.loading = true;
       })
-      .addMatcher(isPending(createEntity, updateEntity, partialUpdateEntity, deleteEntity, searchEntities), state => {
+      .addMatcher(isPending(createEntity, updateEntity, partialUpdateEntity, deleteEntity), state => {
         state.errorMessage = null;
         state.updateSuccess = false;
         state.updating = true;
