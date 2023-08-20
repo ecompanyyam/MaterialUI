@@ -145,7 +145,7 @@ export const DocumentUpdate = () => {
                 name="issueDate"
                 className="validated-field-container"
                 data-cy="issueDate"
-                type="datetime-local"
+                type="date"
                 placeholder="YYYY-MM-DD HH:mm"
               />
               <ValidatedField
@@ -154,7 +154,7 @@ export const DocumentUpdate = () => {
                 name="expiryDate"
                 className="validated-field-container"
                 data-cy="expiryDate"
-                type="datetime-local"
+                type="date"
                 placeholder="YYYY-MM-DD HH:mm"
               />
               <ValidatedField
