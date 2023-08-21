@@ -121,7 +121,7 @@ export const Vendor = () => {
   };
 
   return (
-    <div>
+    <div className="black-text">
       <h2 id="vendor-heading" data-cy="VendorHeading">
         <Translate contentKey="eCompanyApp.vendor.home.title">Vendors</Translate>
         <div className="d-flex justify-content-end">

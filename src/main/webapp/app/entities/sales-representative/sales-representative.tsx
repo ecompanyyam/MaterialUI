@@ -90,7 +90,7 @@ export const SalesRepresentative = () => {
   };
 
   return (
-    <div>
+    <div className="black-text">
       <h2 id="sales-representative-heading" data-cy="SalesRepresentativeHeading">
         <Translate contentKey="eCompanyApp.salesRepresentative.home.title">Sales Representatives</Translate>
         <div className="d-flex justify-content-end">

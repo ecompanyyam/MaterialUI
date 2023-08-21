@@ -4,7 +4,7 @@ import Drawer from '@mui/material/Drawer';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
 import { Nav } from 'reactstrap';
-import { Dashboard, Home } from 'app/shared/layout/header/header-components';
+import { Brand, BrandIcon, Dashboard, Home } from 'app/shared/layout/header/header-components';
 import { AccountMenu, AdminMenu, EntitiesAddMenu, EntitiesMenu, LocaleMenu, UploadMenu } from 'app/shared/layout/menus';
 import { Storage, Translate } from 'react-jhipster';
 import { setLocale } from 'app/shared/reducers/locale';
@@ -13,6 +13,8 @@ import { useAppDispatch, useAppSelector } from 'app/config/store';
 import CloseIcon from '@mui/icons-material/Close';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import EntitiesMenuItems from 'app/entities/menu';
 interface SidebarProps {
   open: boolean;
   onClose: () => void;
@@ -54,30 +56,24 @@ const Sidebar: React.FC<SidebarProps> = props => {
   return (
     <Drawer anchor="left" open={props.open} onClose={props.onClose}>
       <Nav className={`sidebar ${props.open ? 'open' : ''}`}>
+        <div className="close-button" onClick={props.onClose}>
+          <CloseIcon />
+        </div>
+        <Brand />
         <div className="sidebar-content">
-          <Translate contentKey="global.menu.message" interpolate={{ username: account.login }}>
-            Hi {account.login}.
-          </Translate>
-          <div className="close-button" onClick={props.onClose}>
-            <CloseIcon />
-          </div>
           <div className="menu-container">
             {props.isAuthenticated && (
               <List>
-                <ListItem>
-                  <Dashboard />
-                </ListItem>
-                <ListItem>
-                  <EntitiesAddMenu />
-                </ListItem>
-                <ListItem>
-                  <EntitiesMenu />
-                </ListItem>
-                <ListItem>
-                  <UploadMenu />
-                </ListItem>
+                <Dashboard />
+                <EntitiesMenu />
               </List>
             )}
+            <div className="user-bg">
+              <FontAwesomeIcon icon="user" />
+              <Translate contentKey="global.menu.message" interpolate={{ username: account.login }}>
+                Hi {account.login}.
+              </Translate>
+            </div>
           </div>
         </div>
       </Nav>

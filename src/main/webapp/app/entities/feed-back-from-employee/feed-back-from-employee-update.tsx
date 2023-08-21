@@ -80,8 +80,8 @@ export const FeedBackFromEmployeeUpdate = () => {
 
   return (
     <div>
-      <Row className="justify-content-center">
-        <Col md="4">
+      <Row className="justify-content-center blue-bg mb-2">
+        <Col md="6">
           <h2 id="eCompanyApp.feedBackFromEmployee.home.createOrEditLabel" data-cy="FeedBackFromEmployeeCreateUpdateHeading">
             <Translate contentKey="eCompanyApp.feedBackFromEmployee.home.createOrEditLabel">
               Create or edit a FeedBackFromEmployee

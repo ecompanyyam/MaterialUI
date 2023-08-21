@@ -71,8 +71,8 @@ export const SalesRepresentativeUpdate = () => {
 
   return (
     <div>
-      <Row className="justify-content-center">
-        <Col md="4">
+      <Row className="justify-content-center blue-bg mb-2">
+        <Col md="6">
           <h2 id="eCompanyApp.salesRepresentative.home.createOrEditLabel" data-cy="SalesRepresentativeCreateUpdateHeading">
             <Translate contentKey="eCompanyApp.salesRepresentative.home.createOrEditLabel">Create or edit a SalesRepresentative</Translate>
           </h2>

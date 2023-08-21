@@ -429,10 +429,13 @@ body {
 }
 
 .view-routes h2 {
-  color: #000 !important;
+  color: #fff;
   font-size: 22px !important;
+  margin: 0;
 }
-
+.black-text h2 {
+  color: #222;
+}
 .create_btn {
   width: auto;
   border: 1px solid rgb(217, 219, 224);
@@ -564,6 +567,8 @@ input[type='file']::file-selector-button {
 
   &.open {
     transform: translateX(0);
+    height: 100%;
+    overflow: hidden;
   }
 
   .sidebar-content {
@@ -620,4 +625,153 @@ input[type='file']::file-selector-button {
 
 .nav-link {
   color: black !important; /* Change to desired color */
+}
+.download-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  color: #000; /* Adjust the color as needed */
+  background-color: #fff; /* Adjust the background color as needed */
+  border: none;
+  transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
+  outline: none;
+}
+/* Add custom styles for the download links */
+.csv-link,
+.excel-link,
+.pdf-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.csv-link:hover,
+.excel-link:hover,
+.pdf-link:hover {
+  background-color: #0056b3;
+}
+
+.download-button:hover {
+  color: #fff; /* Adjust the color as needed */
+  background-color: #007bff; /* Adjust the background color as needed */
+  text-decoration: none;
+}
+
+.navbar-style {
+  background-color: #375a7f;
+  padding: 4px; /* Adjust padding as needed */
+  color: white; /* Adjust text color as needed */
+  font-size: 20px; /* Adjust font size as needed */
+  transform: translateY(5px);
+  box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+}
+
+.entities-menu {
+  padding: 10px;
+  color: black;
+  font-size: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.entity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.entity-list li {
+  margin: 10px 0;
+  padding: 5px;
+  border-bottom: 1px solid white; /* Add a separator line */
+}
+
+.entity-list li:last-child {
+  border-bottom: none; /* Remove separator for the last item */
+}
+
+.entity-list li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.entity-list li a:hover {
+  color: lightgray;
+}
+
+/* This styles the container for the flag and label */
+.country-option-container {
+  display: flex;
+  align-items: center;
+}
+
+/* This styles the flag */
+.country-option-flag {
+  margin-right: 0.5rem;
+}
+
+/* This styles the label */
+.country-option-label {
+  /* Add any label styles you need */
+}
+.blue-bg {
+  background: #183671;
+  border-radius: 10px;
+  padding: 5px 0;
+}
+.app-container .view-container .card {
+  padding: 0 10px;
+}
+.details-list dt {
+  width: 28%;
+}
+.close-button {
+  background: #ccc;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  padding: 6px;
+  border-radius: 50px;
+}
+.user-bg {
+  background: #ccc;
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+.MuiStack-root button {
+  font-size: 12px !important;
+  color: #000 !important;
+  background-color: #f8f9fa !important;
+  border-color: #f8f9fa !important;
+  padding: 5px 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+.MuiStack-root button:hover {
+  background: #375a7f !important;
+  color: #fff !important;
+}
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link.active:focus {
+  color: #ffffff !important;
+  border: none;
+  box-shadow: inset 0 -2px 0 #375a7f;
+  background: #375a7f;
+}
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus:hover {
+  box-shadow: inset 0 -2px 0 #375a7f;
 }

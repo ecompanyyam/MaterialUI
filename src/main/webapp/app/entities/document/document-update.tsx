@@ -78,8 +78,8 @@ export const DocumentUpdate = () => {
 
   return (
     <div>
-      <Row className="justify-content-center">
-        <Col md="3">
+      <Row className="justify-content-center blue-bg mb-2">
+        <Col md="6">
           <h2 id="eCompanyApp.document.home.createOrEditLabel" data-cy="DocumentCreateUpdateHeading">
             <Translate contentKey="eCompanyApp.document.home.createOrEditLabel">Create or edit a Document</Translate>
           </h2>
@@ -145,7 +145,7 @@ export const DocumentUpdate = () => {
                 name="issueDate"
                 className="validated-field-container"
                 data-cy="issueDate"
-                type="date"
+                type="datetime-local"
                 placeholder="YYYY-MM-DD HH:mm"
               />
               <ValidatedField
@@ -154,7 +154,7 @@ export const DocumentUpdate = () => {
                 name="expiryDate"
                 className="validated-field-container"
                 data-cy="expiryDate"
-                type="date"
+                type="datetime-local"
                 placeholder="YYYY-MM-DD HH:mm"
               />
               <ValidatedField

@@ -123,7 +123,7 @@ export const Product = () => {
   };
 
   return (
-    <div>
+    <div className="black-text">
       <h2 id="product-heading" data-cy="ProductHeading">
         <Translate contentKey="eCompanyApp.product.home.title">Products</Translate>
         <div className="d-flex justify-content-end">
@@ -141,29 +141,33 @@ export const Product = () => {
       <Row>
         <Col sm="12">
           <AdvancedSearch
-              placeholder='Search by product name'
-              filters={ProductFilterDefinitions}
-              onApply={(filterRows: IFilterRow[]) => {
-                const query = filterRows.reduce((acc: string[], curr: IFilterRow) => {
+            placeholder="Search by product name"
+            filters={ProductFilterDefinitions}
+            onApply={(filterRows: IFilterRow[]) => {
+              const query = filterRows
+                .reduce((acc: string[], curr: IFilterRow) => {
                   const searchString = `${curr.property}.${curr.operator}=${curr.value}`;
 
                   acc.push(searchString);
 
                   return acc;
-                }, []).join('&');
+                }, [])
+                .join('&');
 
-                startSearching(query);
-              }}
-              onReset={() => { clear(); }}
-              onBasicTextSearch={(searchKey: string) => {
-                if (searchKey === "") {
-                  clear();
-                  return;
-                }
-                const query = `productName.contains=${searchKey}`;
-                startSearching(query);
-              }}
-            />
+              startSearching(query);
+            }}
+            onReset={() => {
+              clear();
+            }}
+            onBasicTextSearch={(searchKey: string) => {
+              if (searchKey === '') {
+                clear();
+                return;
+              }
+              const query = `productName.contains=${searchKey}`;
+              startSearching(query);
+            }}
+          />
         </Col>
       </Row>
       <div className="table-responsive">

@@ -87,8 +87,8 @@ export const ProductUpdate = () => {
         };
   return (
     <div>
-      <Row className="justify-content-center">
-        <Col md="3">
+      <Row className="justify-content-center blue-bg mb-2">
+        <Col md="6">
           <h2 id="eCompanyApp.product.home.createOrEditLabel" data-cy="ProductCreateUpdateHeading">
             <Translate contentKey="eCompanyApp.product.home.createOrEditLabel">Create or edit a Product</Translate>
           </h2>
@@ -194,7 +194,7 @@ export const ProductUpdate = () => {
                 label={translate('eCompanyApp.product.productImage')}
                 id="product-productImage"
                 name="productImage"
-                className="validated-field-container"
+                className="validated-blob-field-container"
                 required
                 data-cy="productImage"
                 isImage
@@ -204,6 +204,7 @@ export const ProductUpdate = () => {
                 label={translate('eCompanyApp.product.productAttachments')}
                 id="product-productAttachments"
                 name="productAttachments"
+                className="validated-blob-field-container"
                 data-cy="productAttachments"
                 openActionLabel={translate('entity.action.open')}
               />

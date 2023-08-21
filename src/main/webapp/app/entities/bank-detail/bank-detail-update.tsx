@@ -71,8 +71,8 @@ export const BankDetailUpdate = () => {
 
   return (
     <div>
-      <Row className="justify-content-center">
-        <Col md="3">
+      <Row className="justify-content-center blue-bg mb-2">
+        <Col md="6">
           <h2 id="eCompanyApp.bankDetail.home.createOrEditLabel" data-cy="BankDetailCreateUpdateHeading">
             <Translate contentKey="eCompanyApp.bankDetail.home.createOrEditLabel">Create or edit a BankDetail</Translate>
           </h2>

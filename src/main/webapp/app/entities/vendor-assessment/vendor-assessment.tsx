@@ -122,7 +122,7 @@ export const VendorAssessment = () => {
   };
 
   return (
-    <div>
+    <div className="black-text">
       <h2 id="vendor-assessment-heading" data-cy="VendorAssessmentHeading">
         <Translate contentKey="eCompanyApp.vendorAssessment.home.title">Vendor Assessments</Translate>
         <div className="d-flex justify-content-end">

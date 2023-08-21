@@ -91,7 +91,7 @@ export const Client = () => {
   };
 
   return (
-    <div>
+    <div className="black-text">
       <h2 id="client-heading" data-cy="ClientHeading">
         <Translate contentKey="eCompanyApp.client.home.title">Clients</Translate>
         <div className="d-flex justify-content-end">

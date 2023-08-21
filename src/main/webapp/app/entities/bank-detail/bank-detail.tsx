@@ -120,7 +120,7 @@ export const BankDetail = () => {
   };
 
   return (
-    <div>
+    <div className="black-text">
       <h2 id="bank-detail-heading" data-cy="BankDetailHeading">
         <Translate contentKey="eCompanyApp.bankDetail.home.title">Bank Details</Translate>
         <div className="d-flex justify-content-end">

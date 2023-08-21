@@ -120,8 +120,8 @@ export const VendorUpdate = () => {
         };
   return (
     <div>
-      <Row className="justify-content-center">
-        <Col md="3">
+      <Row className="justify-content-center blue-bg mb-2">
+        <Col md="6">
           <h2 id="eCompanyApp.vendor.home.createOrEditLabel" data-cy="VendorCreateUpdateHeading">
             <Translate contentKey="eCompanyApp.vendor.home.createOrEditLabel">Create or edit a Vendor</Translate>
           </h2>
@@ -417,7 +417,6 @@ const FormFieldsTab3: React.FC<{
   saveEntity: (values: any) => void; // Add saveEntity prop type
 }> = ({ tabData, onTabDataChange, defaultValues, saveEntity }) => {
   const vendorEntity = useAppSelector(state => state.vendor.entity);
-  const [googleMapLocation, setGoogleMapLocation] = useState(vendorEntity.googleMap || '');
   const countryValues = Object.keys(Country);
   const [selectedCoordinates, setSelectedCoordinates] = useState<{
     latitude: number;
@@ -532,16 +531,14 @@ const FormFieldsTab3: React.FC<{
         id="vendor-googleMap"
         name="googleMap"
         className="validated-field-container"
-        value={googleMapLocation}
-        onChange={e => setGoogleMapLocation(e.target.value)}
         data-cy="googleMap"
         type="textarea"
       />
-      <GoogleMapComponent
-        location={vendorEntity.googleMap || ''}
-        selectedCoordinates={selectedCoordinates}
-        setSelectedCoordinates={setSelectedCoordinates}
-      />
+      {/*<GoogleMapComponent*/}
+      {/*  location={vendorEntity.googleMap || ''}*/}
+      {/*  selectedCoordinates={selectedCoordinates}*/}
+      {/*  setSelectedCoordinates={setSelectedCoordinates}*/}
+      {/*/>*/}
       <ValidatedField
         label={translate('eCompanyApp.vendor.combinedAddress')}
         id="vendor-combinedAddress"

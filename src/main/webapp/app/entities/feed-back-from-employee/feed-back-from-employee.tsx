@@ -120,7 +120,7 @@ export const FeedBackFromEmployee = () => {
   };
 
   return (
-    <div>
+    <div className="black-text">
       <h2 id="feed-back-from-employee-heading" data-cy="FeedBackFromEmployeeHeading">
         <Translate contentKey="eCompanyApp.feedBackFromEmployee.home.title">Feed Back From Employees</Translate>
         <div className="d-flex justify-content-end">

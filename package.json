@@ -87,6 +87,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@floating-ui/dom": "^1.5.1",
     "@fortawesome/fontawesome-svg-core": "6.4.0",
     "@fortawesome/free-solid-svg-icons": "6.4.0",
     "@fortawesome/react-fontawesome": "0.2.0",
@@ -96,6 +97,7 @@
     "@mui/x-date-pickers": "^6.11.0",
     "@react-pdf/renderer": "^3.1.12",
     "@reduxjs/toolkit": "1.9.5",
+    "@types/jspdf": "^2.0.0",
     "axios": "1.4.0",
     "bootstrap": "5.3.0",
     "bootswatch": "5.3.0",
@@ -114,13 +116,17 @@
     "react": "18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-circular-progressbar": "^2.1.0",
+    "react-csv": "^2.2.2",
     "react-dom": "18.2.0",
     "react-hook-form": "7.45.1",
     "react-jhipster": "0.25.2",
     "react-loadable": "5.5.0",
+    "react-pdf": "^7.3.3",
     "react-redux": "8.1.1",
     "react-redux-loading-bar": "5.0.4",
     "react-router-dom": "6.14.1",
+    "react-select": "^5.7.4",
+    "react-table": "^7.8.0",
     "react-to-print": "^2.14.13",
     "react-toastify": "9.1.3",
     "react-transition-group": "4.4.5",
@@ -128,7 +134,8 @@
     "redux": "4.2.1",
     "redux-thunk": "2.4.2",
     "tslib": "2.6.0",
-    "uuid": "9.0.0"
+    "uuid": "9.0.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@testing-library/react": "14.0.0",
