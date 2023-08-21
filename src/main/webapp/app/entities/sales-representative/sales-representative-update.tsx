@@ -89,6 +89,7 @@ export const SalesRepresentativeUpdate = () => {
                   name="id"
                   required
                   readOnly
+                  className="validated-field-container"
                   id="sales-representative-id"
                   label={translate('global.field.id')}
                   validate={{ required: true }}

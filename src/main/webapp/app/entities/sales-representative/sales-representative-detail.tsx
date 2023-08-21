@@ -40,6 +40,10 @@ export const SalesRepresentativeDetail = () => {
               </dt>
               <dd>{salesRepresentativeEntity.id}</dd>
               <dt>
+                <Translate contentKey="eCompanyApp.salesRepresentative.vendorsName">Vendors Name</Translate>
+              </dt>
+              <dd>{salesRepresentativeEntity.vendorsName ? salesRepresentativeEntity.vendorsName.vendorNameEnglish : ''}</dd>
+              <dt>
                 <span id="fullName">
                   <Translate contentKey="eCompanyApp.salesRepresentative.fullName">Full Name</Translate>
                 </span>
@@ -81,10 +85,6 @@ export const SalesRepresentativeDetail = () => {
                 </span>
               </dt>
               <dd>{salesRepresentativeEntity.otherDetails}</dd>
-              <dt>
-                <Translate contentKey="eCompanyApp.salesRepresentative.vendorsName">Vendors Name</Translate>
-              </dt>
-              <dd>{salesRepresentativeEntity.vendorsName ? salesRepresentativeEntity.vendorsName.vendorNameEnglish : ''}</dd>
             </dl>
             <Button tag={Link} to="/sales-representative" replace color="info" data-cy="entityDetailsBackButton">
               <FontAwesomeIcon icon="arrow-left" />{' '}

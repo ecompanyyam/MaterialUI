@@ -54,9 +54,6 @@ export const ProductUpdate = () => {
   }, [updateSuccess]);
 
   const saveEntity = values => {
-    values.taken = convertDateTimeToServer(values.taken);
-    values.uploaded = convertDateTimeToServer(values.uploaded);
-
     const entity = {
       ...productEntity,
       ...values,
@@ -72,17 +69,12 @@ export const ProductUpdate = () => {
 
   const defaultValues = () =>
     isNew
-      ? {
-          taken: displayDefaultDateTime(),
-          uploaded: displayDefaultDateTime(),
-        }
+      ? {}
       : {
           productOrigin: 'INDIA',
           productStockStatus: 'CUSTOM_ORDER',
           productAvgDeliveryTime: 'WEEKLY',
           ...productEntity,
-          taken: convertDateTimeFromServer(productEntity.taken),
-          uploaded: convertDateTimeFromServer(productEntity.uploaded),
           vendorsName: productEntity?.vendorsName?.id,
         };
   return (
@@ -105,6 +97,7 @@ export const ProductUpdate = () => {
                   name="id"
                   required
                   readOnly
+                  className="validated-field-container"
                   id="product-id"
                   label={translate('global.field.id')}
                   validate={{ required: true }}
@@ -195,7 +188,6 @@ export const ProductUpdate = () => {
                 id="product-productImage"
                 name="productImage"
                 className="validated-blob-field-container"
-                required
                 data-cy="productImage"
                 isImage
                 accept="image/*"

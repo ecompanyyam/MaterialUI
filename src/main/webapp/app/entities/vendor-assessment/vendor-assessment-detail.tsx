@@ -40,6 +40,10 @@ export const VendorAssessmentDetail = () => {
               </dt>
               <dd>{vendorAssessmentEntity.id}</dd>
               <dt>
+                <Translate contentKey="eCompanyApp.vendorAssessment.vendorsName">Vendors Name</Translate>
+              </dt>
+              <dd>{vendorAssessmentEntity.vendorsName ? vendorAssessmentEntity.vendorsName.vendorNameEnglish : ''}</dd>
+              <dt>
                 <span id="assessmentDate">
                   <Translate contentKey="eCompanyApp.vendorAssessment.assessmentDate">Assessment Date</Translate>
                 </span>
@@ -133,10 +137,6 @@ export const VendorAssessmentDetail = () => {
                 </span>
               </dt>
               <dd>{vendorAssessmentEntity.dependabilityComment}</dd>
-              <dt>
-                <Translate contentKey="eCompanyApp.vendorAssessment.vendorsName">Vendors Name</Translate>
-              </dt>
-              <dd>{vendorAssessmentEntity.vendorsName ? vendorAssessmentEntity.vendorsName.vendorNameEnglish : ''}</dd>
             </dl>
             <Button tag={Link} to="/vendor-assessment" replace color="info" data-cy="entityDetailsBackButton">
               <FontAwesomeIcon icon="arrow-left" />{' '}

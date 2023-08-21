@@ -169,6 +169,9 @@ export const VendorAssessment = () => {
                   <Translate contentKey="eCompanyApp.vendorAssessment.id">ID</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
+                <th>
+                  <Translate contentKey="eCompanyApp.vendorAssessment.vendorsName">Vendors Name</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
                 <th className="hand" onClick={sort('assessmentDate')}>
                   <Translate contentKey="eCompanyApp.vendorAssessment.assessmentDate">Assessment Date</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('assessmentDate')} />
@@ -231,9 +234,6 @@ export const VendorAssessment = () => {
                   <Translate contentKey="eCompanyApp.vendorAssessment.dependabilityComment">Dependability Comment</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('dependabilityComment')} />
                 </th>
-                <th>
-                  <Translate contentKey="eCompanyApp.vendorAssessment.vendorsName">Vendors Name</Translate> <FontAwesomeIcon icon="sort" />
-                </th>
                 <th />
               </tr>
             </thead>
@@ -244,6 +244,13 @@ export const VendorAssessment = () => {
                     <Button tag={Link} to={`/vendor-assessment/${vendorAssessment.id}`} color="link" size="sm">
                       {vendorAssessment.id}
                     </Button>
+                  </td>
+                  <td>
+                    {vendorAssessment.vendorsName ? (
+                      <Link to={`/vendor/${vendorAssessment.vendorsName.id}`}>{vendorAssessment.vendorsName.vendorNameEnglish}</Link>
+                    ) : (
+                      ''
+                    )}
                   </td>
                   <td>
                     {vendorAssessment.assessmentDate ? (
@@ -293,13 +300,7 @@ export const VendorAssessment = () => {
                     {vendorAssessment.dependabilityComment.substring(0, 20)}
                     {vendorAssessment.dependabilityComment.length >= 20 && '...'}
                   </td>
-                  <td>
-                    {vendorAssessment.vendorsName ? (
-                      <Link to={`/vendor/${vendorAssessment.vendorsName.id}`}>{vendorAssessment.vendorsName.vendorNameEnglish}</Link>
-                    ) : (
-                      ''
-                    )}
-                  </td>
+
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button

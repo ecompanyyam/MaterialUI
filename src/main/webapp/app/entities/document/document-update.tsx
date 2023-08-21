@@ -97,6 +97,7 @@ export const DocumentUpdate = () => {
                   required
                   readOnly
                   id="document-id"
+                  className="validated-field-container"
                   label={translate('global.field.id')}
                   validate={{ required: true }}
                 />

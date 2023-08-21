@@ -40,6 +40,10 @@ export const ProductDetail = () => {
               </dt>
               <dd>{productEntity.id}</dd>
               <dt>
+                <Translate contentKey="eCompanyApp.product.vendorsName">Vendors Name</Translate>
+              </dt>
+              <dd>{productEntity.vendorsName ? productEntity.vendorsName.vendorNameEnglish : ''}</dd>
+              <dt>
                 <span id="productName">
                   <Translate contentKey="eCompanyApp.product.productName">Product Name</Translate>
                 </span>
@@ -69,6 +73,7 @@ export const ProductDetail = () => {
                 </span>
               </dt>
               <dd>{productEntity.productAvgDeliveryTime}</dd>
+
               <dt>
                 <span id="productManufacturer">
                   <Translate contentKey="eCompanyApp.product.productManufacturer">Product Manufacturer</Translate>
@@ -91,17 +96,10 @@ export const ProductDetail = () => {
                         />
                       </a>
                     ) : null}
-                    <span>
-                      {productEntity.productImageContentType}, {byteSize(productEntity.productImage)}
-                    </span>
+                    <span>{productEntity.productImageContentType}</span>
                   </div>
                 ) : null}
               </dd>
-              <dt>
-                <span id="height">
-                  <Translate contentKey="eCompanyApp.product.height">Height</Translate>
-                </span>
-              </dt>
               <dt>
                 <span id="productAttachments">
                   <Translate contentKey="eCompanyApp.product.productAttachments">Product Attachments</Translate>
@@ -115,16 +113,10 @@ export const ProductDetail = () => {
                         <Translate contentKey="entity.action.open">Open</Translate>&nbsp;
                       </a>
                     ) : null}
-                    <span>
-                      {productEntity.productAttachmentsContentType}, {byteSize(productEntity.productAttachments)}
-                    </span>
+                    <span>{productEntity.productAttachmentsContentType}</span>
                   </div>
                 ) : null}
               </dd>
-              <dt>
-                <Translate contentKey="eCompanyApp.product.vendorsName">Vendors Name</Translate>
-              </dt>
-              <dd>{productEntity.vendorsName ? productEntity.vendorsName.vendorNameEnglish : ''}</dd>
             </dl>
             <Button tag={Link} to="/product" replace color="info" data-cy="entityDetailsBackButton">
               <FontAwesomeIcon icon="arrow-left" />{' '}

@@ -251,9 +251,7 @@ export const Product = () => {
                             &nbsp;
                           </a>
                         ) : null}
-                        <span>
-                          {product.productImageContentType}, {byteSize(product.productImage)}
-                        </span>
+                        <span>{product.productImageContentType}</span>
                       </div>
                     ) : null}
                   </td>

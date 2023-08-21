@@ -40,11 +40,9 @@ export const BankDetailDetail = () => {
               </dt>
               <dd>{bankDetailEntity.id}</dd>
               <dt>
-                <span id="bankAccount">
-                  <Translate contentKey="eCompanyApp.bankDetail.bankAccount">Bank Account</Translate>
-                </span>
+                <Translate contentKey="eCompanyApp.bankDetail.vendorsName">Vendors Name</Translate>
               </dt>
-              <dd>{bankDetailEntity.bankAccount ? 'true' : 'false'}</dd>
+              <dd>{bankDetailEntity.vendorsName ? bankDetailEntity.vendorsName.vendorNameEnglish : ''}</dd>
               <dt>
                 <span id="bankName">
                   <Translate contentKey="eCompanyApp.bankDetail.bankName">Bank Name</Translate>
@@ -69,10 +67,6 @@ export const BankDetailDetail = () => {
                 </span>
               </dt>
               <dd>{bankDetailEntity.accountNumber}</dd>
-              <dt>
-                <Translate contentKey="eCompanyApp.bankDetail.vendorsName">Vendors Name</Translate>
-              </dt>
-              <dd>{bankDetailEntity.vendorsName ? bankDetailEntity.vendorsName.vendorNameEnglish : ''}</dd>
             </dl>
             <Button tag={Link} to="/bank-detail" replace color="info" data-cy="entityDetailsBackButton">
               <FontAwesomeIcon icon="arrow-left" />{' '}

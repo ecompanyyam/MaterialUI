@@ -89,6 +89,7 @@ export const BankDetailUpdate = () => {
                   name="id"
                   required
                   readOnly
+                  className="validated-field-container"
                   id="bank-detail-id"
                   label={translate('global.field.id')}
                   validate={{ required: true }}
@@ -113,14 +114,6 @@ export const BankDetailUpdate = () => {
                   : null}
                 <Translate contentKey="entity.validation.required">This field is required.</Translate>
               </ValidatedField>
-              <ValidatedField
-                label={translate('eCompanyApp.bankDetail.bankAccount')}
-                id="bank-detail-bankAccount"
-                name="bankAccount"
-                data-cy="bankAccount"
-                check
-                type="checkbox"
-              />
               <ValidatedField
                 label={translate('eCompanyApp.bankDetail.bankName')}
                 id="bank-detail-bankName"

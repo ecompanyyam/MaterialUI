@@ -101,6 +101,7 @@ export const ClientUpdate = () => {
                   name="id"
                   required
                   readOnly
+                  className="validated-field-container"
                   id="client-id"
                   label={translate('global.field.id')}
                   validate={{ required: true }}

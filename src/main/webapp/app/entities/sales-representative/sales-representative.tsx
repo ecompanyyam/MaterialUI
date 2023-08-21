@@ -119,6 +119,11 @@ export const SalesRepresentative = () => {
                   <Translate contentKey="eCompanyApp.salesRepresentative.id">ID</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
+                <th>
+                  <Translate contentKey="eCompanyApp.salesRepresentative.vendorsName">Vendors Name</Translate>{' '}
+                  <FontAwesomeIcon icon="sort" />
+                </th>
+
                 <th className="hand" onClick={sort('fullName')}>
                   <Translate contentKey="eCompanyApp.salesRepresentative.fullName">Full Name</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('fullName')} />
@@ -147,10 +152,6 @@ export const SalesRepresentative = () => {
                   <Translate contentKey="eCompanyApp.salesRepresentative.otherDetails">Other Details</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('otherDetails')} />
                 </th>
-                <th>
-                  <Translate contentKey="eCompanyApp.salesRepresentative.vendorsName">Vendors Name</Translate>{' '}
-                  <FontAwesomeIcon icon="sort" />
-                </th>
                 <th />
               </tr>
             </thead>
@@ -161,6 +162,13 @@ export const SalesRepresentative = () => {
                     <Button tag={Link} to={`/sales-representative/${salesRepresentative.id}`} color="link" size="sm">
                       {salesRepresentative.id}
                     </Button>
+                  </td>
+                  <td>
+                    {salesRepresentative.vendorsName ? (
+                      <Link to={`/vendor/${salesRepresentative.vendorsName.id}`}>{salesRepresentative.vendorsName.vendorNameEnglish}</Link>
+                    ) : (
+                      ''
+                    )}
                   </td>
                   <td>{salesRepresentative.fullName}</td>
                   <td>{salesRepresentative.jobTitle}</td>
@@ -175,13 +183,7 @@ export const SalesRepresentative = () => {
                     {salesRepresentative.otherDetails.substring(0, 20)}
                     {salesRepresentative.otherDetails.length >= 20 && '...'}
                   </td>
-                  <td>
-                    {salesRepresentative.vendorsName ? (
-                      <Link to={`/vendor/${salesRepresentative.vendorsName.id}`}>{salesRepresentative.vendorsName.vendorNameEnglish}</Link>
-                    ) : (
-                      ''
-                    )}
-                  </td>
+
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button

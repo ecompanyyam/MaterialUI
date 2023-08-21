@@ -102,6 +102,7 @@ export const VendorAssessmentUpdate = () => {
                   name="id"
                   required
                   readOnly
+                  className="validated-field-container"
                   id="vendor-assessment-id"
                   label={translate('global.field.id')}
                   validate={{ required: true }}

@@ -39,6 +39,14 @@ export const FeedBackFromEmployeeDetail = () => {
               </dt>
               <dd>{feedBackFromEmployeeEntity.id}</dd>
               <dt>
+                <Translate contentKey="eCompanyApp.feedBackFromEmployee.vendorsName">Vendors Name</Translate>
+              </dt>
+              <dd>{feedBackFromEmployeeEntity.vendorsName ? feedBackFromEmployeeEntity.vendorsName.vendorNameEnglish : ''}</dd>
+              <dt>
+                <Translate contentKey="eCompanyApp.feedBackFromEmployee.productName">Product Name</Translate>
+              </dt>
+              <dd>{feedBackFromEmployeeEntity.productName ? feedBackFromEmployeeEntity.productName.productName : ''}</dd>
+              <dt>
                 <span id="refContractPONumber">
                   <Translate contentKey="eCompanyApp.feedBackFromEmployee.refContractPONumber">Ref Contract PO Number</Translate>
                 </span>
@@ -56,14 +64,6 @@ export const FeedBackFromEmployeeDetail = () => {
                 </span>
               </dt>
               <dd>{feedBackFromEmployeeEntity.comment}</dd>
-              <dt>
-                <Translate contentKey="eCompanyApp.feedBackFromEmployee.vendorsName">Vendors Name</Translate>
-              </dt>
-              <dd>{feedBackFromEmployeeEntity.vendorsName ? feedBackFromEmployeeEntity.vendorsName.vendorNameEnglish : ''}</dd>
-              <dt>
-                <Translate contentKey="eCompanyApp.feedBackFromEmployee.productName">Product Name</Translate>
-              </dt>
-              <dd>{feedBackFromEmployeeEntity.productName ? feedBackFromEmployeeEntity.productName.productName : ''}</dd>
             </dl>
             <Button tag={Link} to="/feed-back-from-employee" replace color="info" data-cy="entityDetailsBackButton">
               <FontAwesomeIcon icon="arrow-left" />{' '}

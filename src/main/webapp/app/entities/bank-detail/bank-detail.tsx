@@ -166,9 +166,8 @@ export const BankDetail = () => {
                 <th className="hand" onClick={sort('id')}>
                   <Translate contentKey="eCompanyApp.bankDetail.id">ID</Translate> <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
-                <th className="hand" onClick={sort('bankAccount')}>
-                  <Translate contentKey="eCompanyApp.bankDetail.bankAccount">Bank Account</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('bankAccount')} />
+                <th>
+                  <Translate contentKey="eCompanyApp.bankDetail.vendorsName">Vendors Name</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={sort('bankName')}>
                   <Translate contentKey="eCompanyApp.bankDetail.bankName">Bank Name</Translate>{' '}
@@ -186,9 +185,6 @@ export const BankDetail = () => {
                   <Translate contentKey="eCompanyApp.bankDetail.accountNumber">Account Number</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('accountNumber')} />
                 </th>
-                <th>
-                  <Translate contentKey="eCompanyApp.bankDetail.vendorsName">Vendors Name</Translate> <FontAwesomeIcon icon="sort" />
-                </th>
                 <th />
               </tr>
             </thead>
@@ -200,11 +196,6 @@ export const BankDetail = () => {
                       {bankDetail.id}
                     </Button>
                   </td>
-                  <td>{bankDetail.bankAccount ? 'true' : 'false'}</td>
-                  <td>{bankDetail.bankName}</td>
-                  <td>{bankDetail.branchSwiftCode}</td>
-                  <td>{bankDetail.ibanNo}</td>
-                  <td>{bankDetail.accountNumber}</td>
                   <td>
                     {bankDetail.vendorsName ? (
                       <Link to={`/vendor/${bankDetail.vendorsName.id}`}>{bankDetail.vendorsName.vendorNameEnglish}</Link>
@@ -212,6 +203,10 @@ export const BankDetail = () => {
                       ''
                     )}
                   </td>
+                  <td>{bankDetail.bankName}</td>
+                  <td>{bankDetail.branchSwiftCode}</td>
+                  <td>{bankDetail.ibanNo}</td>
+                  <td>{bankDetail.accountNumber}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`/bank-detail/${bankDetail.id}`} color="info" size="sm" data-cy="entityDetailsButton">

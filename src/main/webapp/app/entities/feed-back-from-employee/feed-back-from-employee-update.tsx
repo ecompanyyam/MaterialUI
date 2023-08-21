@@ -100,6 +100,7 @@ export const FeedBackFromEmployeeUpdate = () => {
                   name="id"
                   required
                   readOnly
+                  className="validated-field-container"
                   id="feed-back-from-employee-id"
                   label={translate('global.field.id')}
                   validate={{ required: true }}
