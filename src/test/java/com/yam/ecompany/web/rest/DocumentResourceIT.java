@@ -14,6 +14,7 @@ import com.yam.ecompany.service.criteria.DocumentCriteria;
 import jakarta.persistence.EntityManager;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.Base64;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
@@ -25,7 +26,6 @@ import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.Base64Utils;
 
 /**
  * Integration tests for the {@link DocumentResource} REST controller.
@@ -185,7 +185,7 @@ class DocumentResourceIT {
             .andExpect(jsonPath("$.[*].expiryDate").value(hasItem(DEFAULT_EXPIRY_DATE.toString())))
             .andExpect(jsonPath("$.[*].documentStatus").value(hasItem(DEFAULT_DOCUMENT_STATUS.toString())))
             .andExpect(jsonPath("$.[*].uploadFileContentType").value(hasItem(DEFAULT_UPLOAD_FILE_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].uploadFile").value(hasItem(Base64Utils.encodeToString(DEFAULT_UPLOAD_FILE))));
+            .andExpect(jsonPath("$.[*].uploadFile").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_UPLOAD_FILE))));
     }
 
     @Test
@@ -208,7 +208,7 @@ class DocumentResourceIT {
             .andExpect(jsonPath("$.expiryDate").value(DEFAULT_EXPIRY_DATE.toString()))
             .andExpect(jsonPath("$.documentStatus").value(DEFAULT_DOCUMENT_STATUS.toString()))
             .andExpect(jsonPath("$.uploadFileContentType").value(DEFAULT_UPLOAD_FILE_CONTENT_TYPE))
-            .andExpect(jsonPath("$.uploadFile").value(Base64Utils.encodeToString(DEFAULT_UPLOAD_FILE)));
+            .andExpect(jsonPath("$.uploadFile").value(Base64.getEncoder().encodeToString(DEFAULT_UPLOAD_FILE)));
     }
 
     @Test
@@ -597,7 +597,7 @@ class DocumentResourceIT {
             .andExpect(jsonPath("$.[*].expiryDate").value(hasItem(DEFAULT_EXPIRY_DATE.toString())))
             .andExpect(jsonPath("$.[*].documentStatus").value(hasItem(DEFAULT_DOCUMENT_STATUS.toString())))
             .andExpect(jsonPath("$.[*].uploadFileContentType").value(hasItem(DEFAULT_UPLOAD_FILE_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].uploadFile").value(hasItem(Base64Utils.encodeToString(DEFAULT_UPLOAD_FILE))));
+            .andExpect(jsonPath("$.[*].uploadFile").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_UPLOAD_FILE))));
 
         // Check, that the count call also returns 1
         restDocumentMockMvc

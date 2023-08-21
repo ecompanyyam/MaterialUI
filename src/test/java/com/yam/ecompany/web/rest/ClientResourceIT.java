@@ -13,6 +13,7 @@ import com.yam.ecompany.service.criteria.ClientCriteria;
 import jakarta.persistence.EntityManager;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.Base64;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
@@ -24,7 +25,6 @@ import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.Base64Utils;
 
 /**
  * Integration tests for the {@link ClientResource} REST controller.
@@ -209,7 +209,7 @@ class ClientResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(client.getId().intValue())))
             .andExpect(jsonPath("$.[*].clientName").value(hasItem(DEFAULT_CLIENT_NAME)))
             .andExpect(jsonPath("$.[*].logoContentType").value(hasItem(DEFAULT_LOGO_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].logo").value(hasItem(Base64Utils.encodeToString(DEFAULT_LOGO))))
+            .andExpect(jsonPath("$.[*].logo").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_LOGO))))
             .andExpect(jsonPath("$.[*].height").value(hasItem(DEFAULT_HEIGHT)))
             .andExpect(jsonPath("$.[*].width").value(hasItem(DEFAULT_WIDTH)))
             .andExpect(jsonPath("$.[*].taken").value(hasItem(DEFAULT_TAKEN.toString())))
@@ -220,7 +220,7 @@ class ClientResourceIT {
             .andExpect(jsonPath("$.[*].dateOfRegistration").value(hasItem(DEFAULT_DATE_OF_REGISTRATION.toString())))
             .andExpect(jsonPath("$.[*].dateOfExpiry").value(hasItem(DEFAULT_DATE_OF_EXPIRY.toString())))
             .andExpect(jsonPath("$.[*].approvalDocumentContentType").value(hasItem(DEFAULT_APPROVAL_DOCUMENT_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].approvalDocument").value(hasItem(Base64Utils.encodeToString(DEFAULT_APPROVAL_DOCUMENT))));
+            .andExpect(jsonPath("$.[*].approvalDocument").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_APPROVAL_DOCUMENT))));
     }
 
     @Test
@@ -237,7 +237,7 @@ class ClientResourceIT {
             .andExpect(jsonPath("$.id").value(client.getId().intValue()))
             .andExpect(jsonPath("$.clientName").value(DEFAULT_CLIENT_NAME))
             .andExpect(jsonPath("$.logoContentType").value(DEFAULT_LOGO_CONTENT_TYPE))
-            .andExpect(jsonPath("$.logo").value(Base64Utils.encodeToString(DEFAULT_LOGO)))
+            .andExpect(jsonPath("$.logo").value(Base64.getEncoder().encodeToString(DEFAULT_LOGO)))
             .andExpect(jsonPath("$.height").value(DEFAULT_HEIGHT))
             .andExpect(jsonPath("$.width").value(DEFAULT_WIDTH))
             .andExpect(jsonPath("$.taken").value(DEFAULT_TAKEN.toString()))
@@ -248,7 +248,7 @@ class ClientResourceIT {
             .andExpect(jsonPath("$.dateOfRegistration").value(DEFAULT_DATE_OF_REGISTRATION.toString()))
             .andExpect(jsonPath("$.dateOfExpiry").value(DEFAULT_DATE_OF_EXPIRY.toString()))
             .andExpect(jsonPath("$.approvalDocumentContentType").value(DEFAULT_APPROVAL_DOCUMENT_CONTENT_TYPE))
-            .andExpect(jsonPath("$.approvalDocument").value(Base64Utils.encodeToString(DEFAULT_APPROVAL_DOCUMENT)));
+            .andExpect(jsonPath("$.approvalDocument").value(Base64.getEncoder().encodeToString(DEFAULT_APPROVAL_DOCUMENT)));
     }
 
     @Test
@@ -826,7 +826,7 @@ class ClientResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(client.getId().intValue())))
             .andExpect(jsonPath("$.[*].clientName").value(hasItem(DEFAULT_CLIENT_NAME)))
             .andExpect(jsonPath("$.[*].logoContentType").value(hasItem(DEFAULT_LOGO_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].logo").value(hasItem(Base64Utils.encodeToString(DEFAULT_LOGO))))
+            .andExpect(jsonPath("$.[*].logo").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_LOGO))))
             .andExpect(jsonPath("$.[*].height").value(hasItem(DEFAULT_HEIGHT)))
             .andExpect(jsonPath("$.[*].width").value(hasItem(DEFAULT_WIDTH)))
             .andExpect(jsonPath("$.[*].taken").value(hasItem(DEFAULT_TAKEN.toString())))
@@ -837,7 +837,7 @@ class ClientResourceIT {
             .andExpect(jsonPath("$.[*].dateOfRegistration").value(hasItem(DEFAULT_DATE_OF_REGISTRATION.toString())))
             .andExpect(jsonPath("$.[*].dateOfExpiry").value(hasItem(DEFAULT_DATE_OF_EXPIRY.toString())))
             .andExpect(jsonPath("$.[*].approvalDocumentContentType").value(hasItem(DEFAULT_APPROVAL_DOCUMENT_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].approvalDocument").value(hasItem(Base64Utils.encodeToString(DEFAULT_APPROVAL_DOCUMENT))));
+            .andExpect(jsonPath("$.[*].approvalDocument").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_APPROVAL_DOCUMENT))));
 
         // Check, that the count call also returns 1
         restClientMockMvc

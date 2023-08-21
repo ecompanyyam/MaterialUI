@@ -82,17 +82,12 @@ export const VendorUpdate = () => {
     }
   }, [updateSuccess]);
   const saveEntity = values => {
-    console.log('hi its save entity ');
     values.taken = convertDateTimeToServer(values.taken);
     values.uploaded = convertDateTimeToServer(values.uploaded);
-    let googleMap = ''; // Initialize an empty location string
-    if (values.latitude && values.longitude) {
-      googleMap = `${values.latitude},${values.longitude}`; // Combine latitude and longitude
-    }
+
     const entity = {
       ...vendorEntity,
       ...values,
-      googleMap: googleMap, // Store the combined location
     };
 
     if (isNew) {
@@ -534,11 +529,6 @@ const FormFieldsTab3: React.FC<{
         data-cy="googleMap"
         type="textarea"
       />
-      {/*<GoogleMapComponent*/}
-      {/*  location={vendorEntity.googleMap || ''}*/}
-      {/*  selectedCoordinates={selectedCoordinates}*/}
-      {/*  setSelectedCoordinates={setSelectedCoordinates}*/}
-      {/*/>*/}
       <ValidatedField
         label={translate('eCompanyApp.vendor.combinedAddress')}
         id="vendor-combinedAddress"

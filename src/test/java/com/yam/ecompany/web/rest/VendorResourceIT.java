@@ -16,6 +16,7 @@ import com.yam.ecompany.service.criteria.VendorCriteria;
 import jakarta.persistence.EntityManager;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.Base64;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
@@ -27,7 +28,6 @@ import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.Base64Utils;
 
 /**
  * Integration tests for the {@link VendorResource} REST controller.
@@ -471,7 +471,7 @@ class VendorResourceIT {
             .andExpect(jsonPath("$.[*].vendorCategory").value(hasItem(DEFAULT_VENDOR_CATEGORY.toString())))
             .andExpect(jsonPath("$.[*].vendorEstablishmentDate").value(hasItem(DEFAULT_VENDOR_ESTABLISHMENT_DATE)))
             .andExpect(jsonPath("$.[*].vendorLogoContentType").value(hasItem(DEFAULT_VENDOR_LOGO_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].vendorLogo").value(hasItem(Base64Utils.encodeToString(DEFAULT_VENDOR_LOGO))))
+            .andExpect(jsonPath("$.[*].vendorLogo").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_VENDOR_LOGO))))
             .andExpect(jsonPath("$.[*].height").value(hasItem(DEFAULT_HEIGHT)))
             .andExpect(jsonPath("$.[*].width").value(hasItem(DEFAULT_WIDTH)))
             .andExpect(jsonPath("$.[*].taken").value(hasItem(DEFAULT_TAKEN.toString())))
@@ -496,15 +496,23 @@ class VendorResourceIT {
             .andExpect(jsonPath("$.[*].googleMap").value(hasItem(DEFAULT_GOOGLE_MAP.toString())))
             .andExpect(jsonPath("$.[*].combinedAddress").value(hasItem(DEFAULT_COMBINED_ADDRESS.toString())))
             .andExpect(jsonPath("$.[*].cRCertificateUploadContentType").value(hasItem(DEFAULT_C_R_CERTIFICATE_UPLOAD_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].cRCertificateUpload").value(hasItem(Base64Utils.encodeToString(DEFAULT_C_R_CERTIFICATE_UPLOAD))))
+            .andExpect(
+                jsonPath("$.[*].cRCertificateUpload").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_C_R_CERTIFICATE_UPLOAD)))
+            )
             .andExpect(jsonPath("$.[*].vATCertificateUploadContentType").value(hasItem(DEFAULT_V_AT_CERTIFICATE_UPLOAD_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].vATCertificateUpload").value(hasItem(Base64Utils.encodeToString(DEFAULT_V_AT_CERTIFICATE_UPLOAD))))
+            .andExpect(
+                jsonPath("$.[*].vATCertificateUpload").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_V_AT_CERTIFICATE_UPLOAD)))
+            )
             .andExpect(jsonPath("$.[*].nationalAddressUploadContentType").value(hasItem(DEFAULT_NATIONAL_ADDRESS_UPLOAD_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].nationalAddressUpload").value(hasItem(Base64Utils.encodeToString(DEFAULT_NATIONAL_ADDRESS_UPLOAD))))
+            .andExpect(
+                jsonPath("$.[*].nationalAddressUpload").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_NATIONAL_ADDRESS_UPLOAD)))
+            )
             .andExpect(jsonPath("$.[*].companyProfileUploadContentType").value(hasItem(DEFAULT_COMPANY_PROFILE_UPLOAD_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].companyProfileUpload").value(hasItem(Base64Utils.encodeToString(DEFAULT_COMPANY_PROFILE_UPLOAD))))
+            .andExpect(
+                jsonPath("$.[*].companyProfileUpload").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_COMPANY_PROFILE_UPLOAD)))
+            )
             .andExpect(jsonPath("$.[*].otherUploadContentType").value(hasItem(DEFAULT_OTHER_UPLOAD_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].otherUpload").value(hasItem(Base64Utils.encodeToString(DEFAULT_OTHER_UPLOAD))))
+            .andExpect(jsonPath("$.[*].otherUpload").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_OTHER_UPLOAD))))
             .andExpect(jsonPath("$.[*].cash").value(hasItem(DEFAULT_CASH)))
             .andExpect(jsonPath("$.[*].credit").value(hasItem(DEFAULT_CREDIT)))
             .andExpect(jsonPath("$.[*].letterOfCredit").value(hasItem(DEFAULT_LETTER_OF_CREDIT)))
@@ -533,7 +541,7 @@ class VendorResourceIT {
             .andExpect(jsonPath("$.vendorCategory").value(DEFAULT_VENDOR_CATEGORY.toString()))
             .andExpect(jsonPath("$.vendorEstablishmentDate").value(DEFAULT_VENDOR_ESTABLISHMENT_DATE))
             .andExpect(jsonPath("$.vendorLogoContentType").value(DEFAULT_VENDOR_LOGO_CONTENT_TYPE))
-            .andExpect(jsonPath("$.vendorLogo").value(Base64Utils.encodeToString(DEFAULT_VENDOR_LOGO)))
+            .andExpect(jsonPath("$.vendorLogo").value(Base64.getEncoder().encodeToString(DEFAULT_VENDOR_LOGO)))
             .andExpect(jsonPath("$.height").value(DEFAULT_HEIGHT))
             .andExpect(jsonPath("$.width").value(DEFAULT_WIDTH))
             .andExpect(jsonPath("$.taken").value(DEFAULT_TAKEN.toString()))
@@ -558,15 +566,15 @@ class VendorResourceIT {
             .andExpect(jsonPath("$.googleMap").value(DEFAULT_GOOGLE_MAP.toString()))
             .andExpect(jsonPath("$.combinedAddress").value(DEFAULT_COMBINED_ADDRESS.toString()))
             .andExpect(jsonPath("$.cRCertificateUploadContentType").value(DEFAULT_C_R_CERTIFICATE_UPLOAD_CONTENT_TYPE))
-            .andExpect(jsonPath("$.cRCertificateUpload").value(Base64Utils.encodeToString(DEFAULT_C_R_CERTIFICATE_UPLOAD)))
+            .andExpect(jsonPath("$.cRCertificateUpload").value(Base64.getEncoder().encodeToString(DEFAULT_C_R_CERTIFICATE_UPLOAD)))
             .andExpect(jsonPath("$.vATCertificateUploadContentType").value(DEFAULT_V_AT_CERTIFICATE_UPLOAD_CONTENT_TYPE))
-            .andExpect(jsonPath("$.vATCertificateUpload").value(Base64Utils.encodeToString(DEFAULT_V_AT_CERTIFICATE_UPLOAD)))
+            .andExpect(jsonPath("$.vATCertificateUpload").value(Base64.getEncoder().encodeToString(DEFAULT_V_AT_CERTIFICATE_UPLOAD)))
             .andExpect(jsonPath("$.nationalAddressUploadContentType").value(DEFAULT_NATIONAL_ADDRESS_UPLOAD_CONTENT_TYPE))
-            .andExpect(jsonPath("$.nationalAddressUpload").value(Base64Utils.encodeToString(DEFAULT_NATIONAL_ADDRESS_UPLOAD)))
+            .andExpect(jsonPath("$.nationalAddressUpload").value(Base64.getEncoder().encodeToString(DEFAULT_NATIONAL_ADDRESS_UPLOAD)))
             .andExpect(jsonPath("$.companyProfileUploadContentType").value(DEFAULT_COMPANY_PROFILE_UPLOAD_CONTENT_TYPE))
-            .andExpect(jsonPath("$.companyProfileUpload").value(Base64Utils.encodeToString(DEFAULT_COMPANY_PROFILE_UPLOAD)))
+            .andExpect(jsonPath("$.companyProfileUpload").value(Base64.getEncoder().encodeToString(DEFAULT_COMPANY_PROFILE_UPLOAD)))
             .andExpect(jsonPath("$.otherUploadContentType").value(DEFAULT_OTHER_UPLOAD_CONTENT_TYPE))
-            .andExpect(jsonPath("$.otherUpload").value(Base64Utils.encodeToString(DEFAULT_OTHER_UPLOAD)))
+            .andExpect(jsonPath("$.otherUpload").value(Base64.getEncoder().encodeToString(DEFAULT_OTHER_UPLOAD)))
             .andExpect(jsonPath("$.cash").value(DEFAULT_CASH))
             .andExpect(jsonPath("$.credit").value(DEFAULT_CREDIT))
             .andExpect(jsonPath("$.letterOfCredit").value(DEFAULT_LETTER_OF_CREDIT))
@@ -2720,7 +2728,7 @@ class VendorResourceIT {
             .andExpect(jsonPath("$.[*].vendorCategory").value(hasItem(DEFAULT_VENDOR_CATEGORY.toString())))
             .andExpect(jsonPath("$.[*].vendorEstablishmentDate").value(hasItem(DEFAULT_VENDOR_ESTABLISHMENT_DATE)))
             .andExpect(jsonPath("$.[*].vendorLogoContentType").value(hasItem(DEFAULT_VENDOR_LOGO_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].vendorLogo").value(hasItem(Base64Utils.encodeToString(DEFAULT_VENDOR_LOGO))))
+            .andExpect(jsonPath("$.[*].vendorLogo").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_VENDOR_LOGO))))
             .andExpect(jsonPath("$.[*].height").value(hasItem(DEFAULT_HEIGHT)))
             .andExpect(jsonPath("$.[*].width").value(hasItem(DEFAULT_WIDTH)))
             .andExpect(jsonPath("$.[*].taken").value(hasItem(DEFAULT_TAKEN.toString())))
@@ -2745,15 +2753,23 @@ class VendorResourceIT {
             .andExpect(jsonPath("$.[*].googleMap").value(hasItem(DEFAULT_GOOGLE_MAP.toString())))
             .andExpect(jsonPath("$.[*].combinedAddress").value(hasItem(DEFAULT_COMBINED_ADDRESS.toString())))
             .andExpect(jsonPath("$.[*].cRCertificateUploadContentType").value(hasItem(DEFAULT_C_R_CERTIFICATE_UPLOAD_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].cRCertificateUpload").value(hasItem(Base64Utils.encodeToString(DEFAULT_C_R_CERTIFICATE_UPLOAD))))
+            .andExpect(
+                jsonPath("$.[*].cRCertificateUpload").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_C_R_CERTIFICATE_UPLOAD)))
+            )
             .andExpect(jsonPath("$.[*].vATCertificateUploadContentType").value(hasItem(DEFAULT_V_AT_CERTIFICATE_UPLOAD_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].vATCertificateUpload").value(hasItem(Base64Utils.encodeToString(DEFAULT_V_AT_CERTIFICATE_UPLOAD))))
+            .andExpect(
+                jsonPath("$.[*].vATCertificateUpload").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_V_AT_CERTIFICATE_UPLOAD)))
+            )
             .andExpect(jsonPath("$.[*].nationalAddressUploadContentType").value(hasItem(DEFAULT_NATIONAL_ADDRESS_UPLOAD_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].nationalAddressUpload").value(hasItem(Base64Utils.encodeToString(DEFAULT_NATIONAL_ADDRESS_UPLOAD))))
+            .andExpect(
+                jsonPath("$.[*].nationalAddressUpload").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_NATIONAL_ADDRESS_UPLOAD)))
+            )
             .andExpect(jsonPath("$.[*].companyProfileUploadContentType").value(hasItem(DEFAULT_COMPANY_PROFILE_UPLOAD_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].companyProfileUpload").value(hasItem(Base64Utils.encodeToString(DEFAULT_COMPANY_PROFILE_UPLOAD))))
+            .andExpect(
+                jsonPath("$.[*].companyProfileUpload").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_COMPANY_PROFILE_UPLOAD)))
+            )
             .andExpect(jsonPath("$.[*].otherUploadContentType").value(hasItem(DEFAULT_OTHER_UPLOAD_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].otherUpload").value(hasItem(Base64Utils.encodeToString(DEFAULT_OTHER_UPLOAD))))
+            .andExpect(jsonPath("$.[*].otherUpload").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_OTHER_UPLOAD))))
             .andExpect(jsonPath("$.[*].cash").value(hasItem(DEFAULT_CASH)))
             .andExpect(jsonPath("$.[*].credit").value(hasItem(DEFAULT_CREDIT)))
             .andExpect(jsonPath("$.[*].letterOfCredit").value(hasItem(DEFAULT_LETTER_OF_CREDIT)))

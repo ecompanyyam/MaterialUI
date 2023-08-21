@@ -19,6 +19,7 @@ import jakarta.persistence.EntityManager;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
@@ -36,7 +37,6 @@ import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.Base64Utils;
 
 /**
  * Integration tests for the {@link ProductResource} REST controller.
@@ -253,13 +253,15 @@ class ProductResourceIT {
             .andExpect(jsonPath("$.[*].productAvgDeliveryTime").value(hasItem(DEFAULT_PRODUCT_AVG_DELIVERY_TIME.toString())))
             .andExpect(jsonPath("$.[*].productManufacturer").value(hasItem(DEFAULT_PRODUCT_MANUFACTURER)))
             .andExpect(jsonPath("$.[*].productImageContentType").value(hasItem(DEFAULT_PRODUCT_IMAGE_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].productImage").value(hasItem(Base64Utils.encodeToString(DEFAULT_PRODUCT_IMAGE))))
+            .andExpect(jsonPath("$.[*].productImage").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_PRODUCT_IMAGE))))
             .andExpect(jsonPath("$.[*].height").value(hasItem(DEFAULT_HEIGHT)))
             .andExpect(jsonPath("$.[*].width").value(hasItem(DEFAULT_WIDTH)))
             .andExpect(jsonPath("$.[*].taken").value(hasItem(DEFAULT_TAKEN.toString())))
             .andExpect(jsonPath("$.[*].uploaded").value(hasItem(DEFAULT_UPLOADED.toString())))
             .andExpect(jsonPath("$.[*].productAttachmentsContentType").value(hasItem(DEFAULT_PRODUCT_ATTACHMENTS_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].productAttachments").value(hasItem(Base64Utils.encodeToString(DEFAULT_PRODUCT_ATTACHMENTS))));
+            .andExpect(
+                jsonPath("$.[*].productAttachments").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_PRODUCT_ATTACHMENTS)))
+            );
     }
 
     @SuppressWarnings({ "unchecked" })
@@ -298,13 +300,13 @@ class ProductResourceIT {
             .andExpect(jsonPath("$.productAvgDeliveryTime").value(DEFAULT_PRODUCT_AVG_DELIVERY_TIME.toString()))
             .andExpect(jsonPath("$.productManufacturer").value(DEFAULT_PRODUCT_MANUFACTURER))
             .andExpect(jsonPath("$.productImageContentType").value(DEFAULT_PRODUCT_IMAGE_CONTENT_TYPE))
-            .andExpect(jsonPath("$.productImage").value(Base64Utils.encodeToString(DEFAULT_PRODUCT_IMAGE)))
+            .andExpect(jsonPath("$.productImage").value(Base64.getEncoder().encodeToString(DEFAULT_PRODUCT_IMAGE)))
             .andExpect(jsonPath("$.height").value(DEFAULT_HEIGHT))
             .andExpect(jsonPath("$.width").value(DEFAULT_WIDTH))
             .andExpect(jsonPath("$.taken").value(DEFAULT_TAKEN.toString()))
             .andExpect(jsonPath("$.uploaded").value(DEFAULT_UPLOADED.toString()))
             .andExpect(jsonPath("$.productAttachmentsContentType").value(DEFAULT_PRODUCT_ATTACHMENTS_CONTENT_TYPE))
-            .andExpect(jsonPath("$.productAttachments").value(Base64Utils.encodeToString(DEFAULT_PRODUCT_ATTACHMENTS)));
+            .andExpect(jsonPath("$.productAttachments").value(Base64.getEncoder().encodeToString(DEFAULT_PRODUCT_ATTACHMENTS)));
     }
 
     @Test
@@ -872,13 +874,15 @@ class ProductResourceIT {
             .andExpect(jsonPath("$.[*].productAvgDeliveryTime").value(hasItem(DEFAULT_PRODUCT_AVG_DELIVERY_TIME.toString())))
             .andExpect(jsonPath("$.[*].productManufacturer").value(hasItem(DEFAULT_PRODUCT_MANUFACTURER)))
             .andExpect(jsonPath("$.[*].productImageContentType").value(hasItem(DEFAULT_PRODUCT_IMAGE_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].productImage").value(hasItem(Base64Utils.encodeToString(DEFAULT_PRODUCT_IMAGE))))
+            .andExpect(jsonPath("$.[*].productImage").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_PRODUCT_IMAGE))))
             .andExpect(jsonPath("$.[*].height").value(hasItem(DEFAULT_HEIGHT)))
             .andExpect(jsonPath("$.[*].width").value(hasItem(DEFAULT_WIDTH)))
             .andExpect(jsonPath("$.[*].taken").value(hasItem(DEFAULT_TAKEN.toString())))
             .andExpect(jsonPath("$.[*].uploaded").value(hasItem(DEFAULT_UPLOADED.toString())))
             .andExpect(jsonPath("$.[*].productAttachmentsContentType").value(hasItem(DEFAULT_PRODUCT_ATTACHMENTS_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].productAttachments").value(hasItem(Base64Utils.encodeToString(DEFAULT_PRODUCT_ATTACHMENTS))));
+            .andExpect(
+                jsonPath("$.[*].productAttachments").value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_PRODUCT_ATTACHMENTS)))
+            );
 
         // Check, that the count call also returns 1
         restProductMockMvc
