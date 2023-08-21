@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Button, Row, Col } from 'reactstrap';
 import { Translate, openFile, byteSize, TextFormat } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { faPrint } from '@fortawesome/free-solid-svg-icons';
 import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
@@ -158,7 +158,10 @@ export const ClientDetail = () => {
           </Button>
           &nbsp;
           <Button color="info" onClick={() => window.print()}>
-            <FontAwesomeIcon icon="print" /> <Translate contentKey="entity.action.PDF">Print PDF</Translate>
+            <FontAwesomeIcon icon={faPrint} />{' '}
+            <span className="d-none d-md-inline">
+              <Translate contentKey="entity.action.PDF">Print PDF</Translate>
+            </span>{' '}
           </Button>
         </div>
       </Col>
