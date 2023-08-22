@@ -182,9 +182,7 @@ export const Client = () => {
                             &nbsp;
                           </a>
                         ) : null}
-                        <span>
-                          {client.logoContentType}, {byteSize(client.logo)}
-                        </span>
+                        <span>{client.logoContentType}</span>
                       </div>
                     ) : null}
                   </td>

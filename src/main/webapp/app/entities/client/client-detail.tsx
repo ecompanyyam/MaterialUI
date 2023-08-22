@@ -58,17 +58,15 @@ export const ClientDetail = () => {
                         <img src={`data:${clientEntity.logoContentType};base64,${clientEntity.logo}`} style={{ maxHeight: '30px' }} />
                       </a>
                     ) : null}
-                    <span>
-                      {clientEntity.logoContentType}, {byteSize(clientEntity.logo)}
-                    </span>
+                    <span>{clientEntity.logoContentType}</span>
                   </div>
                 ) : null}
               </dd>
-              <dt>
-                <span id="height">
-                  <Translate contentKey="eCompanyApp.client.height">Height</Translate>
-                </span>
-              </dt>
+              {/*<dt>*/}
+              {/*  <span id="height">*/}
+              {/*    <Translate contentKey="eCompanyApp.client.height">Height</Translate>*/}
+              {/*  </span>*/}
+              {/*</dt>*/}
               {/* <dd>{clientEntity.height}</dd> */}
               {/* <dt> */}
               {/*   <span id="width"> */}
@@ -141,9 +139,7 @@ export const ClientDetail = () => {
                         <Translate contentKey="entity.action.open">Open</Translate>&nbsp;
                       </a>
                     ) : null}
-                    <span>
-                      {clientEntity.approvalDocumentContentType}, {byteSize(clientEntity.approvalDocument)}
-                    </span>
+                    <span>{clientEntity.approvalDocumentContentType}</span>
                   </div>
                 ) : null}
               </dd>
