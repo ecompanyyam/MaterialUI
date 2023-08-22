@@ -84,8 +84,8 @@ export const VendorAssessmentUpdate = () => {
 
   return (
     <div>
-      <Row className="justify-content-center">
-        <Col md="8">
+      <Row className="justify-content-center blue-bg mb-2">
+        <Col md="6">
           <h2 id="eCompanyApp.vendorAssessment.home.createOrEditLabel" data-cy="VendorAssessmentCreateUpdateHeading">
             <Translate contentKey="eCompanyApp.vendorAssessment.home.createOrEditLabel">Create or edit a VendorAssessment</Translate>
           </h2>
