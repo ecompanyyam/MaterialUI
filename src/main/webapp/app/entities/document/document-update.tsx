@@ -175,6 +175,7 @@ export const DocumentUpdate = () => {
               <ValidatedBlobField
                 label={translate('eCompanyApp.document.uploadFile')}
                 id="document-uploadFile"
+                className="validated-blob-field-container"
                 name="uploadFile"
                 data-cy="uploadFile"
                 openActionLabel={translate('entity.action.open')}

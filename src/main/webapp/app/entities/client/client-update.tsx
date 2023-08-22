@@ -168,6 +168,7 @@ export const ClientUpdate = () => {
                 label={translate('eCompanyApp.client.logo')}
                 id="client-logo"
                 name="logo"
+                className="validated-blob-field-container"
                 data-cy="logo"
                 isImage
                 accept="image/*"
@@ -176,6 +177,7 @@ export const ClientUpdate = () => {
                 label={translate('eCompanyApp.client.approvalDocument')}
                 id="client-approvalDocument"
                 name="approvalDocument"
+                className="validated-blob-field-container"
                 data-cy="approvalDocument"
                 openActionLabel={translate('entity.action.open')}
               />
