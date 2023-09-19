@@ -8,6 +8,8 @@ import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
 import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
+import { ProductsGrid } from './products-grid';
+
 
 import { searchEntities, getEntities } from './product.reducer';
 
@@ -159,7 +161,7 @@ export const Product = () => {
           </Form>
         </Col>
       </Row>
-      <div className="table-responsive">
+      {/* <div className="table-responsive">
         {productList && productList.length > 0 ? (
           <Table responsive>
             <thead>
@@ -331,7 +333,8 @@ export const Product = () => {
         </div>
       ) : (
         ''
-      )}
+      )} */}
+      <ProductsGrid rows={productList ?? []} />
     </div>
   );
 };
